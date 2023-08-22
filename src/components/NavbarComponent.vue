@@ -1,18 +1,18 @@
 <template>
   <nav>
-    <Logo />
+    <LogoComponent />
     <div class="menu">
-      <MenuButton path="/" icon="map" text="Map" />
-      <MenuButton path="/allrecords" icon="grid_on" text="All Records" />
-      <MenuButton path="/collections" icon="library_books" text="Collections" />
-      <MenuButton path="/about" icon="description" text="About" />
+      <MenuButtonComponent path="/" icon="map" text="Map" />
+      <MenuButtonComponent path="/allrecords" icon="grid_on" text="All Records" />
+      <MenuButtonComponent path="/collections" icon="library_books" text="Collections" />
+      <MenuButtonComponent path="/about" icon="description" text="About" />
     </div>
   </nav>
 </template>
   
 <script setup>
-import MenuButton from './MenuButton.vue'
-import Logo from './Logo.vue'
+import MenuButtonComponent from './MenuButtonComponent.vue'
+import LogoComponent from './LogoComponent.vue'
 </script>
   
 <style scoped>

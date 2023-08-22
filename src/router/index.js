@@ -4,7 +4,6 @@ import MapPage from '../views/MapPage.vue'
 import AllRecordsPage from '../views/AllRecordsPage.vue'
 import CollectionsPage from '../views/CollectionsPage.vue'
 import CollectionRecordsPage from '../views/CollectionRecordsPage.vue'
-import RecordModal from '../components/RecordModal.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

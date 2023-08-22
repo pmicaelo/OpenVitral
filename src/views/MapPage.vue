@@ -6,24 +6,25 @@
 			<img :src="logoURL" alt="Vue" />
 		</div>!-->
 
-			<Map />
+			<MapComponent />
 		</main>
 		<Transition name="backdrop-transition">
 			<div class="modal-backdrop" v-if="record"> </div>
 		</Transition>
 		<Transition name="modal-transition">
-			<RecordModal :record="record" v-if="record" />
+			<RecordModalComponent :record="record" v-if="record" />
 		</Transition>
 	</div>
 </template>
 
 <script setup>
 
-import Map from '../components/Map.vue'
+
 import { ref, computed, inject } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-import RecordModal from '../components/RecordModal.vue';
+import MapComponent from '../components/MapComponent.vue'
+import RecordModalComponent from '../components/RecordModalComponent.vue';
 
 
 const results = inject('records');

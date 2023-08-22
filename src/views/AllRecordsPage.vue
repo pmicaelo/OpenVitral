@@ -7,16 +7,16 @@
           name: 'allrecords',
           query: { record: result.uniqueId.value },
         }">
-          <RecordCard :record="result" />
+          <RecordCardComponent :record="result" />
         </router-link>
       </div>
-      <Pagination :items="filteredResults" @updatePage="updateDisplayedResults" />
+      <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
     </main>
     <Transition name="backdrop-transition">
       <div class="modal-backdrop" v-if="record"> </div>
     </Transition>
     <Transition name="modal-transition">
-      <RecordModal :record="record" v-if="record" />
+      <RecordModalComponent :record="record" v-if="record" />
     </Transition>
   </div>
 </template>
@@ -26,9 +26,9 @@
 import { ref, computed, inject } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-import RecordModal from '../components/RecordModal.vue';
-import RecordCard from '../components/RecordCard.vue';
-import Pagination from '../components/Pagination.vue';
+import RecordModalComponent from '../components/RecordModalComponent.vue';
+import RecordCardComponent from '../components/RecordCardComponent.vue';
+import PaginationComponent from '../components/PaginationComponent.vue';
 
 const results = inject('records');
 const displayedResults = ref([]);

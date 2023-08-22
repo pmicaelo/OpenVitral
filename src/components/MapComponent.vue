@@ -18,8 +18,8 @@ import 'leaflet/dist/images/marker-shadow.png'*/
 
 import markerUrl from '../assets/marker.png'
 import markerShadowUrl from '../assets/markerShadow.png'
-const results = inject('records');
 
+const results = inject('records');
 const router = useRouter();
 //const name= "Map"
 

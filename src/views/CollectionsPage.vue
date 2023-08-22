@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<div class="results-container">
-			<CollectionCard v-for="group in groupedResults" :key="group.dataProvider" :collection="group.dataProvider"
+			<CollectionCardComponent v-for="group in groupedResults" :key="group.dataProvider" :collection="group.dataProvider"
 				:image="group.image" />
 		</div>
 	</main>
@@ -9,7 +9,7 @@
   
 <script setup>
 import { ref, computed, inject } from 'vue';
-import CollectionCard from '../components/CollectionCard.vue';
+import CollectionCardComponent from '../components/CollectionCardComponent.vue';
 
 const results = inject('records');
 

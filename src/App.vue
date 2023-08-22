@@ -1,7 +1,7 @@
 <template>
   <div v-if="loaded" class="app">
     <!-- Navbar -->
-    <Navbar />
+    <NavbarComponent />
     <!-- Content -->
     <router-view v-slot="{ Component , route}">
       <Transition :name="route.meta.transition" mode="out-in">
@@ -9,12 +9,12 @@
       </Transition>
     </router-view>
   </div>
-  <LoadingScreen v-else />
+  <LoadingScreenComponent v-else />
 </template>
 
 <script setup>
-import LoadingScreen from './components/LoadingScreen.vue'
-import Navbar from './components/Navbar.vue'
+import LoadingScreenComponent from './components/LoadingScreenComponent.vue'
+import NavbarComponent from './components/NavbarComponent.vue'
 import { onMounted, ref, provide, readonly } from 'vue';
 import axios from 'axios';
 

@@ -1,11 +1,11 @@
 <template>
     <div class="loadingScreen">
-        <Loading />
+        <LoadingComponent />
     </div>
 </template>
 
 <script setup>
-    import Loading from './icons/Loading.vue';
+    import LoadingComponent from './icons/LoadingComponent.vue';
 </script>
 
 <style scoped>
