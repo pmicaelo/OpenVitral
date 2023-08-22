@@ -52,7 +52,6 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const { record } = defineProps(['record']);
-const emit = defineEmits(['closeModal']);
 
 const failedToLoadImage = (event) => {
     event.target.src = '/src/assets/iconV.png';

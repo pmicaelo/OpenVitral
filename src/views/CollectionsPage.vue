@@ -8,7 +8,7 @@
 </template>
   
 <script setup>
-import { ref, computed, inject } from 'vue';
+import { computed, inject } from 'vue';
 import CollectionCardComponent from '../components/CollectionCardComponent.vue';
 
 const results = inject('records');

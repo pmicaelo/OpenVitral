@@ -20,8 +20,8 @@
 <script setup>
 
 
-import { ref, computed, inject } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import {computed, inject } from 'vue';
+import { useRoute} from 'vue-router';
 
 import MapComponent from '../components/MapComponent.vue'
 import RecordModalComponent from '../components/RecordModalComponent.vue';
