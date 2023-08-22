@@ -27,10 +27,6 @@ const groupedResults = computed(() => {
 </script>
   
 <style scoped>
-main {
-	/*min-height: calc(100vh - var(--navbar-height));
-	overflow: auto;*/
-}
 
 .results-container {
 	margin-top: 16px;

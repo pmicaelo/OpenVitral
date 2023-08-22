@@ -9,9 +9,5 @@
 </template>
 
 <style scoped>
-main {
-  /*overflow: auto;
-  /*allows for scroll only within this container
-  min-height: calc(100vh - var(--navbar-height));*/
-}
+
 </style>
