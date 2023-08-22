@@ -1,12 +1,12 @@
 <template>
     <router-link class="card" :to="{
-                name: 'collectionrecords',
-                params: { collection: collection },
-            }">
+        name: 'collectionrecords',
+        params: { collection: collection },
+    }">
         <div class="card-image">
             <img v-if="image" :src="image" @error="failedToLoadImage" alt="Card Image">
         </div>
-        <div class="card-text" >
+        <div class="card-text">
             <div class="title" :title="collection" v-if="collection">{{ collection }}</div>
         </div>
     </router-link>
@@ -98,6 +98,5 @@ const failedToLoadImage = (event) => {
     white-space: normal;
 
 }
-
 </style>
   

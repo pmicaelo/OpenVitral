@@ -102,7 +102,7 @@ async function queryEuropeanaEndpoint() {
     `)
 }
 
-async function querynNFDI4CultureEndpoint() {
+/*async function querynNFDI4CultureEndpoint() {
   return await queryEndpoint('https://nfdi4culture.de/sparql', `
       PREFIX schema: <http://schema.org/>
       PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
@@ -118,7 +118,7 @@ async function querynNFDI4CultureEndpoint() {
         FILTER(contains(str(?item), "corpusvitrearum") && contains(str(?Coords),"geonames"))
       }
       `)
-}
+}*/
 
 async function queryAll() {
   //records.value = [];

@@ -9,7 +9,7 @@ import { onMounted, inject } from 'vue';
 import L from 'leaflet';
 import { useRouter } from 'vue-router';
 
-import axios from 'axios';
+//import axios from 'axios';
 
 import 'leaflet/dist/leaflet.css';
 
