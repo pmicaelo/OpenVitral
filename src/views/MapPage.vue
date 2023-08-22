@@ -1,11 +1,9 @@
 <template>
 	<div class="page-and-modal">
 		<main>
-
 			<!--<div id="rand-div">
 			<img :src="logoURL" alt="Vue" />
 		</div>!-->
-
 			<MapComponent />
 		</main>
 		<Transition name="backdrop-transition">
@@ -20,8 +18,8 @@
 <script setup>
 
 
-import {computed, inject } from 'vue';
-import { useRoute} from 'vue-router';
+import { computed, inject } from 'vue';
+import { useRoute } from 'vue-router';
 
 import MapComponent from '../components/MapComponent.vue'
 import RecordModalComponent from '../components/RecordModalComponent.vue';
