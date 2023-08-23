@@ -24,7 +24,7 @@
 <script setup>
 
 import { ref, computed, inject } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute} from 'vue-router';
 
 import RecordModalComponent from '../components/RecordModalComponent.vue';
 import RecordCardComponent from '../components/RecordCardComponent.vue';
