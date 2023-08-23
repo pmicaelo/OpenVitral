@@ -18,8 +18,9 @@ const groupedResults = computed(() => {
 	results.value.forEach((result) => {
 		const dataProvider = result.DataProvider.value;
 		if (!groups[dataProvider]) {
-			groups[dataProvider] = { dataProvider, image: result.Image.value };
+			groups[dataProvider] = { dataProvider, image: result.Image.value, numberOfElements: 0 };
 		}
+		groups[dataProvider].numberOfElements++;
 	});
 	return Object.values(groups);
 });

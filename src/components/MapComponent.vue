@@ -12,6 +12,9 @@ import { useRouter } from 'vue-router';
 //import axios from 'axios';
 
 import 'leaflet/dist/leaflet.css';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import 'leaflet.markercluster';
 
 /*import 'leaflet/dist/images/marker-icon.png'
 import 'leaflet/dist/images/marker-shadow.png'*/
@@ -45,7 +48,7 @@ const props = defineProps({
 
 // Create and initialize the map
 let map = null
-
+let markersLayer = null;
 /*function addMarker  (latitude, longitude)  {
    const marker = L.marker([latitude, longitude]);
    props.markers.push(marker);
@@ -57,7 +60,7 @@ const addMarker = (record) => {
   const marker = L.marker([parseFloat(record.Lat.value), parseFloat(record.Long.value)], { icon: markerIcon });
   props.markers.push(marker);
   const popupContent = customPopup(record);
-  marker.addTo(map).bindPopup(popupContent).on("popupopen", () => {
+  marker.addTo(markersLayer).bindPopup(popupContent).on("popupopen", () => {
     setTimeout(() => {
       const customLeafletPopup = document.querySelector(".custom-leaflet-popup");
       if (customLeafletPopup) {
@@ -133,12 +136,15 @@ onMounted(async () => {
       }
     }
   }*/
+  markersLayer = L.markerClusterGroup();
 
   for (const result of results.value) {
     if (result.Lat && result.Long) {
+      console.log(result.item.value)
       addMarker(result);
     }
   }
+  map.addLayer(markersLayer);
 })
 </script>
 

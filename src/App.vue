@@ -88,7 +88,7 @@ async function queryEuropeanaEndpoint() {
       ?Aggregation edm:object ?Image .
       OPTIONAL { ?Aggregation edm:provider ?Provider . } 
 
-      FILTER(?subject IN ("stained glass", "Stained Glass",
+      FILTER(?subject IN ("stained glass", "Stained Glass", "Stained glass windows in Sweden","stained glass window ", "stained_glass", "Glasschilderkunst", "Church windows in Sweden", "Vitrail de la famille Jailloux",
         "Stained glass", "Glasmalerei", "Glassmaleri", "Витраж", "Вітраж", "Lasimaalaus",
         "Vitral", "Стъклопис", "Vitražas", "Vitrāža", "Vitraj", "Vitrail", "Üvegfestés",
         "Vitraž", "Vitráž (chrám)", "Gloine dhaite", "Vitrall", "Glasmålning",
