@@ -77,10 +77,6 @@ main {
 	/*min-height: calc(100vh - var(--navbar-height));*/
 }
 
-/*#rand-div{
-  	position: fixed;
-	z-index: 1;
-}*/
 
 /*#map {
 	/*position: sticky; /*appearantly needed to put elements in front of it maybe cause map default is relative
