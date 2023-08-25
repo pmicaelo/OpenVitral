@@ -1,7 +1,7 @@
 <template>
   <div class="page-and-modal">
     <main>
-      <input v-model="filter" placeholder="Title" />
+      <input class="search-input" v-model="filter" placeholder="Search" />
       <div class="results-container">
         <router-link class="card-link" v-for="result in displayedResults" :key="result.item.value" :to="{
           name: 'allrecords',
@@ -24,7 +24,7 @@
 <script setup>
 
 import { ref, computed, inject } from 'vue';
-import { useRoute} from 'vue-router';
+import { useRoute } from 'vue-router';
 
 import RecordModalComponent from '../components/RecordModalComponent.vue';
 import RecordCardComponent from '../components/RecordCardComponent.vue';
@@ -70,8 +70,9 @@ function updateDisplayedResults(data) {
 
 <style scoped>
 .page-and-modal {
-  display: flex;
-  overflow: clip;
+	height: 100%;
+	display: flex;
+	overflow: clip;
 }
 
 .modal-backdrop {
@@ -118,11 +119,26 @@ function updateDisplayedResults(data) {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: space-evenly;*/
-  margin-top: 16px;
+  justify-content: space-evenly;
+  align-items: flex-end;*/
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
-  /*align-items: flex-end;*/
+}
+
+.search-input {
+  margin-bottom: 2rem;
+  font-size: 14.5px;
+  border-radius: 20px;
+  padding-left: 15px;
+  height: 35px;
+  width: 350px;
+  background-color: transparent;
+  border: 1px solid #616161;
+}
+
+.search-input::placeholder {
+  color: #adadad;
 }
 </style>

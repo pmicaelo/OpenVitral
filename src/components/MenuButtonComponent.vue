@@ -17,7 +17,7 @@ const { path, icon, text } = defineProps(['path', 'icon', 'text']);
     align-items: center;
     text-decoration: none;
     height: var(--navbar-height);
-    padding: 0rem 1.0rem;
+    padding: 0px 16px;
     border-bottom: 3px solid transparent;
     border-top: 3px solid transparent;
 }
@@ -36,8 +36,8 @@ const { path, icon, text } = defineProps(['path', 'icon', 'text']);
     font-weight: 600;
     font-family: "Overpass", sans-serif;
 
-    margin-left: 0.2rem;
-    font-size: 1rem;
+    margin-left: 3px;
+    font-size: 16px;
     color: var(--light); 
     color:#bebebe ;
     

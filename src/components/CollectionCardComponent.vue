@@ -48,9 +48,9 @@ const failedToLoadImage = (event) => {
 }
 
 .card .card-image {
+    overflow: clip;
     height: 100%;
     width: 100%;
-    overflow: clip;
 }
 
 .card-image img {
@@ -65,14 +65,14 @@ const failedToLoadImage = (event) => {
 .card:hover .card-image img {
     border-radius: 0px;
     border: 0px solid transparent;
-    transition: 0.2s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
 .card .card-text {
     color: rgb(247, 247, 247);
     font-weight: 500;
     font-family: "Overpass", sans-serif;
-    font-size: 0.97rem;
+    font-size: 15.5px;
 
     padding: 10px;
     word-wrap: break-word;
@@ -80,7 +80,7 @@ const failedToLoadImage = (event) => {
     display: flex;
     padding-top: 6px;
     align-items: center;
-    line-height: 1.3rem;
+    line-height: 21px;
     height: 65px;
     overflow: hidden;
 

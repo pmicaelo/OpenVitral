@@ -175,7 +175,6 @@ const goBack = () => {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: #181818;
     background-color: #0e0e0e;
     display: flex;
     justify-content: center;
@@ -183,7 +182,6 @@ const goBack = () => {
 }
 
 .close-button:hover {
-    background-color: #4d4d4d;
     background-color: var(--dark-alt);
     transition: 0.1s ease-in-out;
 }
@@ -194,7 +192,6 @@ const goBack = () => {
         'wght' 500,
         'GRAD' 0,
         'opsz' 48;
-    color: rgb(240, 240, 240);
     color: rgb(247, 247, 247);
     font-size: 25px;
 }

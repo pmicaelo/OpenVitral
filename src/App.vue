@@ -189,6 +189,7 @@ button {
   /*behind navbar (index 1)*/
   flex: 1 1 0;
   padding: 2rem 2rem;
+  padding-bottom: 1rem;
 
   /*position: relative;
   top: var(--navbar-height);
