@@ -47,12 +47,12 @@ const record = computed(() => { return results.value.find(result => result.uniqu
 const filteredResults = computed(() => {
     const filterText = filter.value.toLowerCase();
     if (filterText == "") return results.value.filter((result) => {
-        if (result.DataProvider) {
-            return result.DataProvider.value.includes(collection);
+        if (result.Collection) {
+            return result.Collection.value.includes(collection);
         } return false
     });
     return results.value.filter((result) => {
-        if (result.Title && result.DataProvider && result.DataProvider.value.includes(collection)) {
+        if (result.Title && result.Collection && result.Collection.value.includes(collection)) {
             return result.Title.value.toLowerCase().includes(filterText);
         }
         return false;

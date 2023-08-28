@@ -42,7 +42,7 @@ async function queryEuropeanaEndpoint() {
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
   
-      SELECT DISTINCT (SAMPLE(?item) AS ?item) (SAMPLE(?DataProvider) AS ?DataProvider) (SAMPLE(?Title) AS ?Title) (SAMPLE(?Description) AS ?Description) (SAMPLE(?Image) AS ?Image) (SAMPLE(?Date) AS ?Date) (SAMPLE(?Provider) AS ?Provider) (SAMPLE(?Creator) AS ?Creator) (SAMPLE(?Spatial) AS ?Spatial) (SAMPLE(?Lat) AS ?Lat) (SAMPLE(?Long) AS ?Long) (SAMPLE(?SpatialLabel) AS ?SpatialLabel)
+      SELECT DISTINCT (SAMPLE(?item) AS ?item) (SAMPLE(?DataProvider) AS ?DataProvider) (SAMPLE(?Collection) AS ?Collection) (SAMPLE(?Title) AS ?Title) (SAMPLE(?Description) AS ?Description) (SAMPLE(?Image) AS ?Image) (SAMPLE(?Date) AS ?Date) (SAMPLE(?Provider) AS ?Provider) (SAMPLE(?Creator) AS ?Creator) (SAMPLE(?Spatial) AS ?Spatial) (SAMPLE(?Lat) AS ?Lat) (SAMPLE(?Long) AS ?Long) (SAMPLE(?SpatialLabel) AS ?SpatialLabel)
       WHERE { 
         ?item ?prop ?subject . 
   
@@ -53,13 +53,14 @@ async function queryEuropeanaEndpoint() {
         OPTIONAL { ?item dcterms:spatial ?Spatial. OPTIONAL {?Spatial wgs84_pos:lat ?Lat.
          ?Spatial wgs84_pos:long ?Long. } OPTIONAL{?Spatial skos:prefLabel ?SpatialLabel}} 
   
-  
         ?item ore:proxyIn ?Aggregation .
   
         ?Aggregation edm:dataProvider ?DataProvider . 
         ?Aggregation edm:object ?Image .
         OPTIONAL { ?Aggregation edm:provider ?Provider . } 
-  
+
+        BIND(?DataProvider AS ?Collection).
+
         FILTER(?subject IN ("stained glass", "Stained Glass", "Stained glass windows in Sweden","stained glass window ", "stained_glass", "Glasschilderkunst", "Church windows in Sweden", "Vitrail de la famille Jailloux",
           "Stained glass", "Glasmalerei", "Glassmaleri", "Витраж", "Вітраж", "Lasimaalaus",
           "Vitral", "Стъклопис", "Vitražas", "Vitrāža", "Vitraj", "Vitrail", "Üvegfestés",
@@ -86,7 +87,7 @@ async function querynNFDI4CultureEndpoint() {
       PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
-      SELECT distinct ?item ?DataProvider ?Title ?Image ?Date ?Spatial ?Height ?Width
+      SELECT distinct ?item ?Collection ?Title ?Image ?Date ?Spatial ?Height ?Width
       WHERE {
         ?item schema:isPartOf <https://corpusvitrearum.de/bildarchiv.html> .
       
@@ -96,8 +97,9 @@ async function querynNFDI4CultureEndpoint() {
         OPTIONAL {?item schema:contentUrl ?Image.}
 
         OPTIONAL {?item schema:height ?Height.}
-        OPTIONAL {?item schema:width ?Width.}        
-        BIND("Corpus Vitrearum Medii Aevi Deutschland" AS ?DataProvider).
+        OPTIONAL {?item schema:width ?Width.}   
+
+        BIND("Corpus Vitrearum Medii Aevi Deutschland" AS ?Collection).
     }
     `)
     results.map((element, index) => {
@@ -109,7 +111,7 @@ async function querynNFDI4CultureEndpoint() {
 
 async function fetchLocal() {
     const filePath = '/src/data/vitralWiki.json';
-    return axios.get(filePath)
+    return await axios.get(filePath)
         .then(response => {
             const results = response.data.results;
             results.map((element, index) => {
@@ -119,7 +121,7 @@ async function fetchLocal() {
             return results
         })
         .catch(error => {
-            console.error('Error fetching JSON data:', error);
+            console.error('Error fetching data:', error);
             return [];
         });
 }
@@ -127,17 +129,28 @@ async function fetchLocal() {
 export async function fetchAll() {
     //records.value = [];
     const all = [];
-    /*getLocal().then(results => {
-        all.push(...results);
-    });*/
     all.push(...await fetchLocal());
-    all.push(...await queryEuropeanaEndpoint())
+    /*all.push(...await queryEuropeanaEndpoint())
     /*all.push(...await querynNFDI4CultureEndpoint())
 
     /*all.map((element, index) => {
         element.uniqueId = { type: 'literal', value: `record${index}` };
         return element;
     });*/
-    console.log(all)
+    console.log(all);
+    /*all.sort((a, b) => {
+        const titleA = a.Title ? a.Title.value : "";
+        const titleB = b.Title ? b.Title.value : "";
+
+        if (titleA === "" && titleB === "") {
+            return 0;
+        } else if (titleA === "") {
+            return 1;
+        } else if (titleB === "") {
+            return -1;
+        }
+        return titleA.localeCompare(titleB);
+    });*/
+
     return all;
 }

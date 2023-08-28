@@ -62,7 +62,6 @@ const filteredResults = computed(() => {
 });
 
 function updateDisplayedResults(data) {
-  console.log("ran");
   displayedResults.value = data
 }
 

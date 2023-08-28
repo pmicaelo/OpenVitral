@@ -18,24 +18,26 @@ const filter = ref('');
 const groupedResults = computed(() => {
 	const groups = {};
 	results.value.forEach((result) => {
-		const collection = result.DataProvider.value;
-		if (!groups[collection]) {
-			groups[collection] = {
-				collection,
-				records: []
-			};
+		if (result.Collection) {
+			const collection = result.Collection.value;
+			if (!groups[collection]) {
+				groups[collection] = {
+					collection,
+					records: []
+				};
+			}
+			groups[collection].records.push(result);
 		}
-		groups[collection].records.push(result);
 	});
 	return Object.values(groups);
 });
 
 const filteredResults = computed(() => {
-  const filterText = filter.value.toLowerCase().trim();
-  if (filterText == "") return groupedResults.value;
-  return groupedResults.value.filter(group => {
-    return group.collection.toLowerCase().includes(filterText);
-  });
+	const filterText = filter.value.toLowerCase();
+	if (filterText == "") return groupedResults.value;
+	return groupedResults.value.filter(group => {
+		return group.collection.toLowerCase().includes(filterText);
+	});
 });
 
 </script>

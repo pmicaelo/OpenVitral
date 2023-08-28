@@ -5,9 +5,9 @@
                 "type": "literal",
                 "value": "Annunciation to the shepherds (fragment)"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -200,9 +200,9 @@
                 "type": "literal",
                 "value": "Adoration of the Magi"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -412,9 +412,9 @@
                 "type": "literal",
                 "value": "Baptism of Jesus (fragment 2)"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -607,9 +607,9 @@
                 "type": "literal",
                 "value": "Baptism of Jesus (fragment)"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -802,9 +802,9 @@
                 "type": "literal",
                 "value": "Descent in Limbo"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -1019,9 +1019,9 @@
                 "type": "literal",
                 "value": "Dormition of Mary"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -1217,9 +1217,9 @@
                 "type": "literal",
                 "value": "Heraldic angel"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -1433,9 +1433,9 @@
                 "type": "literal",
                 "value": "Last Supper (fragment 1)"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -1631,9 +1631,9 @@
                 "type": "literal",
                 "value": "Last Supper (fragment 2)"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -1826,9 +1826,9 @@
                 "type": "literal",
                 "value": "Maestà"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -2035,9 +2035,9 @@
                 "type": "literal",
                 "value": "Our Lady of the Rosary"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -2241,9 +2241,9 @@
                 "type": "literal",
                 "value": "Passion window"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -2442,9 +2442,9 @@
                 "type": "literal",
                 "value": "Prophet"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
@@ -2643,9 +2643,9 @@
                 "type": "literal",
                 "value": "St. Antony the Abbot"
             },
-            "DataProvider": {
+            "Collection": {
                 "type": "literal",
-                "value": "Batalha Monastery collection"
+                "value": "Batalha Monastery"
             },
             "Image": {
                 "type": "uri",
