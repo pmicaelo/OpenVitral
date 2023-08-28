@@ -33,7 +33,7 @@ const emitPagination = defineEmits(['updatePage']);
 
 const inputPage = ref('');
 const currentPage = ref(1);
-const itemsPerPage = 25;
+const itemsPerPage = 24;
 const totalPages = computed(() => {
   if (props.items.length == 0) return 1;
   else return Math.ceil(props.items.length / itemsPerPage)
@@ -76,7 +76,7 @@ function goToPage(pageNumber) {
   
 <style scoped>
 .pagination {
-  margin-top: 2rem;
+  margin-top: 32px;
   display: flex;
   justify-content: center;
   align-items: center;

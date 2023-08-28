@@ -1,7 +1,7 @@
 <template>
     <!--<Teleport to="#popupp" v-if="record">-->
-    <div class="modal" v-if="record" @click="goBack">
-        <div class="modal-content" v-if="record" @click.stop>
+    <div class="modal" @click="goBack">
+        <div class="modal-content" @click.stop>
             <div class="close-button" title="Close" @click="goBack" style="cursor: pointer">
                 <span class="material-symbols-rounded">close</span>
             </div>
@@ -12,9 +12,10 @@
                     <span class="material-symbols-rounded">search</span>
                 </a>
             </div>
-                <div style=" margin-top:15px ;text-align: center;" v-if="record.Title">
-                    <span style= "color: rgb(247, 247, 247); font-weight:500 ; font-size: 17.5px;">{{ record.Title.value }}</span>
-                </div>
+            <div style="word-wrap: break-word; margin-top:15px ;text-align: center;" v-if="record.Title">
+                <span style="color: rgb(247, 247, 247); font-weight:500 ; font-size: 17.5px;">{{ record.Title.value
+                }}</span>
+            </div>
             <div class="modal-text">
                 <!--<div class="param" v-if="record.Title">
                     <span class="param-name">Title</span>
@@ -102,7 +103,6 @@ const goBack = () => {
     padding: 30px;
     padding-bottom: 20px;
 
-    background-color: #1a1c1d;
     background-color: #181818;
 
     border-radius: 5px;
@@ -206,7 +206,7 @@ const goBack = () => {
 
 .param {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
 .param-name {

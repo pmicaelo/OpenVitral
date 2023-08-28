@@ -140,7 +140,6 @@ onMounted(async () => {
 
   for (const result of results.value) {
     if (result.Lat && result.Long) {
-      console.log(result.item.value)
       addMarker(result);
     }
   }

@@ -3,7 +3,7 @@
     <main>
       <input class="search-input" v-model="filter" placeholder="Search" />
       <div class="results-container">
-        <router-link class="card-link" v-for="result in displayedResults" :key="result.item.value" :to="{
+        <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
           name: 'allrecords',
           query: { record: result.uniqueId.value },
         }">
@@ -70,9 +70,9 @@ function updateDisplayedResults(data) {
 
 <style scoped>
 .page-and-modal {
-	height: 100%;
-	display: flex;
-	overflow: clip;
+  height: 100%;
+  display: flex;
+  overflow: clip;
 }
 
 .modal-backdrop {
@@ -109,6 +109,11 @@ function updateDisplayedResults(data) {
 }
 
 .card-link {
+  /*text-decoration: none;
+  max-width: 310px;
+  width: 100%;
+  height: 100%;*/
+
   width: fit-content;
   text-decoration: none;
 }
@@ -122,6 +127,8 @@ function updateDisplayedResults(data) {
   justify-content: space-evenly;
   align-items: flex-end;*/
 
+  /*justify-items: center;*/
+  justify-items: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;

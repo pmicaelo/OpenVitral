@@ -4,7 +4,8 @@
         params: { collection: collection },
     }">
         <div class="card-image">
-            <img v-if="image" :src="image" @error="failedToLoadImage" alt="Card Image">
+            <img v-for="(img, index) in getImages(records)" :key="index" :src="img" @error="failedToLoadImage"
+                alt="Card Image" />
         </div>
         <div class="card-text">
             <div class="title" :title="collection" v-if="collection">{{ collection }}</div>
@@ -13,10 +14,20 @@
 </template>
 <script setup>
 
-const { collection, image } = defineProps(['collection', 'image']);
+const { collection, records } = defineProps(['collection', 'records']);
 
 const failedToLoadImage = (event) => {
     event.target.src = '/src/assets/iconV.png';
+}
+
+function getImages(records) {
+    const images = []
+    while (images.length < 3) {
+        for (let i = 0; i < 3 && records[i] && images.length < 3; i++) {
+            images.push(records[i].Image.value);
+        }
+    }
+    return images;
 }
 
 </script>
@@ -26,77 +37,69 @@ const failedToLoadImage = (event) => {
     text-decoration: none;
     overflow: clip;
     border-radius: 8px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
     display: flex;
     flex-direction: column;
-    width: 200px;
-    height: 350px;
+    /*height: 235px;
+    width: 350px;*/
+    
+    width: 100%;
+    aspect-ratio: 70/47;
+    
+    max-width: 540px;
 
+    padding: 10px;
+    padding-bottom: 0;
     background-color: #181818;
     background-color: #1a1c1d;
 
-    box-shadow: 0px 0px 5px rgb(10, 10, 10);
     box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
-
 }
 
 .card:hover {
-    /*opacity: .6;*/
     filter: brightness(1.4);
     transition: 0.2s ease-in-out;
 }
 
 .card .card-image {
+    border-radius: 8px;
     overflow: clip;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .card-image img {
     overflow: clip;
-    border-radius: 15px;
-    width: 100%;
+    width: 33.3%;
     height: 100%;
     object-fit: cover;
-    border: 10px solid transparent;
-}
-
-.card:hover .card-image img {
-    border-radius: 0px;
-    border: 0px solid transparent;
-    transition: 0.25s ease-in-out;
 }
 
 .card .card-text {
+    padding-bottom: 5px;
+    padding-top: 5px;
     color: rgb(247, 247, 247);
     font-weight: 500;
     font-family: "Overpass", sans-serif;
     font-size: 15.5px;
 
-    padding: 10px;
     word-wrap: break-word;
 
     display: flex;
-    padding-top: 6px;
     align-items: center;
     line-height: 21px;
-    height: 65px;
+    height: 75px;
     overflow: hidden;
-
 }
 
 .card .title {
-    max-height: 100%;
-    overflow: auto;
-
     overflow: hidden;
     -webkit-line-clamp: 2;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     white-space: normal;
-
 }
 </style>
   

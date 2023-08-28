@@ -56,7 +56,7 @@ const router = createRouter({
 router.afterEach((to, from) => {
   const toPos = to.meta.position
   const fromPos = from.meta.position
-  if (toPos == fromPos) {
+  if (toPos === fromPos) {
     const toDepth = to.path.split('/').length
     const fromDepth = from.path.split('/').length
     to.meta.transition = toDepth < fromDepth ? 'slide-out' : 'slide-in'
