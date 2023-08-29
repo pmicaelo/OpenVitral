@@ -3,7 +3,8 @@
         <div class="param" v-for="(value, key) in record" :key="key">
             <span class="param-name">{{ key }}</span>
             <span v-if="value.hasOwnProperty('value')" class="param-value">{{ value.value }}</span>
-            <a :href="value.typeresource" v-else-if="value.hasOwnProperty('resource')" class="param-value">{{ value.typeresource }}</a>
+            <a :href="value.resource" target="_blank" rel="noopener noreferrer" v-else-if="value.hasOwnProperty('resource')"
+                class="param-value">{{ value.resource }}</a>
         </div>
     </div>
 </template>
