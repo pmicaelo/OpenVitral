@@ -51,11 +51,7 @@ onMounted(async () => {
 }
 
 body {
-  background: var(--dark-alt);
-  background: rgb(41, 41, 41);
-  background: #0c0c0c;
   background: #0f0f0f;
-
   /*overflow: clip;/*prevent scrollbar from appearing on nav when super small height*/
 }
 
