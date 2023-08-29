@@ -1,7 +1,14 @@
 <template>
     <div class="page-and-modal">
         <main>
-            <input class="search-input" v-model="filter" placeholder="Search" />
+            <div class="page-header">
+                <router-link class="back-button" :to="{
+                    name: 'collections'
+                }">
+                    <span class="material-icons">arrow_back</span>
+                </router-link>
+                <input class="search-input" v-model="filter" placeholder="Search" />
+            </div>
             <div class="results-container">
                 <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
                     name: 'collectionrecords',
@@ -174,14 +181,38 @@ function updateDisplayedResults(data) {
     gap: 16px;
 }
 
-
-.search-input {
+.page-header {
+    display: flex;
+    align-items: center;
+    height: 35px;
     margin-bottom: 2rem;
+}
+
+.back-button {
+    height: 35px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d1d1d;
+    width: 35px;
+    min-width: 35px;
+    border-radius: 8px;
+    margin-right: 1rem;
+    display: flex;
+}
+
+.back-button:hover {
+  transition: 0.2s ease-in-out;
+  background-color: #4d4d4d;
+}
+.search-input {
+    display: flex;
     font-size: 14.5px;
     border-radius: 20px;
     padding-left: 15px;
     height: 35px;
     width: 350px;
+    min-width: 80px;
     background-color: transparent;
     border: 1px solid #616161;
 }

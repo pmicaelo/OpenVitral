@@ -75,7 +75,7 @@ async function queryEuropeanaEndpoint() {
       `)
 
     results.map((element, index) => {
-        element.uniqueId = { type: 'literal', value: `EuropeanaRecord${index}` };
+        element.uniqueId = { type: 'literal', value: `europeanarecord${index}` };
         return element;
     });
     return results;
@@ -103,7 +103,7 @@ async function querynNFDI4CultureEndpoint() {
     }
     `)
     results.map((element, index) => {
-        element.uniqueId = { type: 'literal', value: `CVDeutschlandRecord${index}` };
+        element.uniqueId = { type: 'literal', value: `cvdeutschlandrecord${index}` };
         return element;
     });
     return results;
@@ -115,7 +115,7 @@ async function fetchLocal() {
         .then(response => {
             const results = response.data.results;
             results.map((element, index) => {
-                element.uniqueId = { type: 'literal', value: `VitralWikiRecord${index}` };
+                element.uniqueId = { type: 'literal', value: `vitralwikirecord${index}` };
                 return element;
             });
             return results
@@ -130,7 +130,7 @@ export async function fetchAll() {
     //records.value = [];
     const all = [];
     all.push(...await fetchLocal());
-    /*all.push(...await queryEuropeanaEndpoint())
+    all.push(...await queryEuropeanaEndpoint())
     /*all.push(...await querynNFDI4CultureEndpoint())
 
     /*all.map((element, index) => {

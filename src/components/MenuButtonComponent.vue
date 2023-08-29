@@ -1,5 +1,5 @@
 <template>
-    <router-link :to=path class="menu-button">
+    <router-link :to="path" class="menu-button">
         <span class="material-icons">{{ icon }}</span>
         <span class="text">{{ text }}</span>
     </router-link>

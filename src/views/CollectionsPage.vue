@@ -1,6 +1,8 @@
 <template>
 	<main>
-		<input class="search-input" v-model="filter" placeholder="Search" />
+		<div class="page-header">
+			<input class="search-input" v-model="filter" placeholder="Search" />
+		</div>
 		<div class="results-container">
 			<CollectionCardComponent v-for="group in filteredResults" :key="group.collection" :collection="group.collection"
 				:records="group.records" />
@@ -43,27 +45,34 @@ const filteredResults = computed(() => {
 </script>
   
 <style scoped>
+
+.page-header {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+	font-size: 14.5px;
+	border-radius: 20px;
+	padding-left: 15px;
+	height: 35px;
+	width: 350px;
+	min-width: 80px;
+	background-color: transparent;
+	border: 1px solid #616161;
+}
+
+.search-input::placeholder {
+	color: #adadad;
+}
+
 .results-container {
 	justify-items: center;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 	gap: 32px;
 	row-gap: 24px;
-}
-
-
-.search-input {
-  margin-bottom: 2rem;
-  font-size: 14.5px;
-  border-radius: 20px;
-  padding-left: 15px;
-  height: 35px;
-  width: 350px;
-  background-color: transparent;
-  border: 1px solid #616161;
-}
-
-.search-input::placeholder {
-  color: #adadad;
 }
 </style>

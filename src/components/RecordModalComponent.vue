@@ -16,11 +16,9 @@
                 <span style="color: rgb(247, 247, 247); font-weight:500 ; font-size: 17.5px;">{{ record.Title.value
                 }}</span>
             </div>
-            <div class="modal-text">
-                <!--<div class="param" v-if="record.Title">
-                    <span class="param-name">Title</span>
-                    <span class="param-value">{{ record.Title.value }}</span>
-                </div>-->
+
+            <ModalTextVWComponent :record="record" v-if="isVitralWiki()" />
+            <div v-else class="modal-text">
                 <div class="param" v-if="record.Description">
                     <span class="param-name">Description</span>
                     <span class="param-value">{{ record.Description.value }}</span>
@@ -50,12 +48,17 @@
   
 <script setup>
 import { useRouter } from 'vue-router';
+import ModalTextVWComponent from './ModalTextVWComponent.vue'
 
 const router = useRouter();
 const { record } = defineProps(['record']);
 
 const failedToLoadImage = (event) => {
     event.target.src = '/src/assets/iconV.png';
+}
+
+function isVitralWiki() {
+    return record.uniqueId.value.includes("vitralwiki");
 }
 
 const goBack = () => {

@@ -1,7 +1,9 @@
 <template>
   <div class="page-and-modal">
     <main>
-      <input class="search-input" v-model="filter" placeholder="Search" />
+      <div class="page-header">
+        <input class="search-input" v-model="filter" placeholder="Search" />
+      </div>
       <div class="results-container">
         <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
           name: 'allrecords',
@@ -133,13 +135,20 @@ function updateDisplayedResults(data) {
   gap: 16px;
 }
 
-.search-input {
+.page-header {
+  display: flex;
+  align-items: center;
+  height: 35px;
   margin-bottom: 2rem;
+}
+
+.search-input {
   font-size: 14.5px;
   border-radius: 20px;
   padding-left: 15px;
   height: 35px;
   width: 350px;
+  min-width: 80px;
   background-color: transparent;
   border: 1px solid #616161;
 }
