@@ -1,4 +1,5 @@
 import axios from 'axios';
+import dataVW from './vitralWiki.json'
 
 async function queryEndpoint(sparqlEndpoint, sparqlEndpointQuery) {
     try {
@@ -109,7 +110,17 @@ async function querynNFDI4CultureEndpoint() {
     return results;
 }
 
-async function fetchLocal() {
+function fetchLocal() {
+    console.log(dataVW);
+    const results = dataVW.results;
+    results.map((element, index) => {
+        element.uniqueId = { type: 'literal', value: `vitralwikirecord${index}` };
+        return element;
+    });
+    return results
+}
+
+/*async function fetchLocal() {
     const filePath = '/src/data/vitralWiki.json';
     return await axios.get(filePath)
         .then(response => {
@@ -124,33 +135,18 @@ async function fetchLocal() {
             console.error('Error fetching data:', error);
             return [];
         });
-}
+}*/
 
 export async function fetchAll() {
     //records.value = [];
     const all = [];
-    all.push(...await fetchLocal());
-    //all.push(...await queryEuropeanaEndpoint())
+    all.push(...fetchLocal());
+    all.push(...await queryEuropeanaEndpoint())
     /*all.push(...await querynNFDI4CultureEndpoint())
 
     /*all.map((element, index) => {
         element.uniqueId = { type: 'literal', value: `record${index}` };
         return element;
     });*/
-    console.log(all);
-    /*all.sort((a, b) => {
-        const titleA = a.Title ? a.Title.value : "";
-        const titleB = b.Title ? b.Title.value : "";
-
-        if (titleA === "" && titleB === "") {
-            return 0;
-        } else if (titleA === "") {
-            return 1;
-        } else if (titleB === "") {
-            return -1;
-        }
-        return titleA.localeCompare(titleB);
-    });*/
-
     return all;
 }

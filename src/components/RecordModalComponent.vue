@@ -49,12 +49,14 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import ModalTextVWComponent from './ModalTextVWComponent.vue'
+import logoURL from '../assets/iconV.png'
+
 
 const router = useRouter();
 const { record } = defineProps(['record']);
 
 const failedToLoadImage = (event) => {
-    event.target.src = '/src/assets/iconV.png';
+    event.target.src = logoURL;
 }
 
 function isVitralWiki() {
@@ -95,7 +97,7 @@ const goBack = () => {
     max-width: min(750px, 80%);
     min-width: min(500px, 80%);
 
-    max-height: 100%;
+    max-height: 90%;
 
     overflow: auto;
 

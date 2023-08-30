@@ -64,9 +64,6 @@ router.afterEach((to, from) => {
   else {
     to.meta.transition = toPos < fromPos ? 'slide-right' : 'slide-left'
   }
-  console.log(to)
-  console.log(from)
-  console.log(to.meta.transition)
 })
 
 export default router

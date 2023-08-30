@@ -72,10 +72,10 @@ button {
 
 .app main {
 
-  z-index: 0;
-  height: 100%;
+  z-index: 0;/*behind navbar (index 1)*/
+  /*height: 100%;
+  width: 100%;*/
   overflow: auto;
-  /*behind navbar (index 1)*/
   flex: 1 1 0;
   padding: 2rem 2rem;
   padding-bottom: 1rem;

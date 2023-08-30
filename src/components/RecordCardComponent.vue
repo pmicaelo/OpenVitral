@@ -12,6 +12,8 @@
   
 <script setup>
 
+import logoURL from '../assets/iconV.png'
+
 /*const props = defineProps({
 record: {
   type: Object,
@@ -23,7 +25,7 @@ record: {
 const { record } = defineProps(['record']);
 
 const failedToLoadImage = (event) => {
-    event.target.src = '/src/assets/iconV.png';
+    event.target.src = logoURL;
 }
 
 

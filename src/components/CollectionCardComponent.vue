@@ -14,10 +14,13 @@
 </template>
 <script setup>
 
+import logoURL from '../assets/iconV.png'
+
+
 const { collection, records } = defineProps(['collection', 'records']);
 
 const failedToLoadImage = (event) => {
-    event.target.src = '/src/assets/iconV.png';
+    event.target.src = logoURL;
 }
 
 function getImages(records) {
