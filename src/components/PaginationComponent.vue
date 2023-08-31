@@ -41,8 +41,7 @@ const totalPages = computed(() => {
 goToPage(1)
 
 onMounted(() => {
-  console.log(props.items)
-  console.log("mounted child")
+
 });
 
 watch(() => props.items, (newItems) => {

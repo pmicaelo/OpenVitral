@@ -2,7 +2,7 @@
   <nav>
     <LogoComponent />
     <div class="menu">
-      <MenuButtonComponent path="/" icon="map" text="Map" />
+      <MenuButtonComponent path="/map" icon="map" text="Map" />
       <MenuButtonComponent path="/allrecords" icon="grid_on" text="All Records" />
       <MenuButtonComponent path="/collections" icon="library_books" text="Collections" />
       <MenuButtonComponent path="/about" icon="description" text="About" />

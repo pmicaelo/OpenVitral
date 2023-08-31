@@ -4,12 +4,20 @@ import MapPage from '../views/MapPage.vue'
 import AllRecordsPage from '../views/AllRecordsPage.vue'
 import CollectionsPage from '../views/CollectionsPage.vue'
 import CollectionRecordsPage from '../views/CollectionRecordsPage.vue'
+import AboutPage from '../views/AboutPage.vue'
+import ErrorPage from '../views/ErrorPage.vue'
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      redirect: '/map', // Redirect from root path to /map
+    },
+    {
+      path: '/map',
       name: 'map',
       component: MapPage,
       meta: { position: 1 },
@@ -44,11 +52,16 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
+      component: AboutPage,
       meta: { position: 4 },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      //component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: "/:pathMatch(.*)",
+      component: ErrorPage,
     }
   ]
 })
@@ -56,9 +69,14 @@ const router = createRouter({
 router.afterEach((to, from) => {
   const toPos = to.meta.position
   const fromPos = from.meta.position
+  if (!fromPos || !toPos) { return }
+
   if (toPos === fromPos) {
     const toDepth = to.path.split('/').length
     const fromDepth = from.path.split('/').length
+
+    if (fromDepth === toDepth) { return }
+
     to.meta.transition = toDepth < fromDepth ? 'slide-out' : 'slide-in'
   }
   else {

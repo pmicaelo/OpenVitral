@@ -69,7 +69,6 @@ const goBack = () => {
     const newPathSegments = currentPathSegments.slice(0, -1);
     const newRoutePath = newPathSegments.join('/');
     router.push(newRoutePath);*/ //this is for using record as a param and not query
-    console.log(router.currentRoute.value)
     router.push(router.currentRoute.value.path);
 };
 </script>
