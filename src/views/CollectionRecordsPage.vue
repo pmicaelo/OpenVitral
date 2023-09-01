@@ -184,7 +184,8 @@ function updateDisplayedResults(data) {
 
 .page-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    height: 35px;
     margin-bottom: 2rem;
 }
 
@@ -213,7 +214,6 @@ function updateDisplayedResults(data) {
     height: 35px;
     width: 350px;
     min-width: 80px;
-    margin-right: 10px;
     background-color: transparent;
     border: 1px solid #616161;
 }
