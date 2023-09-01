@@ -110,7 +110,9 @@ const handlePopupClick = (record) => {
 
 onMounted(async () => {
   // Create and initialize the map
-  map = L.map('map').setView([47, 15], 5);
+  map = L.map('map', {
+    minZoom: 4
+}).setView([47, 15], 5);
 
   // Add a tile layer to the map
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

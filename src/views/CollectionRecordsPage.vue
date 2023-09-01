@@ -1,6 +1,7 @@
 <template>
     <div class="page-and-modal">
         <main>
+            <h1 class="collection-title">{{ collection }}</h1>
             <div class="page-header">
                 <router-link class="back-button" :to="{
                     name: 'collections'
@@ -183,8 +184,7 @@ function updateDisplayedResults(data) {
 
 .page-header {
     display: flex;
-    align-items: center;
-    height: 35px;
+    align-items: flex-start;
     margin-bottom: 2rem;
 }
 
@@ -202,22 +202,33 @@ function updateDisplayedResults(data) {
 }
 
 .back-button:hover {
-  transition: 0.2s ease-in-out;
-  background-color: #4d4d4d;
+    transition: 0.2s ease-in-out;
+    background-color: #4d4d4d;
 }
+
 .search-input {
-    display: flex;
     font-size: 14.5px;
     border-radius: 20px;
     padding-left: 15px;
     height: 35px;
     width: 350px;
     min-width: 80px;
+    margin-right: 10px;
     background-color: transparent;
     border: 1px solid #616161;
 }
 
 .search-input::placeholder {
     color: #adadad;
+}
+
+.collection-title {
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #181818;
+    text-align: center;
 }
 </style>

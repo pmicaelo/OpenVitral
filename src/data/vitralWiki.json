@@ -35,7 +35,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "1996%3A+The+panel+was+taken+down+and+kept+in+storage.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++2008%3A+Superficial+cleaning+was+carried+out%2C+using+distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs.+Paint+was+locally+consolidated+with+Plexigum+N80+in+acetone+%5B8%25%5D.+A+repair+lead+calm+was+removed+and+the+glass+fragments+were+bound+using+Paraloid+B72+in+acetone+%5B70%25%5D.+Peripheral+U-shaped+lead-antimony+%2898%3A2%29+calms+were+applied+and+locally+soldered+to+the+panel.+Some+solder+points+were+reinforced+and+lead+calm+cracks+were+soldered.The+panel+was+kept+in+storage.+Conservator%3A+Pedro+Redol.++++++++++++++++++++++++++++++2012%3A+The+panel+was+put+on+display+at+the+Batalha+Monastery%27s+interpretation+centre%2C+inside+a+climatized+showcase+%28RH+60%25%2C+18+%C2%B0C%29."
+                "value": "1996: The panel was taken down and kept in storage.                                                                      2008: Superficial cleaning was carried out, using distilled water and ethyl alcohol [50:50] on cotton wool swabs. Paint was locally consolidated with Plexigum N80 in acetone [8%]. A repair lead calm was removed and the glass fragments were bound using Paraloid B72 in acetone [70%]. Peripheral U-shaped lead-antimony (98:2) calms were applied and locally soldered to the panel. Some solder points were reinforced and lead calm cracks were soldered.The panel was kept in storage. Conservator: Pedro Redol.                              2012: The panel was put on display at the Batalha Monastery's interpretation centre, inside a climatized showcase (RH 60%, 18 °C)."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -184,7 +184,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
             },
             "Signature": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -230,7 +230,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "2006-2007%3A+All+the+panels+were+taken+down%2C+flattened%2C+and+cleaned+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29.+Grisaille+painting+was+pre-fixed+and+fixed+where+necessary+%28Paraloid+B72+in+acetone+%5B8%25%5D%29.+Glass+fragments+were+bound+with+Paraloid+B72+in+acetone+%2860%25%29and+small+gaps+filled+in+with+fired+painted+glass%2C+Iron+tie+bars+directly+soldered+onto+the+panel+were+unsoldered+and+removed%2C+and+copper+ties+soldered+instead.+Tinted+glazier%27s+putty+was+locally+applied+in+order+to+streghten+and+waterproof+the+panel.+Reinstalled+using+new+brass+tie+bars%2C+lime-based+mortar+%28sides+and+bottom%29+and+glazier%27s+putty+%28top%2C+along+saddle+bar+above%29.+Company%3A+IN+SITU.+Conservator%3A+Raquel+Fonseca+dos+Santos."
+                "value": "2006-2007: All the panels were taken down, flattened, and cleaned (distilled water and ethyl alcohol [50:50] on cotton wool swabs). Grisaille painting was pre-fixed and fixed where necessary (Paraloid B72 in acetone [8%]). Glass fragments were bound with Paraloid B72 in acetone (60%)and small gaps filled in with fired painted glass, Iron tie bars directly soldered onto the panel were unsoldered and removed, and copper ties soldered instead. Tinted glazier's putty was locally applied in order to streghten and waterproof the panel. Reinstalled using new brass tie bars, lime-based mortar (sides and bottom) and glazier's putty (top, along saddle bar above). Company: IN SITU. Conservator: Raquel Fonseca dos Santos."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -388,7 +388,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
             },
             "Row": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -442,7 +442,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "1996%3A+The+panel+was+taken+down.+Conservator%3A+Rita+Isabel+Freitas+Vicente.++++++++++++++++++++++++++++++++1998%3A+Loose+putty+was+removed.+Biocidal+treatment+%28folmaldehyde+aqueous+solution+%5B0%2C1%25%5D%29+and+superficial+cleaning+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29+were+carried+out+and+unstable+paint+was+locally+consolidated++%28Paraloid+B72+in+butyl+acetate+%5B3%25%5D%29Peripheral+U-shaped+lead-antimony+%2898%3A2%29+calms+were+apllied+and+locally+soldered+to+the+panel.+Some+solder+points+were+reinforced.+Repair+lead+calms+were+removed+and+the+glass+fragments+were+bound+using+Araldite+2020.+Small+gaps+were+filled+in+using+Araldite+2020+and+cold+painted+%28with+acrylic+paints+P%C3%A9beo+and+grisaille%29.+Tinted+glazier%27s+putty+was+locally+applied+in+order+to+streghten+the+panel.+The+panel+was+kept+in+storage.+Conservator%3A+Rita+Isabel+Freitas+Vicente.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++2012%3A+The+panel+was+put+on+display+at+the+Batalha+Monastery%27s+interpretation+centre%2C+inside+a+climatized+showcase+%28RH+60%25%2C+18+%C2%B0C%29."
+                "value": "1996: The panel was taken down. Conservator: Rita Isabel Freitas Vicente.                                1998: Loose putty was removed. Biocidal treatment (folmaldehyde aqueous solution [0,1%]) and superficial cleaning (distilled water and ethyl alcohol [50:50] on cotton wool swabs) were carried out and unstable paint was locally consolidated  (Paraloid B72 in butyl acetate [3%])Peripheral U-shaped lead-antimony (98:2) calms were apllied and locally soldered to the panel. Some solder points were reinforced. Repair lead calms were removed and the glass fragments were bound using Araldite 2020. Small gaps were filled in using Araldite 2020 and cold painted (with acrylic paints Pébeo and grisaille). Tinted glazier's putty was locally applied in order to streghten the panel. The panel was kept in storage. Conservator: Rita Isabel Freitas Vicente.                                                                      2012: The panel was put on display at the Batalha Monastery's interpretation centre, inside a climatized showcase (RH 60%, 18 °C)."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -591,7 +591,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
             },
             "Signature": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -637,7 +637,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "1996%3A+The+panel+was+taken+down+and+paint+was+prefixed+%28Paraloid+B72+in+butyl+acetate+%5B5%25%5D%29.+Biocidal+treatment+%28folmaldehyde+aqueous+solution+%5B0%2C1%25%5D%29+and+superficial+cleaning+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29+were+carried+out.+Due+to+general+structural+failure%2C+the+panel+was+dismantled%2C+cleaned+and+releaded.+Repair+lead+calms+were+removed+and+the+glass+fragments+were+bound+using+Araldite+2020.+Small+gaps+were+filled+in+using+Araldite+2020%3B+bigger+ones+were+filled+in+with+cold+painted+colourless+glass+%28with+acrylic+paints+P%C3%A9beo%29.+The+upper+part+of+the+garment%2C+made+up+of+8+glass+fragments%2C+was+very+thin+and+fragile%2C+and+had+to+be+backplated.+The+plating+used+thin+laboratory+borosilicate+glass%2C+conformed+to+the+outer+surface+of+the+original+glass+in+the+kiln.+It+was+peripherally+isolated+using+copperfoil.+In+the+course+of+releading%2C+grey+transparent+glass+was+introduced+as+a+replacement+for+gaps+filled+in+with+lead+and+putty+in+the+19th+century+restoration.+Tinted+glazier%27s+putty+was+locally+applied+in+order+to+streghten+the+panel.+The+panel+was+kept+in+storage.+Conservator%3A+Ana+Paula+de+Melo+Barroso.++++++++++++++++++++++++++++++2012%3A+The+panel+was+put+on+display+at+the+Batalha+Monastery%27s+interpretation+centre%2C+inside+a+climatized+showcase+%28RH+60%25%2C+18+%C2%B0C%29."
+                "value": "1996: The panel was taken down and paint was prefixed (Paraloid B72 in butyl acetate [5%]). Biocidal treatment (folmaldehyde aqueous solution [0,1%]) and superficial cleaning (distilled water and ethyl alcohol [50:50] on cotton wool swabs) were carried out. Due to general structural failure, the panel was dismantled, cleaned and releaded. Repair lead calms were removed and the glass fragments were bound using Araldite 2020. Small gaps were filled in using Araldite 2020; bigger ones were filled in with cold painted colourless glass (with acrylic paints Pébeo). The upper part of the garment, made up of 8 glass fragments, was very thin and fragile, and had to be backplated. The plating used thin laboratory borosilicate glass, conformed to the outer surface of the original glass in the kiln. It was peripherally isolated using copperfoil. In the course of releading, grey transparent glass was introduced as a replacement for gaps filled in with lead and putty in the 19th century restoration. Tinted glazier's putty was locally applied in order to streghten the panel. The panel was kept in storage. Conservator: Ana Paula de Melo Barroso.                              2012: The panel was put on display at the Batalha Monastery's interpretation centre, inside a climatized showcase (RH 60%, 18 °C)."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -786,7 +786,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
             },
             "Signature": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -832,7 +832,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "2006-2007%3A+In+situ+cleaning%3B+isothermal+protective+glazing.Company%3A+IN+SITU.+Conservator%3A+Raquel+Fonseca+dos+Santos."
+                "value": "2006-2007: In situ cleaning; isothermal protective glazing.Company: IN SITU. Conservator: Raquel Fonseca dos Santos."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -995,7 +995,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
             },
             "Row": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -1049,7 +1049,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "1996%3A+The+panel+was+taken+down+and+kept+in+storage.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++1997%3A+Paint+was+prefixed+%28Paraloid+B72+in+butyl+acetate+%5B3%25%5D%29.+Biocidal+treatment+%28folmaldehyde+aqueous+solution+%5B0%2C1%25%5D%29+and+superficial+cleaning+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29+were+carried+out.+Repair+lead+calms+were+removed+and+the+glass+fragments+were+bound+using+Araldite+2020.+Small+gaps+were+filled+in+using+Araldite+2020+.+Peripheral+U-shaped+lead-antimony+%2898%3A2%29+calms+were+applied+and+locally+soldered+to+the+panel.+Some+solder+points+were+reinforced+and+lead+calm+cracks+were+soldered.The+panel+was+kept+in+storage.+Conservator%3A+Mariana+Gaelzer+Wertheimer.++++++++++++++++++++++++++++++2012%3A+The+panel+was+put+on+display+at+the+Batalha+Monastery%27s+interpretation+centre%2C+inside+a+climatized+showcase+%28RH+60%25%2C+18+%C2%B0C%29."
+                "value": "1996: The panel was taken down and kept in storage.                                                                      1997: Paint was prefixed (Paraloid B72 in butyl acetate [3%]). Biocidal treatment (folmaldehyde aqueous solution [0,1%]) and superficial cleaning (distilled water and ethyl alcohol [50:50] on cotton wool swabs) were carried out. Repair lead calms were removed and the glass fragments were bound using Araldite 2020. Small gaps were filled in using Araldite 2020 . Peripheral U-shaped lead-antimony (98:2) calms were applied and locally soldered to the panel. Some solder points were reinforced and lead calm cracks were soldered.The panel was kept in storage. Conservator: Mariana Gaelzer Wertheimer.                              2012: The panel was put on display at the Batalha Monastery's interpretation centre, inside a climatized showcase (RH 60%, 18 °C)."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -1201,7 +1201,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
             },
             "Signature": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -1247,7 +1247,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "2006-2007%3A+All+the+panels+were+taken+down%2C+flattened%2C+and+cleaned+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29.+Grisaille+painting+was+pre-fixed+and+fixed+where+necessary+%28Paraloid+B72+in+acetone+%5B8%25%5D%29.+Glass+fragments+were+bound+with+Paraloid+B72+in+acetone+%2860%25%29and+small+gaps+filled+in+with+fired+painted+glass%2C+Iron+tie+bars+directly+soldered+onto+the+panel+were+unsoldered+and+removed%2C+and+copper+ties+soldered+instead.+Tinted+glazier%27s+putty+was+locally+applied+in+order+to+streghten+the+panel.+Reinstalled+using+new+brass+tie+bars%2C+lime-based+mortar+%28sides+and+bottom%29+and+glazier%27s+putty+%28top%2C+along+saddle+bar+above%29.+Isothermal+protection.+Company%3A+IN+SITU.+Conservator%3A+Raquel+Fonseca+dos+Santos."
+                "value": "2006-2007: All the panels were taken down, flattened, and cleaned (distilled water and ethyl alcohol [50:50] on cotton wool swabs). Grisaille painting was pre-fixed and fixed where necessary (Paraloid B72 in acetone [8%]). Glass fragments were bound with Paraloid B72 in acetone (60%)and small gaps filled in with fired painted glass, Iron tie bars directly soldered onto the panel were unsoldered and removed, and copper ties soldered instead. Tinted glazier's putty was locally applied in order to streghten the panel. Reinstalled using new brass tie bars, lime-based mortar (sides and bottom) and glazier's putty (top, along saddle bar above). Isothermal protection. Company: IN SITU. Conservator: Raquel Fonseca dos Santos."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -1409,7 +1409,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
             },
             "Row": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -1463,7 +1463,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "2002-2003%3A+The+panel+was+taken+down+and+kept+in+storage.+Company%3A+IN+SITU.+Conservator%3A+Clarisse+Duarte+da+Silva.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++2008%3A+Loose+putty+was+removed.+Superficial+cleaning+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29+was+carried+out+and+unstable+paint+was+locally+consolidated++%28Plexigum+N80+in+acetone+%5B8%25%5D%29.+A+repair+lead+calm+was+removed+and+the+glass+fragments+were+bound+using+Paraloid+B72+in+acetone+%5B70%25%5D.+Glass+gaps+were+filled+in+using+adequately+coloured+glass.+Peripheral+U-shaped+lead-antimony+%2898%3A2%29+calms+were+applied+and+locally+soldered+to+the+panel.+Some+solder+points+were+reinforced+and+lead+calm+cracks+were+soldered.The+panel+was+kept+in+storage.+Conservator%3A+Pedro+Redol++++++++++++++++++++++++++++++++++++++++++2012%3A+The+panel+was+put+on+display+at+the+Batalha+Monastery%27s+interpretation+centre%2C+inside+a+climatized+showcase+%28RH+60%25%2C+18+%C2%B0C%29."
+                "value": "2002-2003: The panel was taken down and kept in storage. Company: IN SITU. Conservator: Clarisse Duarte da Silva.                                                                 2008: Loose putty was removed. Superficial cleaning (distilled water and ethyl alcohol [50:50] on cotton wool swabs) was carried out and unstable paint was locally consolidated  (Plexigum N80 in acetone [8%]). A repair lead calm was removed and the glass fragments were bound using Paraloid B72 in acetone [70%]. Glass gaps were filled in using adequately coloured glass. Peripheral U-shaped lead-antimony (98:2) calms were applied and locally soldered to the panel. Some solder points were reinforced and lead calm cracks were soldered.The panel was kept in storage. Conservator: Pedro Redol                                          2012: The panel was put on display at the Batalha Monastery's interpretation centre, inside a climatized showcase (RH 60%, 18 °C)."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -1615,7 +1615,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
             },
             "Signature": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -1661,7 +1661,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "2002-2003%3A+The+panel+was+taken+down+and+kept+in+storage.+Company%3A+IN+SITU.+Conservator%3A+Clarisse+Duarte+da+Silva.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++2008%3A+Loose+putty+was+removed.+Superficial+cleaning+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29+was+carried+out+and+unstable+paint+was+locally+consolidated++%28Plexigum+N80+in+acetone+%5B8%25%5D%29.+Peripheral+U-shaped+lead-antimony+%2898%3A2%29+calms+were+applied+and+locally+soldered+to+the+panel.+Some+solder+points+were+reinforced+and+lead+calm+cracks+were+soldered.Tinted+glazier%27s+putty+was+locally+applied+in+order+to+streghten+the+panel.The+panel+was+kept+in+storage.+Conservator%3A+Pedro+Redol++++++++++++++++++++++++++++++++++++++++++2012%3A+The+panel+was+put+on+display+at+the+Batalha+Monastery%27s+interpretation+centre%2C+inside+a+climatized+showcase+%28RH+60%25%2C+18+%C2%B0C%29."
+                "value": "2002-2003: The panel was taken down and kept in storage. Company: IN SITU. Conservator: Clarisse Duarte da Silva.                                                                 2008: Loose putty was removed. Superficial cleaning (distilled water and ethyl alcohol [50:50] on cotton wool swabs) was carried out and unstable paint was locally consolidated  (Plexigum N80 in acetone [8%]). Peripheral U-shaped lead-antimony (98:2) calms were applied and locally soldered to the panel. Some solder points were reinforced and lead calm cracks were soldered.Tinted glazier's putty was locally applied in order to streghten the panel.The panel was kept in storage. Conservator: Pedro Redol                                          2012: The panel was put on display at the Batalha Monastery's interpretation centre, inside a climatized showcase (RH 60%, 18 °C)."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -1810,7 +1810,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
             },
             "Signature": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -1856,7 +1856,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "2006-2007%3A+All+the+panels+were+taken+down%2C+flattened%2C+and+cleaned+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29.+Grisaille+painting+was+pre-fixed+and+fixed+where+necessary+%28Paraloid+B72+in+acetone+%5B8%25%5D%29.+Glass+fragments+were+bound+with+Paraloid+B72+in+acetone+%2860%25%29and+small+gaps+filled+in+with+fired+painted+glass%2C+Iron+tie+bars+directly+soldered+onto+the+panel+were+unsoldered+and+removed%2C+and+copper+ties+soldered+instead.+Reinstalled+using+new+brass+tie+bars%2C+lime-based+mortar+%28sides+and+bottom%29+and+glazier%27s+putty+%28top%2C+along+saddle+bar+above%29.+Company%3A+IN+SITU.+Conservator%3A+Raquel+Fonseca+dos+Santos."
+                "value": "2006-2007: All the panels were taken down, flattened, and cleaned (distilled water and ethyl alcohol [50:50] on cotton wool swabs). Grisaille painting was pre-fixed and fixed where necessary (Paraloid B72 in acetone [8%]). Glass fragments were bound with Paraloid B72 in acetone (60%)and small gaps filled in with fired painted glass, Iron tie bars directly soldered onto the panel were unsoldered and removed, and copper ties soldered instead. Reinstalled using new brass tie bars, lime-based mortar (sides and bottom) and glazier's putty (top, along saddle bar above). Company: IN SITU. Conservator: Raquel Fonseca dos Santos."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -2011,7 +2011,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
             },
             "Row": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -2065,7 +2065,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "2002-2003%3A+Panel+I1+was+taken+down%2C+flattened%2C+and+cleaned+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29.+Grisaille+painting+was+pre-fixed+and+fixed+where+necessary+using+Paraloid+B72+in+acetone+%288%25%29.+Glass+fragments+were+bound+with+Paraloid+B72+in+acetone+%2860%25%29.+Iron+tie+bars+directly+soldered+on+to+the+panel+were+unsoldered+and+removed%2C+and+copper+ties+soldered+instead.+Tinted+glazier%27s+putty+was+locally+applied+in+order+to+streghten+and+waterproof+the+panel.+The+panel+reinstalled+using+new+brass+tie+bars%2C+lime-based+mortar+%28sides+and+bottom%29+and+glazier%27s+putty+%28top%2C+along+saddle+bar+above%29.+Company%3A+IN+SITU.+Conservator%3A+Clarisse+Duarte+da+Silva."
+                "value": "2002-2003: Panel I1 was taken down, flattened, and cleaned (distilled water and ethyl alcohol [50:50] on cotton wool swabs). Grisaille painting was pre-fixed and fixed where necessary using Paraloid B72 in acetone (8%). Glass fragments were bound with Paraloid B72 in acetone (60%). Iron tie bars directly soldered on to the panel were unsoldered and removed, and copper ties soldered instead. Tinted glazier's putty was locally applied in order to streghten and waterproof the panel. The panel reinstalled using new brass tie bars, lime-based mortar (sides and bottom) and glazier's putty (top, along saddle bar above). Company: IN SITU. Conservator: Clarisse Duarte da Silva."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -2217,7 +2217,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
             },
             "Row": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -2271,7 +2271,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "2006-2007%3A+External+protection+grids+were+removed%2C+deoxidized%2C+protected+and+painted.+All+the+panels+were+taken+down%2C+flattened%2C+and+cleaned+%28distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs%29.+Grisaille+painting+was+pre-fixed+and+fixed+where+necessary+%28Paraloid+B72+in+acetone+%5B8%25%5D%29.+Glass+fragments+were+bound+with+Paraloid+B72+in+acetone+%2860%25%29and+small+gaps+filled+in+with+fired+painted+glass%2C+Iron+tie+bars+directly+soldered+onto+the+panel+were+unsoldered+and+removed%2C+and+copper+ties+soldered+instead.+Tinted+glazier%27s+putty+was+locally+applied+in+order+to+streghten+and+waterproof+the+panel.+Reinstalled+using+new+brass+tie+bars%2C+lime-based+mortar+%28sides+and+bottom%29+and+glazier%27s+putty+%28top%2C+along+saddle+bar+above%29.+External+protection+grids+were+reinstalled.+Company%3A+IN+SITU.+Conservator%3A+Raquel+Fonseca+dos+Santos."
+                "value": "2006-2007: External protection grids were removed, deoxidized, protected and painted. All the panels were taken down, flattened, and cleaned (distilled water and ethyl alcohol [50:50] on cotton wool swabs). Grisaille painting was pre-fixed and fixed where necessary (Paraloid B72 in acetone [8%]). Glass fragments were bound with Paraloid B72 in acetone (60%)and small gaps filled in with fired painted glass, Iron tie bars directly soldered onto the panel were unsoldered and removed, and copper ties soldered instead. Tinted glazier's putty was locally applied in order to streghten and waterproof the panel. Reinstalled using new brass tie bars, lime-based mortar (sides and bottom) and glazier's putty (top, along saddle bar above). External protection grids were reinstalled. Company: IN SITU. Conservator: Raquel Fonseca dos Santos."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -2422,7 +2422,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
             },
             "Signature": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -2472,7 +2472,7 @@
             },
             "Current state of conservation": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "1996%3A+The+panel+was+taken+down+and+kept+in+storage.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++2009-2010%3A+Superficial+cleaning+was+carried+out%2C+using+distilled+water+and+ethyl+alcohol+%5B50%3A50%5D+on+cotton+wool+swabs.+Paint+was+locally+consolidated+with+Plexigum+N80+in+acetone+%5B8%25%5D.+Repair+lead+calms+were+removed+and+the+glass+fragments+were+bound+using+Paraloid+B72+in+acetone+%5B70%25%5D.+Some+lead+calms+in+the++bottom+of+the+panel+were+replaced+due+to+structural+instability+and+two+peripheral+lead+calm+gaps+were+filled+in.+Peripheral+U-shaped+lead-antimony+%2898%3A2%29+calms+were+applied+and+locally+soldered+to+the+panel.+Some+solder+points+were+reinforced+and+lead+calm+cracks+were+soldered.The+panel+was+kept+in+storage.+Conservator%3A+Pedro+Redol.++++++++++++++++++++++++++++++++2012%3A+The+panel+was+put+on+display+at+the+Batalha+Monastery%27s+interpretation+centre%2C+inside+a+climatized+showcase+%28RH+60%25%2C+18+%C2%B0C%29."
+                "value": "1996: The panel was taken down and kept in storage.                                                                      2009-2010: Superficial cleaning was carried out, using distilled water and ethyl alcohol [50:50] on cotton wool swabs. Paint was locally consolidated with Plexigum N80 in acetone [8%]. Repair lead calms were removed and the glass fragments were bound using Paraloid B72 in acetone [70%]. Some lead calms in the  bottom of the panel were replaced due to structural instability and two peripheral lead calm gaps were filled in. Peripheral U-shaped lead-antimony (98:2) calms were applied and locally soldered to the panel. Some solder points were reinforced and lead calm cracks were soldered.The panel was kept in storage. Conservator: Pedro Redol.                                2012: The panel was put on display at the Batalha Monastery's interpretation centre, inside a climatized showcase (RH 60%, 18 °C)."
             },
             "Date of origin": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -2627,7 +2627,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/4/41/Restoration_%26_conservation_history_LUZ.pdf"
             },
             "Signature": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
@@ -2832,7 +2832,7 @@
             },
             "Restoration and conservation history": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
-                "value": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
+                "resource": "https://cvportugal.fct.unl.pt/mediawiki-1.37.1/images/1/16/Restoration_%26_conservation_history.pdf"
             },
             "Row": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
