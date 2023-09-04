@@ -18,7 +18,7 @@
         <p>As of today, the data on this website is obtained via three different sources: </p>
         <p>• By using the data in VitralWiki's wiki page available at MediaWiki which contains the Portuguese Batalha's
           Monastery stained glass collection;</p>
-        <p>• By querrying the Europeana's open access SPARQL Endpoint.</p>
+        <p>• By querrying the Europeana's open access SPARQL Endpoint;</p>
         <p>• By querrying the NFDI4Culture's open access SPARQL Endpoint.</p>
       </section>
       <section class="text-element">
@@ -60,14 +60,11 @@ main {
 }
 
 .text {
-  margin-top: auto;
-  margin-bottom: auto;
-  gap: 32px;
+  max-width: 100%;
+  margin:auto;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .text-element {
@@ -75,7 +72,9 @@ main {
   box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
   padding: 1rem;
   border-radius: 8px;
-  width: 500px;
+  width: 550px;
+  max-width: 100%;
+  min-width: 200px;
   height: fit-content;
 }
 
