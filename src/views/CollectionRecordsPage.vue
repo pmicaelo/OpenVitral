@@ -19,9 +19,10 @@
                     <RecordCardComponent :record="result" />
                 </router-link>
             </div>
-            <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
+            <div class="footer">
+                <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
+            </div>
         </main>
-
         <transition name="backdrop-transition">
             <div class="modal-backdrop" v-if="record"> </div>
         </transition>
@@ -144,44 +145,6 @@ function updateDisplayedResults(data) {
     backdrop-filter: blur(6px);
 }
 
-.modal-transition-enter-active,
-.modal-transition-leave-active {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.modal-transition-enter-from,
-.modal-transition-leave-to {
-    opacity: 0;
-    transform: scale(0.8);
-}
-
-.backdrop-transition-enter-active,
-.backdrop-transition-leave-active {
-    transition: opacity 0.3s ease
-}
-
-.backdrop-transition-enter-from,
-.backdrop-transition-leave-to {
-    opacity: 0;
-}
-
-.card-link {
-    /*text-decoration: none;
-    max-width: 310px;
-    width: 100%;
-    height: 100%;*/
-
-    width: fit-content;
-    text-decoration: none;
-}
-
-.results-container {
-    justify-items: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-}
-
 .page-header {
     display: flex;
     align-items: center;
@@ -223,6 +186,9 @@ function updateDisplayedResults(data) {
 }
 
 .collection-title {
+    min-width: fit-content;
+    height: fit-content;
+    width: 100%;
     margin-bottom: 2rem;
     font-weight: 600;
     font-size: 20px;
@@ -230,5 +196,47 @@ function updateDisplayedResults(data) {
     padding: 10px;
     background-color: #181818;
     text-align: center;
+}
+
+.card-link {
+    /*text-decoration: none;
+    max-width: 310px;
+    width: 100%;
+    height: 100%;*/
+
+    width: fit-content;
+    text-decoration: none;
+}
+
+.results-container {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.modal-transition-enter-active,
+.modal-transition-leave-active {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-transition-enter-from,
+.modal-transition-leave-to {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.backdrop-transition-enter-active,
+.backdrop-transition-leave-active {
+    transition: opacity 0.3s ease
+}
+
+.backdrop-transition-enter-from,
+.backdrop-transition-leave-to {
+    opacity: 0;
 }
 </style>

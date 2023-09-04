@@ -88,6 +88,7 @@ for (const [key, value] of Object.entries(record)) {
 .param {
     display: flex;
     flex-direction: column;
+    line-height: 21px;
 }
 
 .param .param-name {

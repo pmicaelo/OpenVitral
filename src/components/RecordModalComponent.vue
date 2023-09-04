@@ -68,14 +68,13 @@ const goBack = () => {
 
     /*background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(6px);*/
-
 }
 
 .modal-content {
     max-width: min(750px, 80%);
     min-width: min(500px, 80%);
 
-    max-height: 90%;
+    max-height: 95%;
 
     overflow: auto;
 
@@ -86,11 +85,11 @@ const goBack = () => {
     padding: 30px;
     padding-bottom: 20px;
 
+
     background-color: #181818;
 
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
-
 }
 
 .modal-image {
@@ -178,5 +177,4 @@ const goBack = () => {
     color: rgb(247, 247, 247);
     font-size: 25px;
 }
-
 </style>

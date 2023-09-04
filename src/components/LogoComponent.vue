@@ -19,26 +19,26 @@ import logoURL from '../assets/logoV.png'
 
 .logo img {
     transition: 0.2s ease-in-out;
-    width: 2.5rem;
+    width: 40px;
 }
 
 .logo .text {
     transition: 0.2s ease-in-out;
     white-space: nowrap;
     font-family: "Russo One", sans-serif;
-    margin-left: 0.25rem;
-    font-size: 1.15rem;
+    margin-left: 4px;
+    font-size: 18.4px;
     color: var(--logo-font);
 }
 
 .logo:hover img {
     transition: 0.2s ease-in-out;
-    width: 2.58rem;
+    width: 41.5px;
 }
 
 .logo:hover .text {
     transition: 0.2s ease-in-out;
-    font-size: 1.2rem;
+    font-size: 19.4px;
     /*font-weight: bold;*/
 }
 </style>

@@ -46,8 +46,7 @@ const failedToLoadImage = (event) => {
     /*aspect-ratio: 4/7;*/
     background-color: #181818;
     background-color: #1a1c1d;
-
-    box-shadow: 0px 0px 5px rgb(10, 10, 10);
+    
     box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
 }
 

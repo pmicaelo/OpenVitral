@@ -42,6 +42,7 @@ const { record } = defineProps(['record']);
 .param {
     display: flex;
     flex-direction: column;
+    line-height: 21px;
 }
 
 .param-name {

@@ -12,7 +12,9 @@
           <RecordCardComponent :record="result" />
         </router-link>
       </div>
-      <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
+      <div class="footer">
+        <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
+      </div>
     </main>
     <Transition name="backdrop-transition">
       <div class="modal-backdrop" v-if="record"> </div>
@@ -155,5 +157,9 @@ function updateDisplayedResults(data) {
 
 .search-input::placeholder {
   color: #adadad;
+}
+
+.footer {
+  margin-top: auto;
 }
 </style>
