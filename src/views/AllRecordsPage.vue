@@ -73,9 +73,10 @@ function updateDisplayedResults(data) {
 
 <style scoped>
 .page-and-modal {
-  height: 100%;
-  display: flex;
-  overflow: clip;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	overflow: clip;
 }
 
 .modal-backdrop {
@@ -130,7 +131,6 @@ function updateDisplayedResults(data) {
   justify-content: space-evenly;
   align-items: flex-end;*/
 
-  /*justify-items: center;*/
   justify-items: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

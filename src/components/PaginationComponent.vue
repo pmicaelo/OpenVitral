@@ -77,6 +77,7 @@ function goToPage(pageNumber) {
 .pagination {
   margin-top: 32px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }

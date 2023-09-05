@@ -34,6 +34,7 @@ const record = computed(() => { return results.value.find(result => result.uniqu
 <style scoped>
 .page-and-modal {
 	height: 100%;
+	width: 100%;
 	display: flex;
 	overflow: clip;
 }

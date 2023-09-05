@@ -68,17 +68,17 @@ button {
   flex-direction: column;
   overflow: clip;
   height: 100vh;
+  width: 100vw;
 }
 
 .app main {
-
   z-index: 0;
   /*behind navbar (index 1)*/
   /*height: 100%;
   width: 100%;*/
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  overflow: clip auto;
   flex: 1 1 0;
   padding: 2rem 2rem;
   padding-bottom: 1rem;
