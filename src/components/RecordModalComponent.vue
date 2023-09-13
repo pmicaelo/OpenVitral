@@ -11,6 +11,14 @@
                     rel="noopener noreferrer">
                     <span class="material-symbols-rounded">search</span>
                 </a>
+                <div v-if="!fav" class="add-fav-button" title="Add record from favourites" @click="toggleFav"
+                    style="cursor: pointer">
+                    <span class="material-symbols-rounded">star</span>
+                </div>
+                <div v-else class="remove-fav-button" title="Remove record from favourites" @click="toggleFav"
+                    style="cursor: pointer">
+                    <span class="material-symbols-rounded">star</span>
+                </div>
             </div>
             <div style="word-wrap: break-word; margin-top:15px ;text-align: center;" v-if="record.Title">
                 <span style="color: rgb(247, 247, 247); font-weight:500 ; font-size: 17.5px;">{{ record.Title.value
@@ -24,6 +32,8 @@
 </template>
   
 <script setup>
+
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import ModalTextVWComponent from './ModalTextVWComponent.vue'
 import ModalTextGenericComponent from './ModalTextGenericComponent.vue'
@@ -41,6 +51,21 @@ const failedToLoadImage = (event) => {
 function isVitralWiki() {
     return record.uniqueId.value.includes("vitralwiki");
 }
+
+const fav = ref(JSON.parse(localStorage.getItem('favourites')).includes(record.uniqueId.value))
+
+const toggleFav = () => {
+    const currentFavourites = JSON.parse(localStorage.getItem('favourites')) || [];
+    const isRecordFavourite = currentFavourites.includes(record.uniqueId.value);
+    if (isRecordFavourite) {
+        const updatedFavourites = currentFavourites.filter(id => id !== record.uniqueId.value);
+        localStorage.setItem('favourites', JSON.stringify(updatedFavourites));
+    } else {
+        currentFavourites.push(record.uniqueId.value);
+        localStorage.setItem('favourites', JSON.stringify(currentFavourites));
+    }
+    fav.value = !fav.value
+};
 
 const goBack = () => {
     //router.go(-1)
@@ -65,9 +90,6 @@ const goBack = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /*background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(6px);*/
 }
 
 .modal-content {
@@ -84,7 +106,6 @@ const goBack = () => {
     position: absolute;
     padding: 30px;
     padding-bottom: 20px;
-
 
     background-color: #181818;
 
@@ -112,11 +133,8 @@ const goBack = () => {
 
     border-radius: 10px;
     text-decoration: none;
-    background-color: rgba(15, 15, 15, 0.822);
 
     background-color: rgba(42, 42, 42, .8);
-    /*border: 1px solid rgba(255, 255, 255, 0.7);
-  border-color: hsla(0, 0%, 100%, 0.2);*/
 
     height: 33px;
     width: 33px;
@@ -124,6 +142,25 @@ const goBack = () => {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.remove-fav-button,
+.add-fav-button {
+    position: absolute;
+    bottom: 5px;
+    right: 45px;
+
+    border-radius: 10px;
+
+    background-color: rgba(42, 42, 42, .8);
+
+    height: 33px;
+    width: 33px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
 }
 
 .open-image-button .material-symbols-rounded {
@@ -136,18 +173,33 @@ const goBack = () => {
     color: rgb(247, 247, 247);
 }
 
-.open-image-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.add-fav-button .material-symbols-rounded {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+    font-size: 28px;
+    color: rgb(247, 247, 247);
+}
 
-    /*border: 1px solid rgba(255, 255, 255, 0.8);*/
+.remove-fav-button .material-symbols-rounded {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+    font-size: 28px;
+    color: rgb(247, 247, 247);
+}
+
+
+.open-image-button:hover,
+.remove-fav-button:hover,
+.add-fav-button:hover {
     background-color: rgba(83, 83, 83, 0.8);
     transition: 0.1s ease-in-out;
 }
-
-/*.open-image-button:hover .material-icons-round{
-  font-size: 30px;
-  transition: 0.1s ease-in-out;
-  }*/
 
 .close-button {
     position: absolute;

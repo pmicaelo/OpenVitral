@@ -23,6 +23,9 @@ const loaded = ref(true);
 provide('records', readonly(records));
 
 onMounted(async () => {
+  if (!localStorage.favourites) {
+    localStorage.setItem('favourites', JSON.stringify([]));
+  }
   loaded.value = false;
   records.value = await fetchAll();
   loaded.value = true;

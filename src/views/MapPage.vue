@@ -1,18 +1,13 @@
 <template>
-	<div class="page-and-modal">
-		<main>
-			<!--<div id="rand-div">
-			<img :src="logoURL" alt="Vue" />
-		</div>!-->
-			<MapComponent />
-		</main>
+	<main>
+		<MapComponent />
 		<Transition name="backdrop-transition">
 			<div class="modal-backdrop" v-if="record"> </div>
 		</Transition>
 		<Transition name="modal-transition">
 			<RecordModalComponent :record="record" v-if="record" />
 		</Transition>
-	</div>
+	</main>
 </template>
 
 <script setup>
@@ -32,11 +27,10 @@ const record = computed(() => { return results.value.find(result => result.uniqu
 </script>
 
 <style scoped>
-.page-and-modal {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	overflow: clip;
+
+main {
+	padding: 0rem;
+	z-index: unset;
 }
 
 .modal-backdrop {
@@ -71,16 +65,4 @@ const record = computed(() => { return results.value.find(result => result.uniqu
 .backdrop-transition-leave-to {
 	opacity: 0;
 }
-
-main {
-	padding: 0rem;
-	/*overflow: auto;*/
-	/*min-height: calc(100vh - var(--navbar-height));*/
-}
-
-
-/*#map {
-	/*position: sticky; /*appearantly needed to put elements in front of it maybe cause map default is relative
-	height: 100%;/*change to 100%?
-}*/
 </style>

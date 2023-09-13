@@ -23,7 +23,6 @@ async function queryEndpoint(sparqlEndpoint, sparqlEndpointQuery) {
           console.log(resultRow);
         });*/
 
-        console.log(response.data.results.bindings);
         return response.data.results.bindings;
     } catch (error) {
         console.error('Error querying the endpoint:', error);
@@ -111,7 +110,6 @@ async function querynNFDI4CultureEndpoint() {
 }
 
 function fetchLocal() {
-    console.log(dataVW);
     const results = dataVW.results;
     results.map((element, index) => {
         element.uniqueId = { type: 'literal', value: `vitralwikirecord${index}` };

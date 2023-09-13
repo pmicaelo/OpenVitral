@@ -4,6 +4,7 @@ import MapPage from '../views/MapPage.vue'
 import AllRecordsPage from '../views/AllRecordsPage.vue'
 import CollectionsPage from '../views/CollectionsPage.vue'
 import CollectionRecordsPage from '../views/CollectionRecordsPage.vue'
+import FavouritesPage from '../views/FavouritesPage.vue'
 import AboutPage from '../views/AboutPage.vue'
 import ErrorPage from '../views/ErrorPage.vue'
 
@@ -50,10 +51,16 @@ const router = createRouter({
       meta: { position: 3 },
     },
     {
+      path: '/favourites',
+      name: 'favourites',
+      component: FavouritesPage,
+      meta: { position: 4 },
+    },
+    {
       path: '/about',
       name: 'about',
       component: AboutPage,
-      meta: { position: 4 },
+      meta: { position: 5 },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.

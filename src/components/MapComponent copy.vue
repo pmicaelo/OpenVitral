@@ -39,7 +39,12 @@ const markerIcon = L.icon({
 
 let map = null
 let markersLayer = null;
-
+/*function addMarker  (latitude, longitude)  {
+   const marker = L.marker([latitude, longitude]);
+   props.markers.push(marker);
+   console.log(props.markers)
+   marker.addTo(map);
+}*/
 
 const addRecordMarker = (record) => {
   const marker = L.marker([parseFloat(record.Lat.value), parseFloat(record.Long.value)], { icon: markerIcon });
@@ -52,6 +57,15 @@ const addRecordMarker = (record) => {
       }
     }, 200); // Delay needed to avoid adding while prev popup still there
   });
+  /*const customLeafletPopup = document.querySelector(".custom-leaflet-popup");
+    customLeafletPopup.addEventListener("click", () => handlePopupClick(record));
+  });*/
+  /*marker.addTo(map).bindPopup(popupContent);
+  marker.on("popupopen", (event) => {
+    const customLeafletPopup = event.popup;
+    const contentElement = customLeafletPopup._contentNode;
+    contentElement.addEventListener("click", () => handlePopupClick(record));
+  });*/
 }
 
 function customPopup(record) {
@@ -79,6 +93,7 @@ function customPopup(record) {
 const handlePopupClick = (record) => {
   const currentRoute = router.currentRoute.value;
   const queryParams = { ...currentRoute.query, record: record.uniqueId.value };
+
   router.push({ path: currentRoute.path, query: queryParams });
 };
 
@@ -93,6 +108,25 @@ onMounted(async () => {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
+  /*for (const result of results.value) {
+    if (result.SpatialLabel) {
+      const locationName = result.SpatialLabel.value
+      try {
+        const response = await axios.get(`https://nominatim.openstreetmap.org/search?q=${locationName}&format=json&limit=1`);
+        console.log(response)
+        if (response.data.length > 0) {
+          const { lat, lon } = response.data[0];
+          const latitude = parseFloat(lat);
+          const longitude = parseFloat(lon);
+          console.log(lat +" "+ lon)
+          addMarker(latitude, longitude);
+          console.log("marker added at" + locationName)
+        }
+      } catch (error) {
+        console.error(`Error fetching coordinates for ${locationName}:`, error);
+      }
+    }
+  }*/
   markersLayer = L.markerClusterGroup();
 
   for (const result of results.value) {

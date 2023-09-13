@@ -1,35 +1,34 @@
 <template>
-    <div class="page-and-modal">
-        <main>
-            <h1 class="collection-title">{{ collection }}</h1>
-            <div class="page-header">
-                <router-link class="back-button" :to="{
-                    name: 'collections'
-                }">
-                    <span class="material-icons">arrow_back</span>
-                </router-link>
-                <input class="search-input" v-model="filter" placeholder="Search" />
-            </div>
-            <div class="results-container">
-                <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
-                    name: 'collectionrecords',
-                    params: { collection: collection },
-                    query: { record: result.uniqueId.value },
-                }">
-                    <RecordCardComponent :record="result" />
-                </router-link>
-            </div>
-            <div class="footer">
-                <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
-            </div>
-        </main>
+    <main>
+        <h1 class="collection-title">{{ collection }}</h1>
+        <div class="page-header">
+            <router-link class="back-button" :to="{
+                name: 'collections'
+            }">
+                <span class="material-icons">arrow_back</span>
+            </router-link>
+            <input class="search-input" v-model="filter" placeholder="Search" />
+        </div>
+        <div class="results-container">
+            <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
+                name: 'collectionrecords',
+                params: { collection: collection },
+                query: { record: result.uniqueId.value },
+            }">
+                <RecordCardComponent :record="result" />
+            </router-link>
+        </div>
+        <div class="footer">
+            <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
+        </div>
+
         <transition name="backdrop-transition">
             <div class="modal-backdrop" v-if="record"> </div>
         </transition>
         <transition name="modal-transition">
             <RecordModalComponent :record="record" v-if="record" />
         </transition>
-    </div>
+    </main>
 </template>
   
 <script setup>
@@ -127,11 +126,8 @@ function updateDisplayedResults(data) {
 </script>
   
 <style scoped>
-.page-and-modal {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	overflow: clip;
+main {
+    z-index: unset;
 }
 
 .modal-backdrop {

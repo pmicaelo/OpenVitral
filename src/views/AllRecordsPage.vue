@@ -1,28 +1,26 @@
 <template>
-  <div class="page-and-modal">
-    <main>
-      <div class="page-header">
-        <input class="search-input" v-model="filter" placeholder="Search" />
-      </div>
-      <div class="results-container">
-        <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
-          name: 'allrecords',
-          query: { record: result.uniqueId.value },
-        }">
-          <RecordCardComponent :record="result" />
-        </router-link>
-      </div>
-      <div class="footer">
-        <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
-      </div>
-    </main>
+  <main>
+    <div class="page-header">
+      <input class="search-input" v-model="filter" placeholder="Search" />
+    </div>
+    <div class="results-container">
+      <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
+        name: 'allrecords',
+        query: { record: result.uniqueId.value },
+      }">
+        <RecordCardComponent :record="result" />
+      </router-link>
+    </div>
+    <div class="footer">
+      <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
+    </div>
     <Transition name="backdrop-transition">
       <div class="modal-backdrop" v-if="record"> </div>
     </Transition>
     <Transition name="modal-transition">
       <RecordModalComponent :record="record" v-if="record" />
     </Transition>
-  </div>
+  </main>
 </template>
 
 <script setup>
@@ -72,11 +70,8 @@ function updateDisplayedResults(data) {
 </script>
 
 <style scoped>
-.page-and-modal {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	overflow: clip;
+main {
+  z-index: unset;
 }
 
 .modal-backdrop {
@@ -89,27 +84,6 @@ function updateDisplayedResults(data) {
 
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(6px);
-}
-
-.modal-transition-enter-active,
-.modal-transition-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.modal-transition-enter-from,
-.modal-transition-leave-to {
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-.backdrop-transition-enter-active,
-.backdrop-transition-leave-active {
-  transition: opacity 0.3s ease
-}
-
-.backdrop-transition-enter-from,
-.backdrop-transition-leave-to {
-  opacity: 0;
 }
 
 .card-link {
@@ -161,5 +135,26 @@ function updateDisplayedResults(data) {
 
 .footer {
   margin-top: auto;
+}
+
+.modal-transition-enter-active,
+.modal-transition-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal-transition-enter-from,
+.modal-transition-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.backdrop-transition-enter-active,
+.backdrop-transition-leave-active {
+  transition: opacity 0.3s ease
+}
+
+.backdrop-transition-enter-from,
+.backdrop-transition-leave-to {
+  opacity: 0;
 }
 </style>
