@@ -110,6 +110,7 @@ function goToPage(pageNumber) {
   text-align: center;
   background-color: transparent;
   border: 1px solid #1d1d1d;
+  outline: none;
 }
 
 .page-input::placeholder {

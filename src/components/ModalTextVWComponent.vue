@@ -1,8 +1,8 @@
 <template>
     <div class="modal-text">
-        <div class="param" v-if="record['Dc:description']">
+        <div class="param" v-if="record['Description']">
             <span class="param-name">Description</span>
-            <span class="param-value">{{ record['Dc:description'].value }}</span>
+            <span class="param-value">{{ record['Description'].value }}</span>
         </div>
         <div class="param" v-if="record['Dcterms:extent']">
             <span class="param-name">Dimensions</span>
@@ -12,9 +12,9 @@
             <span class="param-name">Date</span>
             <span class="param-value">{{ record['Date of origin'].value }}</span>
         </div>
-        <div class="param" v-if="record['Dc:creator']">
+        <div class="param" v-if="record['Creator']">
             <span class="param-name">Creator</span>
-            <span class="param-value">{{ record['Dc:creator'].value }}</span>
+            <span class="param-value">{{ record['Creator'].value }}</span>
         </div>
         <ExpandableParameterComponent :paramEntries="locationEntries" paramName="Location" />
         <ExpandableParameterComponent :paramEntries="productionEntries"

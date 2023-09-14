@@ -2,6 +2,12 @@
   <main>
     <div class="page-header">
       <input class="search-input" v-model="filter" placeholder="Search" />
+      <select class="filter-dropdown" v-model="selectedFilter" >
+        <option value="title">Title</option>
+        <option value="description">Description</option>
+        <option value="creator">Creator</option>
+      </select>
+      <p style="margin-left: auto; color: #adadad; white-space: nowrap;">  {{filteredResults.length}} Records</p>
     </div>
     <div class="results-container">
       <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
@@ -35,29 +41,23 @@ import PaginationComponent from '../components/PaginationComponent.vue';
 const results = inject('records');
 const displayedResults = ref([]);
 const filter = ref('');
+const selectedFilter = ref('title');
 
 const route = useRoute();
 const record = computed(() => { return results.value.find(result => result.uniqueId.value === route.query.record) });
 
-/*onMounted(() => {
-  //maybe not needed, pushes the 
-  if(route.query.record && !record.value){
-    router.push(route.path)
-  }
-});
-
-watch(() => route.fullPath, () => {
-  if(route.query.record && !record.value){
-    router.go(-1)
-  }
-});*/
-
 const filteredResults = computed(() => {
   const filterText = filter.value.toLowerCase();
-  if (filterText == "") return results.value;
+  if (filterText === "") {
+    return results.value;
+  }
   return results.value.filter((result) => {
-    if (result.Title) {
+    if (selectedFilter.value === 'title' && result.Title) {
       return result.Title.value.toLowerCase().includes(filterText);
+    } else if (selectedFilter.value === 'description' && result.Description) {
+      return result.Description.value.toLowerCase().includes(filterText);
+    } else if (selectedFilter.value === 'creator' && result.Creator) {
+      return result.Creator.value.toLowerCase().includes(filterText);
     }
     return false;
   });
@@ -121,16 +121,45 @@ main {
 .search-input {
   font-size: 14.5px;
   border-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   padding-left: 15px;
   height: 35px;
   width: 350px;
   min-width: 80px;
+  background-color: #1a1c1d;
   background-color: transparent;
   border: 1px solid #616161;
+  outline: none;
 }
 
 .search-input::placeholder {
   color: #adadad;
+}
+
+.filter-dropdown {
+  cursor: pointer;
+  color: #adadad;
+  height: 35px;
+  width: 110px;
+  font-size: 14px;
+  border: 1px solid #616161;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+  background-color: transparent;
+  background-color: #1d1d1d;
+  outline: none;
+  padding: 8px;
+}
+
+.filter-dropdown option {
+  color: #adadad;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #0f0f0f;
+  background-color: #1d1d1d;
 }
 
 .footer {

@@ -139,7 +139,7 @@ export async function fetchAll() {
     //records.value = [];
     const all = [];
     all.push(...fetchLocal());
-    /*all.push(...await queryEuropeanaEndpoint())
+    all.push(...await queryEuropeanaEndpoint())
     /*all.push(...await querynNFDI4CultureEndpoint())
 
     /*all.map((element, index) => {

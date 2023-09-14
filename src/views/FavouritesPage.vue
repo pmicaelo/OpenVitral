@@ -1,17 +1,27 @@
 <template>
     <main>
-        <div class="results-container">
-            <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
-                name: 'favourites',
-                query: { record: result.uniqueId.value },
-            }">
-                <RecordCardComponent :record="result" />
-            </router-link>
+        <div style="display: flex; flex-direction: column; flex: 1 1 0;" v-if="favourites.length > 0">
+            <div class="results-container">
+                <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
+                    name: 'favourites',
+                    query: { record: result.uniqueId.value },
+                }">
+                    <RecordCardComponent :record="result" />
+                </router-link>
+            </div>
+            <div class="footer">
+                <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
+            </div>
         </div>
-        <div class="footer">
-            <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
+        <div v-else class="message">
+            <h1 class="message-subtitle">The favourites page is currently empty :[</h1>
+            <p class="message-description">
+                It seems you have not added any records to your favourites page ...
+            </p>
+            <p class="message-description">
+                Try adding some, so they can be highlighted here!
+            </p>
         </div>
-
         <transition name="backdrop-transition">
             <div class="modal-backdrop" v-if="record"> </div>
         </transition>
@@ -29,24 +39,24 @@ import RecordCardComponent from '../components/RecordCardComponent.vue';
 import PaginationComponent from '../components/PaginationComponent.vue';
 import RecordModalComponent from '../components/RecordModalComponent.vue';
 
+const route = useRoute();
 
 const results = inject('records');
 const displayedResults = ref([]);
 
-
-const route = useRoute();
-
-const filter = ref('');
 const record = computed(() => { return results.value.find(result => result.uniqueId.value === route.query.record) });
 
+const favourites = ref(JSON.parse(localStorage.favourites) || '[]')
 
-const filteredResults = computed(() => {
-    const favourites = JSON.parse(localStorage.favourites) || '[]'
-    return results.value.filter((result) => {
-        return favourites.includes(result.uniqueId.value)
-    });
+window.addEventListener('updatedFav', (event) => {
+    favourites.value = event.detail.newFavourites;
 });
 
+const filteredResults = computed(() => {
+    return results.value.filter((result) => {
+        return favourites.value.includes(result.uniqueId.value)
+    });
+});
 
 function updateDisplayedResults(data) {
     displayedResults.value = data
@@ -143,6 +153,31 @@ main {
 
 .footer {
     margin-top: auto;
+}
+
+.message {
+    padding-bottom: var(--navbar-height);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.message-title {
+    font-weight: 500;
+    font-size: 100px;
+}
+
+.message-subtitle {
+    font-weight: 500;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.message-description {
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .modal-transition-enter-active,

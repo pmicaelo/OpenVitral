@@ -6,6 +6,7 @@
         <div class="card-image">
             <img v-for="(img, index) in getImages(records)" :key="index" :src="img" @error="failedToLoadImage"
                 alt="Card Image" />
+            <div class="record-number-indicator">{{records.length}}</div>
         </div>
         <div class="card-text">
             <div class="title" :title="collection" v-if="collection">{{ collection }}</div>
@@ -66,6 +67,7 @@ function getImages(records) {
 .card .card-image {
     border-radius: 8px;
     overflow: clip;
+    position: relative;
     height: 100%;
     width: 100%;
     display: flex;
@@ -77,6 +79,26 @@ function getImages(records) {
     width: 33.3%;
     height: 100%;
     object-fit: cover;
+}
+
+.record-number-indicator {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+
+    border-radius: 50%;
+    text-decoration: none;
+
+    background-color: rgba(42, 42, 42, .8);
+
+    height: 35px;
+    width: 35px;
+
+    font-size: 13.5px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card .card-text {

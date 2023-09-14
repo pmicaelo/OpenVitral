@@ -49,11 +49,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1480-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Unknown"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "A standing, bearded shepherd, wearing a cloak and a hat, looks up in awe while praying. In front of him, two sheep are to be seen in the middle of the bush. A reused piece shows the arm of another praying shepherd."
             },
@@ -244,11 +244,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1530-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Estêvão Tomás"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Standing and kneeling in front of the Virgin Mary,the three biblical kings adore the Christ Child and make their offerings."
             },
@@ -456,11 +456,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1460-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Luís Alemão (?)"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "The bust of Christ with praying hands and traces of a garment is depicted. Water is poured onto Him from a jug, hold by a hand in the upper right corner. The Holy Ghost as dove descends from the upper left corner."
             },
@@ -651,11 +651,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1460-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Luís Alemão (?)"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "St. John the Baptist stands against a background made up of a deep blue sky and green countryside landscape, including schematic pine trees and smaller plants. The saint wears the current camel hair garment. This depiction is directly related to the one under the same title and the inventory number MB 496."
             },
@@ -846,11 +846,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1518-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Francisco Henriques"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Wearing the Resurrection mantle and holding the Resurrection banner, the risen Christ holds Adam by the wrist, who kneels next to Eve and other damned, over the broken doors of the Underworld, to the detriment of devils, that either agonize or fly away."
             },
@@ -1063,11 +1063,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1483-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Unknown"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "The Virgin Mary lies in her deathbed, looking up and with her hands in prayer. Her veiled and haloed head rests on two pillows and her arms and body are covered with a sheet and a green bedspread. The bed is depicted as being made of light coloured wood and the background as a deep blue fabric."
             },
@@ -1261,11 +1261,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1514-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Francisco Henriques (?)"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "An angel, his right knee on the floor, dressing like a valet (see the feathered hat laid on the ground), holds a banner with the Order of Christ's Cross against an ellaborately decorated background. The bottom left part of this decoration includes a piece of glass with the coat of arms of the Dominicans and the date 1514."
             },
@@ -1477,11 +1477,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1508-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Master João"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Christ raises the eucharistic cup with His left hand while pointing downwards with the right one. He wears a deep blue-violet mantle and is frontally depicted against a red background decorated with a yellow pattern made up of the Flagelation whips and pomegrenates."
             },
@@ -1675,11 +1675,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1508-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Master João"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "St. John the Evangelist is shown sitting, in a three-quarter views, his right hand laying on the table and holding apparently a piece of bread. In the background, also on thetable, a footed bowl is to be seen. Most of the background pieces, depicting architectural and decorative elements, must have belonged to the same panel but are no longer in their original position."
             },
@@ -1870,11 +1870,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1531-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Pero Picardo"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "The Virgin Mary sits on a Renaissance throne made of different stone varieties and holds the Christ Child on her lap. The throne is covered by a rich textile canopy bearing the inscription 'SALVE REGINA CELORVM OMNIUM'. Two flying angels crown Mary. Above them, hanging from the canopy, an urn bears the Latin monograms of Jesus and Mary."
             },
@@ -2079,11 +2079,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1518-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Francisco Henriques (?)"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "The Virgin Mary stands on a crescent and is surrounded by a rosary, holding the Christ Child in her left arm and a white rose in the right hand. The Christ Child Himself raises a rosary in his right hand. A fortress in the base stands for Mary's virtues."
             },
@@ -2285,11 +2285,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1514-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Francisco Henriques"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Three successive moments of the Passion of Jesus are depicted in each of the three lancets. From left to right: Jesus being nailed to the Cross; Jesus on the Cross; descent from the Cross. The conserved 16th century tracery panels bear the Arma Christi, heraldry of King Manuel I and of the Dominicans, as well as the date of 1514."
             },
@@ -2486,11 +2486,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1460-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Unknown"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "A prophet raises both hands and holds an open scroll in the left one."
             },
@@ -2683,11 +2683,11 @@
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "1518-12-31"
             },
-            "Dc:creator": {
+            "Creator": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "Francisco Henriques"
             },
-            "Dc:description": {
+            "Description": {
                 "type": "http://www.w3.org/2001/XMLSchema#string",
                 "value": "St. Anthony the Abbot is depicted in the foreground, wearing a mantle with an embroidered tau-shaped cross and surroudend by devils. A pig with a bell and an open book showing an excerpt of the Gloria Patri lie at the saint's feet. Above, in the background, a sactuary and the St. Anthony in a dominican habit, seized and dragged through the air by devils, are to be seen."
             },

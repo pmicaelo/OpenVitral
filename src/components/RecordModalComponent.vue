@@ -11,7 +11,7 @@
                     rel="noopener noreferrer">
                     <span class="material-symbols-rounded">search</span>
                 </a>
-                <div v-if="!fav" class="add-fav-button" title="Add record from favourites" @click="toggleFav"
+                <div v-if="!fav" class="add-fav-button" title="Add record to favourites" @click="toggleFav"
                     style="cursor: pointer">
                     <span class="material-symbols-rounded">star</span>
                 </div>
@@ -64,6 +64,11 @@ const toggleFav = () => {
         currentFavourites.push(record.uniqueId.value);
         localStorage.setItem('favourites', JSON.stringify(currentFavourites));
     }
+    window.dispatchEvent(new CustomEvent('updatedFav', {
+        detail: {
+            newFavourites: JSON.parse(localStorage.getItem('favourites'))
+        }
+    }));
     fav.value = !fav.value
 };
 
@@ -190,7 +195,7 @@ const goBack = () => {
         'GRAD' 0,
         'opsz' 48;
     font-size: 28px;
-    color: rgb(247, 247, 247);
+    color: rgb(243, 202, 17);
 }
 
 

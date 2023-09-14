@@ -8,6 +8,12 @@
                 <span class="material-icons">arrow_back</span>
             </router-link>
             <input class="search-input" v-model="filter" placeholder="Search" />
+            <select v-model="selectedFilter" class="filter-dropdown">
+                <option value="title">Title</option>
+                <option value="description">Description</option>
+                <option value="creator">Creator</option>
+            </select>
+            <p style="margin-left: auto; color: #adadad;">  {{filteredResults.length}} Records</p>
         </div>
         <div class="results-container">
             <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
@@ -39,90 +45,46 @@ import RecordCardComponent from '../components/RecordCardComponent.vue';
 import PaginationComponent from '../components/PaginationComponent.vue';
 import RecordModalComponent from '../components/RecordModalComponent.vue';
 
+const route = useRoute();
 
 const results = inject('records');
 const displayedResults = ref([]);
 
 
-const route = useRoute();
-
 const filter = ref('');
-const collection = route.params.collection;
-const record = computed(() => { return results.value.find(result => result.uniqueId.value === route.query.record) });
-//const path = '/collections/' + encodeURIComponent(collection) + '/';
+const selectedFilter = ref('title');
 
+const collection = route.params.collection;
+
+const collectionResults = results.value.filter((result) => {
+    if (result.Collection) {
+        return result.Collection.value === collection;
+    } return false
+});
+
+const record = computed(() => { return collectionResults.find(result => result.uniqueId.value === route.query.record) });
 
 const filteredResults = computed(() => {
     const filterText = filter.value.toLowerCase();
-    if (filterText == "") return results.value.filter((result) => {
-        if (result.Collection) {
-            return result.Collection.value.includes(collection);
-        } return false
-    });
-    return results.value.filter((result) => {
-        if (result.Title && result.Collection && result.Collection.value.includes(collection)) {
+    if (filterText === "") {
+        return collectionResults;
+    }
+    return collectionResults.filter((result) => {
+        if (selectedFilter.value === 'title' && result.Title) {
             return result.Title.value.toLowerCase().includes(filterText);
+        } else if (selectedFilter.value === 'description' && result.Description) {
+            return result.Description.value.toLowerCase().includes(filterText);
+        } else if (selectedFilter.value == 'creator' && result.Creator) {
+            return result.Creator.value.toLowerCase().includes(filterText);
         }
         return false;
     });
 });
 
-
 function updateDisplayedResults(data) {
     displayedResults.value = data
 }
 
-/*async function queryEuropeanaEndpoint() {
-    try {
-        results.value = [];
-
-        const sparqlQuery = `
-        PREFIX dc: <http://purl.org/dc/elements/1.1/> 
-        PREFIX edm: <http://www.europeana.eu/schemas/edm/> 
-        PREFIX ore: <http://www.openarchives.org/ore/terms/> 
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-        PREFIX dcterms: <http://purl.org/dc/terms/> 
-        PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> 
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-        PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
-    
-        SELECT DISTINCT (SAMPLE(?item) AS ?item) (SAMPLE(?DataProvider) AS ?DataProvider) (SAMPLE(?Title) AS ?Title) (SAMPLE(?Description) AS ?Description) (SAMPLE(?Image) AS ?Image) (SAMPLE(?Date) AS ?Date) (SAMPLE(?Provider) AS ?Provider)
-        WHERE { 
-        ?item dc:subject ?subject . 
-        OPTIONAL { ?item dc:title ?Title . }
-        OPTIONAL { ?item dc:description ?Description . }
-        ?item ore:proxyIn ?Aggregation . 
-        ?Aggregation edm:aggregatedCHO ?ProvidedCHO . 
-        ?Aggregation edm:dataProvider ?DataProvider . 
-        OPTIONAL { ?item dc:date ?Date . } 
-        ?Aggregation edm:object ?Image .
-        OPTIONAL { ?Aggregation edm:provider ?Provider . } 
-        FILTER(?subject IN ("stained glass",
-            "Stained glass", "Glasmalerei", "Glassmaleri", "Витраж", "Вітраж", "Lasimaalaus",
-            "Vitral", "Стъклопис", "Vitražas", "Vitrāža", "Vitraj", "Vitrail", "Üvegfestés",
-            "Vitraž", "Vitráž (chrám)", "Gloine dhaite", "Vitrall", "Glasmålning",
-            "스테인드 글라스", "Vidreira gótica", "Υαλογραφία", "Vetrata", "花窗玻璃",
-            "Beirate", "زجاج معشق", "Gwydr lliw", "ステンドグラス", "Witraż", "Vitraliu",
-            "Gebrandschilderd glas"
-        )AND ?DataProvider = ("${collection}")) 
-        } 
-        GROUP BY ?item
-        LIMIT 10000
-        `;
-
-        const response = await axios.get('https://sparql.europeana.eu/', {
-            params: {
-                query: sparqlQuery,
-                format: 'json',
-            },
-        });
-
-        results.value = response.data.results.bindings;
-        results.value.s
-    } catch (error) {
-        console.error('Error querying Europeana SPARQL endpoint:', error);
-    }
-}*/
 </script>
   
 <style scoped>
@@ -170,16 +132,44 @@ main {
 .search-input {
     font-size: 14.5px;
     border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     padding-left: 15px;
     height: 35px;
     width: 350px;
     min-width: 80px;
     background-color: transparent;
     border: 1px solid #616161;
+    outline: none;
 }
 
 .search-input::placeholder {
     color: #adadad;
+}
+
+.filter-dropdown {
+    cursor: pointer;
+    color: #adadad;
+    width: 110px;
+    height: 35px;
+    font-size: 14px;
+    border: 1px solid #616161;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    background-color: transparent;
+    background-color: #1d1d1d;
+    outline: none;
+    padding: 8px;
+}
+
+.filter-dropdown option {
+    color: #adadad;
+    padding: 8px;
+    font-size: 14px;
+    background-color: #0f0f0f;
+    background-color: #1d1d1d;
 }
 
 .collection-title {
