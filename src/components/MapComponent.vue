@@ -86,7 +86,7 @@ onMounted(async () => {
   // Create and initialize the map
   map = L.map('map', {
     minZoom: 5
-  }).setView([47, 15], 5);
+  }).setView([47, 1], 5);
 
   // Add a tile layer to the map
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

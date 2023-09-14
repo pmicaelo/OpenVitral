@@ -13,7 +13,7 @@
                 <option value="description">Description</option>
                 <option value="creator">Creator</option>
             </select>
-            <p style="margin-left: auto; color: #adadad;">  {{filteredResults.length}} Records</p>
+            <p style="margin-left: auto; color: #adadad;font-weight:500;">  {{filteredResults.length}} Records</p>
         </div>
         <div class="results-container">
             <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{

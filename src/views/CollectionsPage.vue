@@ -7,7 +7,7 @@
 				<option value="record">Record</option>
 				<option value="creator">Creator</option>
 			</select>
-			<p style="margin-left: auto; color: #adadad;">  {{filteredResults.length}} Collections</p>
+			<p style="margin-left: auto; color: #adadad;font-weight:500;">  {{filteredResults.length}} Collections</p>
 		</div>
 		<div class="results-container">
 			<CollectionCardComponent v-for="group in filteredResults" :key="group.collection" :collection="group.collection"
