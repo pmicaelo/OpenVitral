@@ -14,6 +14,8 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import 'leaflet.markercluster';
+import 'leaflet-control-geocoder/dist/Control.Geocoder.css';
+import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
 
 /*import 'leaflet/dist/images/marker-icon.png'
 import 'leaflet/dist/images/marker-shadow.png'*/
@@ -101,30 +103,42 @@ onMounted(async () => {
     }
   }
   map.addLayer(markersLayer);
+
+  L.Control.geocoder({
+    defaultMarkGeocode: false
+  }).on('markgeocode', function (e) {
+    var latlng = e.geocode.center;
+    var bbox = e.geocode.bbox;
+    var poly = L.polygon([
+      bbox.getSouthEast(),
+      bbox.getNorthEast(),
+      bbox.getNorthWest(),
+      bbox.getSouthWest()
+    ])
+    map.setView(latlng, map.getBoundsZoom(poly.getBounds()));
+  }).addTo(map);
+
 })
 </script>
 
 
 <style >
+.leaflet-control-zoom.leaflet-bar.leaflet-control a:hover {
+  background-color: #3a3a3a;
+  border-bottom: 1px solid #858585;
+}
+
+.leaflet-control-zoom.leaflet-bar.leaflet-control a {
+  background-color: #181818;
+  border-bottom: 1px solid #858585;
+  color: rgb(247, 247, 247);
+}
 
 .leaflet-container a.leaflet-popup-close-button {
   border-radius: 50%;
   top: 2px;
   right: 2px;
   background: #1a1c1d;
-}
-
-.leaflet-control-zoom.leaflet-bar.leaflet-control a:hover {
-  background-color: #1a1c1d;
-  background-color: #3a3a3a;
-  border-bottom: 1px solid #858585;
-}
-
-.leaflet-control-zoom.leaflet-bar.leaflet-control a {
-  background-color: #1a1c1d;
-  background-color: #181818;
-  border-bottom: 1px solid #858585;
-  color: rgb(247, 247, 247);
 }
 
 .leaflet-popup-content-wrapper {
@@ -138,15 +152,39 @@ onMounted(async () => {
 }
 
 .leaflet-popup-tip {
-  background-color: #1a1c1d
+  background-color: #1a1c1d;
 }
 
+.leaflet-control-geocoder-alternatives li:hover {
+  background-color: #3a3a3a;
+}
+
+.leaflet-control-geocoder-alternatives li a {
+  color: #969696;
+}
+
+.leaflet-control-geocoder-alternatives li a .leaflet-control-geocoder-address-context {
+  color: #969696;
+}
+
+.leaflet-control-geocoder {
+  background-color: #181818;
+}
+
+.leaflet-control-geocoder-icon {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.2 13l3.4 6.6c.6 1.1 2.5-.4 2-1.2l-4-6.2z' fill='rgb(247, 247, 247)' stroke='rgb(247, 247, 247)'/%3E%3Ccircle cx='10.8' cy='8.9' r='3.9' fill='none' stroke='rgb(247, 247, 247)' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
+.leaflet-control-geocoder-form input::placeholder {
+  color: #adadad;
+}
 </style>
 
 <style scoped>
 #map {
   height: 100%;
-	width: 100%;
-	z-index: 0;
+  width: 100%;
+  z-index: 0;
 }
 </style>
