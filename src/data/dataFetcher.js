@@ -74,8 +74,18 @@ async function queryEuropeanaEndpoint() {
       LIMIT 10000
       `)
 
-    results.map((element, index) => {
+    /*results.map((element, index) => {
         element.uniqueId = { type: 'literal', value: `europeanarecord${index}` };
+        console.log(element.item.value)
+        return element;
+    });*/
+
+    results.map((element, index) => {
+        const segments = element.item.value.split("/");
+        const secondLastSegment = segments[segments.length - 2];
+        const lastSegment = segments[segments.length - 1];
+        const uniqueId = `europeana${secondLastSegment}${lastSegment}`;
+        element.uniqueId = { type: 'literal', value: uniqueId };
         return element;
     });
     return results;

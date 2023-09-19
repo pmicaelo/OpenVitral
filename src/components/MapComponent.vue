@@ -87,7 +87,8 @@ const handlePopupClick = (record) => {
 onMounted(async () => {
   // Create and initialize the map
   map = L.map('map', {
-    minZoom: 5
+    minZoom: 5,
+    zoomControl: false
   }).setView([47, 1], 5);
 
   // Add a tile layer to the map
@@ -95,17 +96,12 @@ onMounted(async () => {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  markersLayer = L.markerClusterGroup();
-
-  for (const result of results.value) {
-    if (result.Lat && result.Long) {
-      addRecordMarker(result);
-    }
-  }
-  map.addLayer(markersLayer);
+  L.control.zoom({
+    position: 'topright'
+  }).addTo(map);
 
   L.Control.geocoder({
-    defaultMarkGeocode: false
+    defaultMarkGeocode: false, position: 'topleft'
   }).on('markgeocode', function (e) {
     var latlng = e.geocode.center;
     var bbox = e.geocode.bbox;
@@ -118,6 +114,14 @@ onMounted(async () => {
     map.setView(latlng, map.getBoundsZoom(poly.getBounds()));
   }).addTo(map);
 
+  markersLayer = L.markerClusterGroup();
+
+  for (const result of results.value) {
+    if (result.Lat && result.Long) {
+      addRecordMarker(result);
+    }
+  }
+  map.addLayer(markersLayer);
 })
 </script>
 
@@ -169,6 +173,11 @@ onMounted(async () => {
 
 .leaflet-control-geocoder {
   background-color: #181818;
+}
+
+.leaflet-touch .leaflet-control-geocoder-icon {
+  width: 34px;
+  height: 34px;
 }
 
 .leaflet-control-geocoder-icon {

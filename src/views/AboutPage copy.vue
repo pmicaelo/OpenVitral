@@ -17,10 +17,11 @@
         <h1>Content</h1>
         <p>VitralWiki contains data regarding stained glass objects that is available on the Web in the form of Linked
           Open Data (LOD).</p>
-        <p>As of today, the data on this website is obtained via two different sources: </p>
+        <p>As of today, the data on this website is obtained via three different sources: </p>
         <p>• By using the data in VitralWiki's wiki page available at MediaWiki which contains the Portuguese Batalha's
           Monastery stained glass collection;</p>
         <p>• By querrying the Europeana's open access SPARQL Endpoint;</p>
+        <p>• By querrying the NFDI4Culture's open access SPARQL Endpoint.</p>
       </section>
       <section class="text-element">
         <h1>Collaborators</h1>
@@ -46,6 +47,9 @@
         <a class="link" href="https://sparql.europeana.eu/" target="_blank" rel="noopener noreferrer">
           <p>Europeana SPARQL Endpoint</p>
         </a>
+        <a class="link" href="https://nfdi4culture.de/sparql" target="_blank" rel="noopener noreferrer">
+          <p>NFDI4Culture SPARQL Endpoint</p>
+        </a>
       </section>
     </div>
   </main>
@@ -69,7 +73,7 @@ main {
   box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
   padding: 1rem;
   border-radius: 8px;
-  width: 600px;
+  width: 600px; 
   max-width: 100%;
   min-width: 200px;
   height: fit-content;

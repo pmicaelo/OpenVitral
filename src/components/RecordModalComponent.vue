@@ -52,7 +52,7 @@ function isVitralWiki() {
     return record.uniqueId.value.includes("vitralwiki");
 }
 
-const fav = ref(JSON.parse(localStorage.getItem('favourites')).includes(record.uniqueId.value))
+const fav = ref((JSON.parse(localStorage.getItem('favourites')) || []).includes(record.uniqueId.value))
 
 const toggleFav = () => {
     const currentFavourites = JSON.parse(localStorage.getItem('favourites')) || [];

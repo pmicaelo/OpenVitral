@@ -26,8 +26,8 @@ nav {
 
   /*need for sticky position*/
   z-index: 1;
-  max-width: 100vw;
-  width: 100vw;
+  max-width: 100%;
+  width: 100%;
   position: relative;
   height: var(--navbar-height);
 

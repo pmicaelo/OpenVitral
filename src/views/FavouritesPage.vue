@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div style="display: flex; flex-direction: column; flex: 1 1 0;" v-if="favourites.length > 0">
+        <div v-if="favourites.length > 0" style="display: flex; flex-direction: column; flex: 1 1 0;">
             <div class="results-container">
                 <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
                     name: 'favourites',
@@ -46,7 +46,7 @@ const displayedResults = ref([]);
 
 const record = computed(() => { return results.value.find(result => result.uniqueId.value === route.query.record) });
 
-const favourites = ref(JSON.parse(localStorage.favourites) || '[]')
+const favourites = ref(JSON.parse(localStorage.getItem('favourites')) || [])
 
 window.addEventListener('updatedFav', (event) => {
     favourites.value = event.detail.newFavourites;
