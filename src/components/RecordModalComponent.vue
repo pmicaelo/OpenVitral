@@ -49,7 +49,7 @@ const failedToLoadImage = (event) => {
 }
 
 function isVitralWiki() {
-    return record.uniqueId.value.includes("vitralwiki");
+    return record.uniqueId.value.startsWith("vitralwiki");
 }
 
 const fav = ref((JSON.parse(localStorage.getItem('favourites')) || []).includes(record.uniqueId.value))

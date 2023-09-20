@@ -88,10 +88,8 @@ main {
 }
 
 .card-link {
-  /*text-decoration: none;
-  max-width: 310px;
-  width: 100%;
-  height: 100%;*/
+  /*  max-width: 200px;
+  width: 100%;*/
 
   width: fit-content;
   text-decoration: none;

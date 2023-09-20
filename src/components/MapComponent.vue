@@ -101,7 +101,7 @@ onMounted(async () => {
   }).addTo(map);
 
   L.Control.geocoder({
-    defaultMarkGeocode: false, position: 'topleft'
+    defaultMarkGeocode: false, position: 'topleft', placeholder: "Search location"
   }).on('markgeocode', function (e) {
     var latlng = e.geocode.center;
     var bbox = e.geocode.bbox;

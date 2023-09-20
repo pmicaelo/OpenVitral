@@ -32,7 +32,7 @@
 </template>
   
 <script setup>
-import { ref, computed, inject, watch } from 'vue';
+import { ref, computed, inject } from 'vue';
 import { useRoute } from 'vue-router';
 
 import RecordCardComponent from '../components/RecordCardComponent.vue';
