@@ -1,5 +1,5 @@
 <template>
-	<main>
+	<main class="main">
 		<div class="page-header">
 			<input class="search-input" v-model="filter" placeholder="Search" />
 			<select class="filter-dropdown" v-model="selectedFilter">

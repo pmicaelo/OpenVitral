@@ -1,5 +1,5 @@
 <template>
-  <main>
+	<main class="main">
     <div class="text">
       <section class="text-element">
         <h1>Project & Goals</h1>
@@ -52,7 +52,7 @@
 </template>
 
 <style scoped>
-main {
+.main {
   padding: 32px;
 }
 

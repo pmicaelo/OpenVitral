@@ -1,5 +1,5 @@
 <template>
-	<main>
+	<main class="main">
 		<MapComponent />
 		<Transition name="backdrop-transition">
 			<div class="modal-backdrop" v-if="record"> </div>
@@ -28,7 +28,7 @@ const record = computed(() => { return results.value.find(result => result.uniqu
 
 <style scoped>
 
-main {
+.main {
 	padding: 0rem;
 	z-index: unset;
 }

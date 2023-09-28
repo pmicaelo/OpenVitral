@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="main">
         <div v-if="favourites.length > 0" style="display: flex; flex-direction: column; flex: 1 1 0;">
             <div class="results-container">
                 <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
@@ -65,7 +65,7 @@ function updateDisplayedResults(data) {
 </script>
   
 <style scoped>
-main {
+.main {
     z-index: unset;
 }
 

@@ -1,5 +1,4 @@
 <template>
-    <!--<Teleport to="#popupp" v-if="record">-->
     <div class="modal" @click="goBack">
         <div class="modal-content" @click.stop>
             <div class="close-button" title="Close" @click="goBack" style="cursor: pointer">
@@ -28,7 +27,6 @@
             <ModalTextGenericComponent :record="record" v-else />
         </div>
     </div>
-    <!--</Teleport>-->
 </template>
   
 <script setup>

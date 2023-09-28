@@ -33,7 +33,7 @@ onMounted(async () => {
 
 </script>
 
-<style >
+<style>
 :root {
   --primary: #f88c27;
   --grey: #64748b;

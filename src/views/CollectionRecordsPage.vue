@@ -1,5 +1,5 @@
 <template>
-    <main>
+	<main class="main">
         <h1 class="collection-title">{{ collection }}</h1>
         <div class="page-header">
             <router-link class="back-button" :to="{
@@ -88,7 +88,7 @@ function updateDisplayedResults(data) {
 </script>
   
 <style scoped>
-main {
+.main {
     z-index: unset;
 }
 

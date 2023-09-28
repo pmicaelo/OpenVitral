@@ -1,5 +1,5 @@
 <template>
-  <main>
+	<main class="main">
     <div class="error">
       <h1 class="error-title">404</h1>
       <h1 class="error-subtitle">Page Not Found :[</h1>
@@ -11,7 +11,7 @@
 </template>
 
 <style scoped>
-main {
+.main {
   padding: 0 0;
   justify-content: center;
 }

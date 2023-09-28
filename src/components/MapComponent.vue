@@ -126,7 +126,7 @@ onMounted(async () => {
 </script>
 
 
-<style >
+<style>
 .leaflet-control-zoom.leaflet-bar.leaflet-control a:hover {
   background-color: #3a3a3a;
   border-bottom: 1px solid #858585;
