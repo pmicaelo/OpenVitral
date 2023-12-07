@@ -1,13 +1,13 @@
 <template>
 	<main class="main">
     <div class="page-header">
-      <input class="search-input" v-model="filter" placeholder="Search" />
-      <select class="filter-dropdown" v-model="selectedFilter">
+      <input class="search-input" name="search-input" v-model="filter" placeholder="Search" />
+      <select class="filter-dropdown" name="filter-dropdown" v-model="selectedFilter">
         <option value="title">Title</option>
         <option value="description">Description</option>
         <option value="creator">Creator</option>
       </select>
-      <p style="margin-left: auto; color: #adadad; font-weight:500; white-space: nowrap;"> {{ filteredResults.length }}
+      <p style="margin-left: auto; font-size: 15px;	color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;"> {{ filteredResults.length }}
         Records</p>
     </div>
     <div class="results-container">
@@ -88,10 +88,10 @@ function updateDisplayedResults(data) {
 }
 
 .card-link {
-  /*  max-width: 200px;
-  width: 100%;*/
+  max-width: 200px;
+  width: 100%;
 
-  width: fit-content;
+  /*width: fit-content;*/
   text-decoration: none;
 }
 
@@ -106,7 +106,7 @@ function updateDisplayedResults(data) {
 
   justify-items: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   gap: 16px;
 }
 
@@ -129,6 +129,8 @@ function updateDisplayedResults(data) {
   background-color: #1a1c1d;
   background-color: transparent;
   border: 1px solid #616161;
+  border: 1px solid #424242;
+
   outline: none;
 }
 
@@ -139,10 +141,13 @@ function updateDisplayedResults(data) {
 .filter-dropdown {
   cursor: pointer;
   color: #adadad;
+  color: rgb(247, 247, 247);
   height: 35px;
   width: 110px;
   font-size: 14px;
   border: 1px solid #616161;
+    border: 1px solid #424242;
+
   border-radius: 20px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -156,6 +161,7 @@ function updateDisplayedResults(data) {
 
 .filter-dropdown option {
   color: #adadad;
+  color: rgb(247, 247, 247);
   padding: 8px;
   font-size: 14px;
   background-color: #0f0f0f;

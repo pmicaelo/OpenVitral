@@ -11,7 +11,7 @@ import logoURL from '../assets/logoV.png'
     
 <style scoped>
 .logo {
-    width: 136px;
+    width: 125px;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -27,7 +27,7 @@ import logoURL from '../assets/logoV.png'
     white-space: nowrap;
     font-family: "Russo One", sans-serif;
     margin-left: 4px;
-    font-size: 18.4px;
+    font-size: 17px;
     color: var(--logo-font);
 }
 
@@ -38,7 +38,7 @@ import logoURL from '../assets/logoV.png'
 
 .logo:hover .text {
     transition: 0.2s ease-in-out;
-    font-size: 19.4px;
+    font-size: 18px;
     /*font-weight: bold;*/
 }
 </style>

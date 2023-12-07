@@ -42,7 +42,7 @@ onMounted(async () => {
   --light: #fafafa;
   --logo-font: #f2f7fc;
   --bg: #303135;
-  --navbar-height: 55px;
+  --navbar-height: 50px;
 }
 
 * {
@@ -69,7 +69,8 @@ button {
 .app {
   display: flex;
   flex-direction: column;
-  overflow: clip;
+  overflow: hidden;
+  /*overflow: clip;*/
   height: 100vh;
   width: 100vw;
 }
@@ -81,9 +82,10 @@ button {
   width: 100%;*/
   display: flex;
   flex-direction: column;
-  overflow: clip auto;
+  /*overflow: clip auto;*/
+  overflow: hidden auto;
   flex: 1 1 0;
-  padding: 2rem 2rem;
+  padding: 2rem 1rem;
   padding-bottom: 1rem;
 
   /*position: relative;

@@ -1,13 +1,13 @@
 <template>
 	<main class="main">
 		<div class="page-header">
-			<input class="search-input" v-model="filter" placeholder="Search" />
-			<select class="filter-dropdown" v-model="selectedFilter">
+			<input class="search-input" name="search-input" v-model="filter" placeholder="Search" />
+			<select class="filter-dropdown" name="filter-dropdown" v-model="selectedFilter">
 				<option value="collection">Collection</option>
 				<option value="record">Record</option>
 				<option value="creator">Creator</option>
 			</select>
-			<p style="margin-left: auto; color: #adadad; font-weight:500; white-space: nowrap;">  {{filteredResults.length}} Collections</p>
+			<p style="margin-left: auto; font-size: 15px; color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;">  {{filteredResults.length}} Collections</p>
 		</div>
 		<div class="results-container">
 			<CollectionCardComponent v-for="group in filteredResults" :key="group.collection" :collection="group.collection"
@@ -82,6 +82,7 @@ const filteredResults = computed(() => {
 	min-width: 80px;
 	background-color: transparent;
 	border: 1px solid #616161;
+	border: 1px solid #424242;
 	outline: none;
 }
 
@@ -92,10 +93,12 @@ const filteredResults = computed(() => {
 .filter-dropdown {
 	cursor: pointer;
 	color: #adadad;
+	color: rgb(247, 247, 247);
 	height: 35px;
 	width: 110px;
 	font-size: 14px;
 	border: 1px solid #616161;
+	border: 1px solid #424242;
 	border-radius: 20px;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
@@ -109,6 +112,7 @@ const filteredResults = computed(() => {
 
 .filter-dropdown option {
 	color: #adadad;
+	color: rgb(247, 247, 247);
 	padding: 8px;
 	font-size: 14px;
 	background-color: #0f0f0f;

@@ -52,9 +52,6 @@
 </template>
 
 <style scoped>
-.main {
-  padding: 32px;
-}
 
 .text {
   margin: auto;

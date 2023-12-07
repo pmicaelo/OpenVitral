@@ -82,7 +82,8 @@ const goBack = () => {
   
 <style scoped>
 .modal {
-    overflow: clip;
+    overflow: hidden;
+    /*overflow: clip;*/
     position: absolute;
     top: 0;
     left: 0;

@@ -34,16 +34,17 @@ const failedToLoadImage = (event) => {
 <style scoped>
 .card {
     text-decoration: none;
-    overflow: clip;
+    overflow: hidden;
+    /*overflow: clip;*/
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-radius: 8px;
     
     display: flex;
     flex-direction: column;
-    width: 200px;
-    height: 350px;
-    /*aspect-ratio: 4/7;*/
+    /*width: 200px;
+    height: 350px;*/
+    aspect-ratio: 4/7;
     background-color: #181818;
     background-color: #1a1c1d;
     
@@ -57,13 +58,15 @@ const failedToLoadImage = (event) => {
 }
 
 .card .card-image {
-    overflow: clip;
+    overflow: hidden;
+    /*overflow: clip;*/
     height: 100%;
     width: 100%;
 }
 
 .card-image img {
-    overflow: clip;
+    overflow: hidden;
+    /*overflow: clip;*/
     border-radius: 15px;
     width: 100%;
     height: 100%;
@@ -82,7 +85,7 @@ const failedToLoadImage = (event) => {
 
     font-family: "Overpass", sans-serif;
     font-weight: 500;
-    font-size: 15.5px;
+    font-size: 15px;
 
     padding: 10px;
     word-wrap: break-word;

@@ -7,13 +7,13 @@
             }">
                 <span class="material-icons">arrow_back</span>
             </router-link>
-            <input class="search-input" v-model="filter" placeholder="Search" />
-            <select v-model="selectedFilter" class="filter-dropdown">
+            <input class="search-input" name="search-input" v-model="filter" placeholder="Search" />
+            <select v-model="selectedFilter" class="filter-dropdown" name="filter-dropdown">
                 <option value="title">Title</option>
                 <option value="description">Description</option>
                 <option value="creator">Creator</option>
             </select>
-            <p style="margin-left: auto; color: #adadad; font-weight:500; white-space: nowrap;">  {{filteredResults.length}} Records</p>
+            <p style="margin-left: auto; font-size: 15px; color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;">  {{filteredResults.length}} Records</p>
         </div>
         <div class="results-container">
             <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
@@ -140,6 +140,7 @@ function updateDisplayedResults(data) {
     min-width: 80px;
     background-color: transparent;
     border: 1px solid #616161;
+    border: 1px solid #424242;
     outline: none;
 }
 
@@ -150,10 +151,12 @@ function updateDisplayedResults(data) {
 .filter-dropdown {
     cursor: pointer;
     color: #adadad;
+    color: rgb(247, 247, 247);
     width: 110px;
     height: 35px;
     font-size: 14px;
     border: 1px solid #616161;
+    border: 1px solid #424242;
     border-radius: 20px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -167,6 +170,7 @@ function updateDisplayedResults(data) {
 
 .filter-dropdown option {
     color: #adadad;
+    color: rgb(247, 247, 247);
     padding: 8px;
     font-size: 14px;
     background-color: #0f0f0f;
@@ -187,19 +191,17 @@ function updateDisplayedResults(data) {
 }
 
 .card-link {
-    /*text-decoration: none;
-    max-width: 310px;
+    max-width: 200px;
     width: 100%;
-    height: 100%;*/
 
-    width: fit-content;
+  /*width: fit-content;*/
     text-decoration: none;
 }
 
 .results-container {
     justify-items: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 16px;
 }
 

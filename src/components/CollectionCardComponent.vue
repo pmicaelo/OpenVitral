@@ -39,7 +39,8 @@ function getImages(records) {
 <style scoped>
 .card {
     text-decoration: none;
-    overflow: clip;
+    overflow: hidden;
+    /*overflow: clip;*/
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -66,7 +67,9 @@ function getImages(records) {
 
 .card .card-image {
     border-radius: 8px;
-    overflow: clip;
+    overflow: hidden;
+
+    /*overflow: clip;*/
     position: relative;
     height: 100%;
     width: 100%;
@@ -75,7 +78,9 @@ function getImages(records) {
 }
 
 .card-image img {
-    overflow: clip;
+    overflow: hidden;
+
+    /*overflow: clip;*/
     width: 33.3%;
     height: 100%;
     object-fit: cover;
@@ -107,7 +112,7 @@ function getImages(records) {
     color: rgb(247, 247, 247);
     font-weight: 500;
     font-family: "Overpass", sans-serif;
-    font-size: 15.5px;
+    font-size: 15px;
 
     word-wrap: break-word;
 

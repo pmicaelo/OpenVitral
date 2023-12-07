@@ -70,13 +70,13 @@ const addRecordMarker = (record) => {
 
 function customPopup(record) {
   return `
-    <div class="custom-leaflet-popup" style="cursor: pointer; box-shadow: 0 3px 14px rgba(0,0,0,0.4); overflow: clip; display: flex;
+    <div class="custom-leaflet-popup" style="cursor: pointer; box-shadow: 0 3px 14px rgba(0,0,0,0.4);   overflow: hidden;  display: flex;
     flex-direction: column; border-radius: 8px; padding: 8px; width: 150px;
     height: 250px; background-color: #1a1c1d;">
-      <div style="overflow:clip; height:100%; 
+      <div style="overflow:hidden; height:100%; 
       background-color: #1a1c1d;">
         <img src="${record.Image.value}" alt="" 
-        style="width: 100%; height: 100%; overflow: clip;
+        style="width: 100%; height: 100%;   overflow: hidden;
         object-fit: cover;border-radius: 8px;">
       </div>
       <div style="word-wrap:break-word; padding-top:8px;  overflow: hidden;

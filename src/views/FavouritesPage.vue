@@ -135,19 +135,17 @@ function updateDisplayedResults(data) {
 }
 
 .card-link {
-    /*text-decoration: none;
-    max-width: 310px;
+    max-width: 200px;
     width: 100%;
-    height: 100%;*/
 
-    width: fit-content;
+    /*width: fit-content;*/
     text-decoration: none;
 }
 
 .results-container {
     justify-items: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 16px;
 }
 
@@ -156,7 +154,7 @@ function updateDisplayedResults(data) {
 }
 
 .message {
-    padding-bottom: var(--navbar-height);
+    padding-bottom: calc(1rem + var(--navbar-height));
     display: flex;
     flex-direction: column;
     flex: 1 1 0;

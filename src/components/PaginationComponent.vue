@@ -4,8 +4,8 @@
       Previous
     </button>
 
-    <input class="page-input" v-model="inputPage" :placeholder="currentPage" type="number" min="1" :max="totalPages"
-      @keyup.enter="goToPage(parseInt(inputPage))" />
+    <input class="page-input" name="page-input" v-model="inputPage" :placeholder="currentPage" type="number" min="1"
+      :max="totalPages" @keyup.enter="goToPage(parseInt(inputPage))" />
 
     <span class="page-indicator">&nbsp; of &nbsp;{{ totalPages }}</span>
 
@@ -33,7 +33,7 @@ const emitPagination = defineEmits(['updatePage']);
 
 const inputPage = ref('');
 const currentPage = ref(1);
-const itemsPerPage = 24;
+const itemsPerPage = 30;
 const totalPages = computed(() => {
   if (props.items.length == 0) return 1;
   else return Math.ceil(props.items.length / itemsPerPage)
@@ -109,6 +109,7 @@ function goToPage(pageNumber) {
   height: 30px;
   text-align: center;
   background-color: transparent;
+  border: 1px solid #424242;
   border: 1px solid #1d1d1d;
   outline: none;
 }

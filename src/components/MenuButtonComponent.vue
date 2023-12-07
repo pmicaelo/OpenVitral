@@ -25,7 +25,7 @@ const { path, icon, text } = defineProps(['path', 'icon', 'text']);
 .menu-button .material-symbols-rounded,
 .menu-button .material-icons-outlined,
 .menu-button .material-icons {
-    font-size: 1.7rem;
+    font-size: 22px;
     color: #888888;color:#bebebe ;
     
 }
@@ -37,7 +37,7 @@ const { path, icon, text } = defineProps(['path', 'icon', 'text']);
     font-family: "Overpass", sans-serif;
 
     margin-left: 3px;
-    font-size: 16px;
+    font-size: 15px;
     color: var(--light); 
     color:#bebebe ;
     
