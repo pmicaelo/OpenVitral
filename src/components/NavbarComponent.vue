@@ -20,7 +20,7 @@ import LogoComponent from './LogoComponent.vue'
 nav {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   top: 0;
   left: 0;
 
@@ -33,11 +33,12 @@ nav {
 
   background-color: #1a1c1d;
 
-  padding: 1rem 1rem;
+  padding: 0rem 1rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .9), 0 0px 2px rgba(0, 0, 0, .9);
 }
 
 .logo{
+  height: var(--navbar-height);
   margin-right: 2rem;
 }
 
@@ -45,7 +46,6 @@ nav {
   /*overflow-y: hidden;*/
   overflow: auto;
   display: flex;
-  align-items: center;
   margin-left: auto;
   gap: 8px;
 }

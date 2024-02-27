@@ -27,7 +27,6 @@ const { path, icon, text } = defineProps(['path', 'icon', 'text']);
 .menu-button .material-icons {
     font-size: 22px;
     color: #888888;color:#bebebe ;
-    
 }
 
 .menu-button .text {
@@ -35,8 +34,8 @@ const { path, icon, text } = defineProps(['path', 'icon', 'text']);
 
     font-weight: 600;
     font-family: "Overpass", sans-serif;
-
     margin-left: 3px;
+    margin-top: 3px;
     font-size: 15px;
     color: var(--light); 
     color:#bebebe ;

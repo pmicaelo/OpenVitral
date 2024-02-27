@@ -96,10 +96,12 @@ onMounted(async () => {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
+  // Add a zoom to the map
   L.control.zoom({
     position: 'topright'
   }).addTo(map);
 
+  // Add a geocoder to the map
   L.Control.geocoder({
     defaultMarkGeocode: false, position: 'topleft', placeholder: "Search location"
   }).on('markgeocode', function (e) {
@@ -114,8 +116,8 @@ onMounted(async () => {
     map.setView(latlng, map.getBoundsZoom(poly.getBounds()));
   }).addTo(map);
 
+  // Add markers in a cluster to the map
   markersLayer = L.markerClusterGroup();
-
   for (const result of results.value) {
     if (result.Lat && result.Long) {
       addRecordMarker(result);
