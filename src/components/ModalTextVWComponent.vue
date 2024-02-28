@@ -1,31 +1,30 @@
 <template>
     <div class="modal-text">
-        <div class="param" v-if="record['Description']">
+        <div class="param" v-if="record.Description">
             <span class="param-name">Description</span>
-            <span class="param-value">{{ record['Description'].value }}</span>
+            <span class="param-value">{{ record.Description.value }}</span>
         </div>
-        <div class="param" v-if="record['Dcterms:extent']">
+        <div class="param" v-if="record.Extent">
             <span class="param-name">Dimensions</span>
-            <span class="param-value">{{ record['Dcterms:extent'].value }}</span>
+            <span class="param-value">{{ record.Extent.value }}</span>
         </div>
-        <div class="param" v-if="record['Date of origin']">
+        <div class="param" v-if="record.Date_of_origin">
             <span class="param-name">Date</span>
-            <span class="param-value">{{ record['Date of origin'].value }}</span>
+            <span class="param-value">{{ record.Date_of_origin.value }}</span>
         </div>
-        <div class="param" v-if="record['Creator']">
+        <div class="param" v-if="record.Creator">
             <span class="param-name">Creator</span>
-            <span class="param-value">{{ record['Creator'].value }}</span>
+            <span class="param-value">{{ record.Creator.value }}</span>
         </div>
         <ExpandableParameterComponent :paramEntries="locationEntries" paramName="Location" />
-        <ExpandableParameterComponent :paramEntries="productionEntries"
-            paramName="Production/Conservation" />
+        <ExpandableParameterComponent :paramEntries="productionEntries" paramName="Production/Conservation" />
         <ExpandableParameterComponent :paramEntries="imageEntries" paramName="Image" />
         <ExpandableParameterComponent :paramEntries="registryEntries" paramName="Registry" />
         <ExpandableParameterComponent :paramEntries="licenseEntries" paramName="License" />
-        <div class="param" v-if="record['History related image']">
+        <div class="param" v-if="record.History_related_image">
             <span class="param-name">Related Images</span>
-            <a class="param-image" :href="record['History related image'].value" target="_blank" rel="noopener noreferrer">
-                <img :src="record['History related image'].value" alt="History related image">
+            <a class="param-image" :href="record.History_related_image.value" target="_blank" rel="noopener noreferrer">
+                <img :src="record.History_related_image.value" alt="History_related_image">
             </a>
         </div>
     </div>
@@ -37,40 +36,45 @@ import ExpandableParameterComponent from './ExpandableParameterComponent.vue'
 
 const { record } = defineProps(['record']);
 
-const locationProps = ["Building", "Direction", "City", "Edm:country", "Edm:currentLocation",
-    "Former/Original Locations",
-    "State/Region", "Row", "Window number"];
+const locationProps = ["Building", "Direction", "City", "Country", "Current_location",
+    "Former_or_original_locations",
+    "State_or_region", "Row", "Window_number"];
 
-const licenseProps = ["License type",
-    "License description"];
+const licenseProps = ["License_type",
+    "License_description"];
 
-const registryProps = ["Registry Author",
-    "Registry Date"];
+const registryProps = ["Registry_author",
+    "Registry_date"];
 
-const productionProps = ["Production technique and style",
-    "Restoration and conservation history", "Current state of conservation"];
+const productionProps = ["Production_technique_and_style",
+    "Restoration_and_conservation_history"];
 
-const imageProps = ["Image author", "Photo creation date",
-    "Photographic context", "Photographic process", "Images filenames"];
+const imageProps = ["Image_author", "Photo_creation_date",
+    "Photographic_context", "Photographic_process"];
 
 const locationEntries = {}, licenseEntries = {}, productionEntries = {}, registryEntries = {}, imageEntries = {}
 
 
 for (const [key, value] of Object.entries(record)) {
     if (locationProps.includes(key)) {
-        locationEntries[key] = value;
+        const displayKey = key.replace(/_/g, " ");
+        locationEntries[displayKey] = value.value;
     }
     if (licenseProps.includes(key)) {
-        licenseEntries[key] = value;
+        const displayKey = key.replace(/_/g, " ");
+        licenseEntries[displayKey] = value.value;
     }
     if (imageProps.includes(key)) {
-        imageEntries[key] = value;
+        const displayKey = key.replace(/_/g, " ");
+        imageEntries[displayKey] = value.value;
     }
     if (registryProps.includes(key)) {
-        registryEntries[key] = value;
+        const displayKey = key.replace(/_/g, " ");
+        registryEntries[displayKey] = value.value;
     }
     if (productionProps.includes(key)) {
-        productionEntries[key] = value;
+        const displayKey = key.replace(/_/g, " ");
+        productionEntries[displayKey] = value.value;
     }
 }
 

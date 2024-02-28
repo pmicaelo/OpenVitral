@@ -7,11 +7,11 @@
             </span>
         </div>
         <div class="expandable-section" v-if="expanded">
-            <div class="param" v-for="(value, key) in paramEntries" :key="key">
+            <div class="param" v-for="(value, key) in getSortedEntries()" :key="key">
                 <span class="param-name">{{ key }}</span>
-                <span v-if="value.value" class="param-value">{{ value.value }}</span>
-                <a :href="value.resource" target="_blank" rel="noopener noreferrer" v-else-if="value.resource"
-                    class="param-value">{{ value.resource }}</a>
+                <span v-if="!value.trim().startsWith('http')" class="param-value">{{ value }}</span>
+                <a :href="value" target="_blank" rel="noopener noreferrer" v-else
+                    class="param-value">{{ value }}</a>
             </div>
         </div>
     </div>
@@ -21,6 +21,7 @@
 
 const { paramEntries, paramName } = defineProps(['paramEntries', 'paramName']);
 
+ 
 import { ref } from 'vue'
 
 const expanded = ref(false);
@@ -29,6 +30,12 @@ const toggleExpanded = () => {
     expanded.value = !expanded.value;
 };
 
+const getSortedEntries= () => {
+      // Sort by entry key alphabetically
+      return Object.fromEntries(
+        Object.entries(paramEntries).sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
+      );
+}
 </script>
   
 <style scoped>

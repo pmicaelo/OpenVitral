@@ -47,7 +47,7 @@ const failedToLoadImage = (event) => {
 }
 
 function isVitralWiki() {
-    return record.uniqueId.value.startsWith("vitralwiki");
+    return record.uniqueId.value.startsWith("http://cvportugal.fct.unl.pt");
 }
 
 const fav = ref((JSON.parse(localStorage.getItem('favourites')) || []).includes(record.uniqueId.value))
