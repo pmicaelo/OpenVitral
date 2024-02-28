@@ -2221,7 +2221,7 @@
             },
             "Current_location": {
                 "type": "literal",
-                "value": "39.65921, -8.82583"
+                "value": "kjk38bhbhb77"
             },
             "Collection": {
                 "type": "literal",
@@ -2230,14 +2230,6 @@
             "uniqueId": {
                 "type": "uri",
                 "value": "http://cvportugal.fct.unl.pt/mediawiki-1.37.1/index.php/Special:URIResolver/St._Antony_the_Abbot"
-            },
-            "Lat": {
-                "type": "literal",
-                "value": "39.65921"
-            },
-            "Long": {
-                "type": "literal",
-                "value": "-8.82583"
             }
         }
     ]

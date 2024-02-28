@@ -1,5 +1,5 @@
 <template>
-    <div class="expandable-param" v-if="Object.entries(paramEntries).length > 0">
+    <div class="expandable-param" v-if="paramEntries.length > 0">
         <div class="expandable-param-title" @click="toggleExpanded" style="cursor:pointer">
             <span class="text"> {{ paramName }} </span>
             <span class="material-symbols-rounded">
@@ -7,7 +7,7 @@
             </span>
         </div>
         <div class="expandable-section" v-if="expanded">
-            <div class="param" v-for="(value, key) in getSortedEntries()" :key="key">
+            <div class="param" v-for="([key, value], index) in getSortedEntries()" :key="index">
                 <span class="param-name">{{ key }}</span>
                 <span v-if="!value.trim().startsWith('http')" class="param-value">{{ value }}</span>
                 <a :href="value" target="_blank" rel="noopener noreferrer" v-else
@@ -31,10 +31,7 @@ const toggleExpanded = () => {
 };
 
 const getSortedEntries= () => {
-      // Sort by entry key alphabetically
-      return Object.fromEntries(
-        Object.entries(paramEntries).sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
-      );
+      return paramEntries.sort((a, b) => a[0].localeCompare(b[0]));
 }
 </script>
   

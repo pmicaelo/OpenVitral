@@ -52,29 +52,33 @@ const productionProps = ["Production_technique_and_style",
 const imageProps = ["Image_author", "Photo_creation_date",
     "Photographic_context", "Photographic_process"];
 
-const locationEntries = {}, licenseEntries = {}, productionEntries = {}, registryEntries = {}, imageEntries = {}
-
+const locationEntries = [], licenseEntries = [], productionEntries = [], registryEntries = [], imageEntries = []
 
 for (const [key, value] of Object.entries(record)) {
     if (locationProps.includes(key)) {
         const displayKey = key.replace(/_/g, " ");
-        locationEntries[displayKey] = value.value;
+        locationEntries.push([displayKey,value.value]);
+        //locationEntries[displayKey] = value.value;
     }
     if (licenseProps.includes(key)) {
         const displayKey = key.replace(/_/g, " ");
-        licenseEntries[displayKey] = value.value;
+        licenseEntries.push([displayKey,value.value]);
+        //licenseEntries[displayKey] = value.value;
     }
     if (imageProps.includes(key)) {
         const displayKey = key.replace(/_/g, " ");
-        imageEntries[displayKey] = value.value;
+        imageEntries.push([displayKey,value.value]);
+        //imageEntries[displayKey] = value.value;
     }
     if (registryProps.includes(key)) {
         const displayKey = key.replace(/_/g, " ");
-        registryEntries[displayKey] = value.value;
+        registryEntries.push([displayKey,value.value]);
+        //registryEntries[displayKey] = value.value;
     }
     if (productionProps.includes(key)) {
         const displayKey = key.replace(/_/g, " ");
-        productionEntries[displayKey] = value.value;
+        productionEntries.push([displayKey,value.value]);
+        //productionEntries[displayKey] = value.value;
     }
 }
 

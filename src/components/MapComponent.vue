@@ -44,16 +44,21 @@ let markersLayer = null;
 
 
 const addRecordMarker = (record) => {
-  const marker = L.marker([parseFloat(record.Lat.value), parseFloat(record.Long.value)], { icon: markerIcon });
-  const popupContent = customPopup(record);
-  marker.addTo(markersLayer).bindPopup(popupContent).on("popupopen", () => {
-    setTimeout(() => {
-      const customLeafletPopup = document.querySelector(".custom-leaflet-popup");
-      if (customLeafletPopup) {
-        customLeafletPopup.addEventListener("click", () => handlePopupClick(record));
-      }
-    }, 200); // Delay needed to avoid adding while prev popup still there
-  });
+  try {
+    const marker = L.marker([parseFloat(record.Lat.value), parseFloat(record.Long.value)], { icon: markerIcon });
+    const popupContent = customPopup(record);
+    marker.addTo(markersLayer).bindPopup(popupContent).on("popupopen", () => {
+      setTimeout(() => {
+        const customLeafletPopup = document.querySelector(".custom-leaflet-popup");
+        if (customLeafletPopup) {
+          customLeafletPopup.addEventListener("click", () => handlePopupClick(record));
+        }
+      }, 200); // Delay needed to avoid adding while prev popup still there
+    });
+  } catch (error) {
+        console.error('Error adding the marker:', error);
+        return;
+    }
 }
 
 function customPopup(record) {

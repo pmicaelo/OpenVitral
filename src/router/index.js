@@ -15,13 +15,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/map', // Redirect from root path to /map
+      redirect: '/collections', // Redirect from root path to /map
     },
     {
       path: '/map',
       name: 'map',
       component: MapPage,
-      meta: { position: 1 },
+      meta: { position: 4 },
     },
     {
       path: '/allrecords',
@@ -42,19 +42,19 @@ const router = createRouter({
       path: '/collections',
       name: 'collections',
       component: CollectionsPage,
-      meta: { position: 3 },
+      meta: { position: 1 },
     },
     {
       path: '/collections/:collection',
       name: 'collectionrecords',
       component: CollectionRecordsPage,
-      meta: { position: 3 },
+      meta: { position: 1 },
     },
     {
       path: '/favourites',
       name: 'favourites',
       component: FavouritesPage,
-      meta: { position: 4 },
+      meta: { position: 3 },
     },
     {
       path: '/about',
