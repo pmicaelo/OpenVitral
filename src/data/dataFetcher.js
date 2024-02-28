@@ -179,8 +179,6 @@ function fetchLocal() {
 }
 
 export async function fetchAll() {
-    //records.value = [];
-    //queryVitralWikiEndpoint();
     const all = [];
     all.push(...fetchLocal());
     //all.push(...await queryVitralWikiEndpoint())

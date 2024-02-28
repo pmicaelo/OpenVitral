@@ -1,7 +1,7 @@
 <template>
 	<main class="main">
 		<MapComponent />
-		<div class="info"> 
+		<div class="info">
 			<button @click="showMessage()">?</button>
 		</div>
 		<Transition name="backdrop-transition">
@@ -16,7 +16,7 @@
 <script setup>
 
 
-import { computed, inject } from 'vue';
+import { computed, inject, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 
 import MapComponent from '../components/MapComponent.vue'
@@ -27,26 +27,35 @@ const route = useRoute();
 const record = computed(() => { return results.value.find(result => result.uniqueId.value === route.query.record) });
 
 function showMessage() {
-	alert('The map page only contains records that explicitly have their geo-location properties expressed (latitude and longitude). As such, the records displayed on the map are only a fraction of those present on the website.');
+	alert('The map page only contains stained glass pieces that explicitly have their geo-location properties expressed (latitude and longitude). As such, the records displayed on the map are only a fraction of those present on the website.');
 }
+
+onMounted(() => {
+	if (!localStorage.getItem('mapMessage')) {
+		showMessage();
+		localStorage.setItem('mapMessage', 'true');
+	}
+});
+
 </script>
 
 <style scoped>
-
 .main {
 	padding: 0rem;
 	z-index: unset;
 }
+
 .info {
 	background-color: #181818;
 	position: fixed;
 	bottom: 10px;
 	left: 10px;
 	border-radius: 2px;
-	border: 2px solid rgba(0,0,0,0.2);
+	border: 2px solid rgba(0, 0, 0, 0.2);
 	background-clip: padding-box;
 }
-.info button{
+
+.info button {
 	width: 34px;
 	height: 34px;
 	font-size: 22px;
@@ -54,8 +63,9 @@ function showMessage() {
 }
 
 .info:hover {
-  background-color: #3a3a3a;
+	background-color: #3a3a3a;
 }
+
 .modal-backdrop {
 	position: absolute;
 	top: 0;
