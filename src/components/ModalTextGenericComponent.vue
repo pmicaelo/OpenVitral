@@ -21,6 +21,11 @@
             <span class="param-name">Creator</span>
             <span class="param-value">{{ record.Creator.value }}</span>
         </div>
+        <div class="param" v-if="record.item">
+            <span class="param-name">Source</span>
+            <a class="param-value" :href="record.item.value" target="_blank"
+                    rel="noopener noreferrer" >{{ record.item.value }}</a>
+        </div>
     </div>
 </template>
   

@@ -3,11 +3,14 @@
 		<div class="page-header">
 			<input class="search-input" name="search-input" v-model="filter" placeholder="Search" />
 			<select class="filter-dropdown" name="filter-dropdown" v-model="selectedFilter">
-				<option value="collection">Collection</option>
-				<option value="record">Record</option>
 				<option value="creator">Creator</option>
+				<option value="collection">Collection</option>
+				<option value="date">Date</option>
+				<option value="location">Location</option>
+				<option value="record">Record</option>
 			</select>
-			<p style="margin-left: auto; font-size: 15px; color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;">  {{filteredResults.length}} Collections</p>
+			<p style="margin-left: auto; font-size: 15px; color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;">
+				{{ filteredResults.length }} Collections</p>
 		</div>
 		<div class="results-container">
 			<CollectionCardComponent v-for="group in filteredResults" :key="group.collection" :collection="group.collection"
@@ -23,6 +26,12 @@ import CollectionCardComponent from '../components/CollectionCardComponent.vue';
 const results = inject('records');
 const filter = ref('');
 const selectedFilter = ref('collection');
+
+const dateProps = ["Date", "Date_of_origin"];
+
+const locationProps = ["Country", "Building", "SpatialLabel", "City",
+	"Former_or_original_locations",
+	"State_or_region"];
 
 const groupedResults = computed(() => {
 	const groups = {};
@@ -58,6 +67,27 @@ const filteredResults = computed(() => {
 				return record.Creator && record.Creator.value.toLowerCase().includes(filterText);
 			});
 		}
+		if (selectedFilter.value === 'date') {
+			return group.records.some(record => {
+				for (const prop of dateProps) {
+					if (record[prop] && record[prop].value.toLowerCase().includes(filterText)) {
+						return true;
+					}
+				}
+				return false;
+			});
+		}
+		if (selectedFilter.value === 'location') {
+			return group.records.some(record => {
+				for (const prop of locationProps) {
+					if (record[prop] && record[prop].value.toLowerCase().includes(filterText)) {
+						return true;
+					}
+				}
+				return false;
+			});
+		}
+		return false;
 	});
 });
 

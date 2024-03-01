@@ -27,23 +27,21 @@ async function queryEuropeanaEndpoint() {
         PREFIX wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> 
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
         PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
-    
-        SELECT DISTINCT (SAMPLE(?item) AS ?item) (SAMPLE(?DataProvider) AS ?DataProvider) (SAMPLE(?Collection) AS ?Collection) (SAMPLE(?Title) AS ?Title) (SAMPLE(?Description) AS ?Description) (SAMPLE(?Image) AS ?Image) (SAMPLE(?Date) AS ?Date) (SAMPLE(?Provider) AS ?Provider) (SAMPLE(?Creator) AS ?Creator) (SAMPLE(?Spatial) AS ?Spatial) (SAMPLE(?Lat) AS ?Lat) (SAMPLE(?Long) AS ?Long) (SAMPLE(?SpatialLabel) AS ?SpatialLabel)
+
+        SELECT DISTINCT (SAMPLE(?item) AS ?item) (SAMPLE(?proxy) AS ?proxy) (SAMPLE(?DataProvider) AS ?DataProvider) (SAMPLE(?Collection) AS ?Collection) (SAMPLE(?Title) AS ?Title) (SAMPLE(?Description) AS ?Description) (SAMPLE(?Image) AS ?Image) (SAMPLE(?Date) AS ?Date) (SAMPLE(?Provider) AS ?Provider) (SAMPLE(?Creator) AS ?Creator) (SAMPLE(?Spatial) AS ?Spatial) (SAMPLE(?Lat) AS ?Lat) (SAMPLE(?Long) AS ?Long) (SAMPLE(?SpatialLabel) AS ?SpatialLabel)
         WHERE { 
-            ?item ?prop ?subject . 
-    
-            OPTIONAL { ?item dc:title ?Title . }
-            OPTIONAL { ?item dc:description ?Description . }
-            OPTIONAL { ?item dc:date ?Date . } 
-            OPTIONAL { ?item dc:creator ?Creator. } 
-            OPTIONAL { ?item dcterms:spatial ?Spatial. OPTIONAL {?Spatial wgs84_pos:lat ?Lat.
-            ?Spatial wgs84_pos:long ?Long. } OPTIONAL{?Spatial skos:prefLabel ?SpatialLabel}} 
-    
-            ?item ore:proxyIn ?Aggregation .
-    
-            ?Aggregation edm:dataProvider ?DataProvider . 
+            ?proxy ?prop ?subject . 
+            ?proxy ore:proxyFor ?item .
+            ?proxy ore:proxyIn ?Aggregation .
             ?Aggregation edm:object ?Image .
-            OPTIONAL { ?Aggregation edm:provider ?Provider . } 
+            ?Aggregation edm:dataProvider ?DataProvider .
+            ?Aggregation edm:provider ?Provider . 
+            OPTIONAL { ?proxy dc:title ?Title . }
+            OPTIONAL { ?proxy dc:description ?Description . }
+            OPTIONAL { ?proxy dc:date ?Date . } 
+            OPTIONAL { ?proxy dc:creator ?Creator. } 
+            OPTIONAL { ?proxy dcterms:spatial ?Spatial. OPTIONAL {?Spatial wgs84_pos:lat ?Lat.
+            ?Spatial wgs84_pos:long ?Long. } OPTIONAL{?Spatial skos:prefLabel ?SpatialLabel}} 
 
             BIND(?DataProvider AS ?Collection).
 
@@ -56,7 +54,7 @@ async function queryEuropeanaEndpoint() {
             "Gebrandschilderd glas"
             )) 
         } 
-        GROUP BY ?item
+        GROUP BY ?proxy
         LIMIT 10000
     `)
 
@@ -180,9 +178,9 @@ function fetchLocal() {
 
 export async function fetchAll() {
     const all = [];
-    all.push(...fetchLocal());
-    //all.push(...await queryVitralWikiEndpoint())
-    //all.push(...await queryEuropeanaEndpoint())
+    //all.push(...fetchLocal());
+    all.push(...await queryVitralWikiEndpoint())
+    all.push(...await queryEuropeanaEndpoint())
     //all.push(...await querynNFDI4CultureEndpoint())
     return all;
 }

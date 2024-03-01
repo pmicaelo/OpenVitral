@@ -1,13 +1,16 @@
 <template>
-	<main class="main">
+  <main class="main">
     <div class="page-header">
       <input class="search-input" name="search-input" v-model="filter" placeholder="Search" />
       <select class="filter-dropdown" name="filter-dropdown" v-model="selectedFilter">
-        <option value="title">Title</option>
-        <option value="description">Description</option>
         <option value="creator">Creator</option>
+        <option value="date">Date</option>
+        <option value="description">Description</option>
+        <option value="location">Location</option>
+        <option value="title">Title</option>
       </select>
-      <p style="margin-left: auto; font-size: 15px;	color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;"> {{ filteredResults.length }}
+      <p style="margin-left: auto; font-size: 15px;	color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;"> {{
+        filteredResults.length }}
         Records</p>
     </div>
     <div class="results-container">
@@ -47,6 +50,12 @@ const selectedFilter = ref('title');
 const route = useRoute();
 const record = computed(() => { return results.value.find(result => result.uniqueId.value === route.query.record) });
 
+const dateProps = ["Date", "Date_of_origin"];
+
+const locationProps = ["Country", "Building", "SpatialLabel", "City",
+  "Former_or_original_locations",
+  "State_or_region"];
+
 const filteredResults = computed(() => {
   const filterText = filter.value.toLowerCase();
   if (filterText === "") {
@@ -59,6 +68,20 @@ const filteredResults = computed(() => {
       return result.Description.value.toLowerCase().includes(filterText);
     } else if (selectedFilter.value === 'creator' && result.Creator) {
       return result.Creator.value.toLowerCase().includes(filterText);
+    } else if (selectedFilter.value === 'date') {
+      for (const prop of dateProps) {
+        if (result[prop] && result[prop].value.toLowerCase().includes(filterText)) {
+          return true;
+        }
+      }
+      return false;
+    } else if (selectedFilter.value === 'location') {
+      for (const prop of locationProps) {
+        if (result[prop] && result[prop].value.toLowerCase().includes(filterText)) {
+          return true;
+        }
+      }
+      return false;
     }
     return false;
   });
@@ -146,7 +169,7 @@ function updateDisplayedResults(data) {
   width: 110px;
   font-size: 14px;
   border: 1px solid #616161;
-    border: 1px solid #424242;
+  border: 1px solid #424242;
 
   border-radius: 20px;
   border-top-left-radius: 0;

@@ -1,5 +1,5 @@
 <template>
-	<main class="main">
+    <main class="main">
         <h1 class="collection-title">{{ collection }}</h1>
         <div class="page-header">
             <router-link class="back-button" :to="{
@@ -9,11 +9,14 @@
             </router-link>
             <input class="search-input" name="search-input" v-model="filter" placeholder="Search" />
             <select v-model="selectedFilter" class="filter-dropdown" name="filter-dropdown">
-                <option value="title">Title</option>
-                <option value="description">Description</option>
                 <option value="creator">Creator</option>
+                <option value="date">Date</option>
+                <option value="description">Description</option>
+                <option value="location">Location</option>
+                <option value="title">Title</option>
             </select>
-            <p style="margin-left: auto; font-size: 15px; color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;">  {{filteredResults.length}} Records</p>
+            <p style="margin-left: auto; font-size: 15px; color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;">
+                {{ filteredResults.length }} Records</p>
         </div>
         <div class="results-container">
             <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
@@ -56,6 +59,12 @@ const selectedFilter = ref('title');
 
 const collection = route.params.collection;
 
+const dateProps = ["Date", "Date_of_origin"];
+
+const locationProps = ["Country", "Building", "SpatialLabel", "City",
+    "Former_or_original_locations",
+    "State_or_region"];
+
 const collectionResults = results.value.filter((result) => {
     if (result.Collection) {
         return result.Collection.value === collection;
@@ -76,6 +85,20 @@ const filteredResults = computed(() => {
             return result.Description.value.toLowerCase().includes(filterText);
         } else if (selectedFilter.value == 'creator' && result.Creator) {
             return result.Creator.value.toLowerCase().includes(filterText);
+        } else if (selectedFilter.value === 'date') {
+            for (const prop of dateProps) {
+                if (result[prop] && result[prop].value.toLowerCase().includes(filterText)) {
+                    return true;
+                }
+            }
+            return false;
+        } else if (selectedFilter.value === 'location') {
+            for (const prop of locationProps) {
+                if (result[prop] && result[prop].value.toLowerCase().includes(filterText)) {
+                    return true;
+                }
+            }
+            return false;
         }
         return false;
     });
@@ -194,7 +217,7 @@ function updateDisplayedResults(data) {
     max-width: 200px;
     width: 100%;
 
-  /*width: fit-content;*/
+    /*width: fit-content;*/
     text-decoration: none;
 }
 
