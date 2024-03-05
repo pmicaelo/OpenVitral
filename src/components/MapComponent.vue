@@ -63,7 +63,7 @@ const addRecordMarker = (record) => {
 }
 
 function customPopup(record) {
-  const Title = ref ("untitled")
+  const Title = ref ("Untitled Record")
   const Image = ref(logoURL)
   if (record.Title){
     Title.value = record.Title.value
