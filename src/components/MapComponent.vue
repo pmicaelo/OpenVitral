@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import { onMounted, inject } from 'vue';
+import { onMounted, inject, ref } from 'vue';
 import L from 'leaflet';
 import { useRouter } from 'vue-router';
 
@@ -20,6 +20,7 @@ import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
 /*import 'leaflet/dist/images/marker-icon.png'
 import 'leaflet/dist/images/marker-shadow.png'*/
 
+import logoURL from '../assets/logoV.png'
 import markerUrl from '../assets/marker.png'
 import markerShadowUrl from '../assets/markerShadow.png'
 
@@ -62,13 +63,21 @@ const addRecordMarker = (record) => {
 }
 
 function customPopup(record) {
+  const Title = ref ("untitled")
+  const Image = ref(logoURL)
+  if (record.Title){
+    Title.value = record.Title.value
+  }
+  if (record.Image){
+    Image.value = record.Image.value
+  }
   return `
     <div class="custom-leaflet-popup" style="cursor: pointer; box-shadow: 0 3px 14px rgba(0,0,0,0.4);   overflow: hidden; display: flex;
     flex-direction: column; border-radius: 8px; padding: 8px; width: 150px;
     height: 250px; background-color: #1a1c1d;">
       <div style="overflow:hidden; height:100%; 
       background-color: #1a1c1d;">
-        <img src="${record.Image.value}" alt="" 
+        <img src="${Image.value}" alt="" 
         style="width: 100%; height: 100%;   overflow: hidden;
         object-fit: cover;border-radius: 8px;">
       </div>
@@ -77,7 +86,7 @@ function customPopup(record) {
         <div style="overflow: hidden; font-weight:500;
             -webkit-line-clamp: 2; display: -webkit-box;
             -webkit-box-orient: vertical; text-overflow: ellipsis;
-            white-space: normal;">${record.Title.value}</div>
+            white-space: normal;">${Title.value}</div>
       </div>
     </div>
     `

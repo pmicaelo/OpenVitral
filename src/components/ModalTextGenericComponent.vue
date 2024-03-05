@@ -5,7 +5,7 @@
             <span class="param-value">{{ record.Description.value }}</span>
         </div>
         <div class="param" v-if="record.DataProvider">
-            <span class="param-name">DataProvider</span>
+            <span class="param-name">Data Provider</span>
             <span class="param-value">{{ record.DataProvider.value }}</span>
         </div>
         <div class="param" v-if="record.Date">

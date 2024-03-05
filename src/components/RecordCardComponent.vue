@@ -2,6 +2,7 @@
     <div class="card" style="cursor: pointer">
         <div class="card-image">
             <img v-if="record.Image" :src="record.Image.value" loading="lazy" @error="failedToLoadImage" alt="Card Image">
+            <img v-else :src="logoURL" alt="Card Image">
         </div>
         <div class="card-text">
             <div v-if="record.Title" class="title" :title="record.Title.value">{{ record.Title.value }} </div>

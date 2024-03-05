@@ -28,7 +28,8 @@ function getImages(records) {
     const images = []
     while (images.length < 3) {
         for (let i = 0; i < 3 && records[i] && images.length < 3; i++) {
-            images.push(records[i].Image.value);
+            if(records[i].Image){ images.push(records[i].Image.value);}
+            else {images.push(logoURL)}
         }
     }
     return images;

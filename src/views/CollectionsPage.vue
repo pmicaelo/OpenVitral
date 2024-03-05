@@ -3,8 +3,8 @@
 		<div class="page-header">
 			<input class="search-input" name="search-input" v-model="filter" placeholder="Search" />
 			<select class="filter-dropdown" name="filter-dropdown" v-model="selectedFilter">
-				<option value="creator">Creator</option>
 				<option value="collection">Collection</option>
+				<option value="creator">Creator</option>
 				<option value="date">Date</option>
 				<option value="location">Location</option>
 				<option value="record">Record</option>
