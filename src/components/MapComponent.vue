@@ -20,7 +20,7 @@ import 'leaflet-control-geocoder/dist/Control.Geocoder.js';
 /*import 'leaflet/dist/images/marker-icon.png'
 import 'leaflet/dist/images/marker-shadow.png'*/
 
-import logoURL from '../assets/logoV.png'
+import logoURL from '../assets/iconV.png'
 import markerUrl from '../assets/marker.png'
 import markerShadowUrl from '../assets/markerShadow.png'
 
