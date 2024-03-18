@@ -73,7 +73,7 @@ button {
 }
 
 .app main {
-  z-index: 0;
+  /*z-index: 0;
   /*behind navbar (index 1)*/
   /*height: 100%;
   width: 100%;*/

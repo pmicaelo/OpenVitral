@@ -22,7 +22,7 @@
             <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
                 name: 'collectionrecords',
                 params: { collection: collection },
-                query: { record: result.uniqueId.value },
+                query: { ...$route.query, record: result.uniqueId.value },
             }">
                 <RecordCardComponent :record="result" />
             </router-link>
@@ -30,12 +30,11 @@
         <div class="footer">
             <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
         </div>
-
         <transition name="backdrop-transition">
-            <div class="modal-backdrop" v-if="record"> </div>
+            <div class="modal-backdrop" v-if="query_record"> </div>
         </transition>
         <transition name="modal-transition">
-            <RecordModalComponent :record="record" v-if="record" />
+            <RecordModalComponent :record="query_record" v-if="query_record" />
         </transition>
     </main>
 </template>
@@ -59,6 +58,10 @@ const selectedFilter = ref('title');
 
 const collection = route.params.collection;
 
+const query_record = computed(() => { 
+  return findRecord(route.query.record) 
+});
+
 const dateProps = ["Date", "Date_of_origin"];
 
 const locationProps = ["Country", "Building", "SpatialLabel", "City",
@@ -70,8 +73,6 @@ const collectionResults = results.value.filter((result) => {
         return result.Collection.value === collection;
     } return false
 });
-
-const record = computed(() => { return collectionResults.find(result => result.uniqueId.value === route.query.record) });
 
 const filteredResults = computed(() => {
     const filterText = filter.value.toLowerCase();
@@ -104,6 +105,10 @@ const filteredResults = computed(() => {
     });
 });
 
+function findRecord(record_id){
+  return collectionResults.find(result => result.uniqueId.value === record_id) 
+}
+
 function updateDisplayedResults(data) {
     displayedResults.value = data
 }
@@ -111,9 +116,9 @@ function updateDisplayedResults(data) {
 </script>
   
 <style scoped>
-.main {
+/*.main {
     z-index: unset;
-}
+}*/
 
 .modal-backdrop {
     position: absolute;

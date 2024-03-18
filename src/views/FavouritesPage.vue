@@ -4,13 +4,13 @@
             <div class="results-container">
                 <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
                     name: 'favourites',
-                    query: { record: result.uniqueId.value },
+                    query: {...$route.query, record: result.uniqueId.value },
                 }">
                     <RecordCardComponent :record="result" />
                 </router-link>
             </div>
             <div class="footer">
-                <PaginationComponent :items="filteredResults" @updatePage="updateDisplayedResults" />
+                <PaginationComponent :items="favouriteResults" @updatePage="updateDisplayedResults" />
             </div>
         </div>
         <div v-else class="message">
@@ -23,10 +23,10 @@
             </p>
         </div>
         <transition name="backdrop-transition">
-            <div class="modal-backdrop" v-if="record"> </div>
+            <div class="modal-backdrop" v-if="query_record"> </div>
         </transition>
         <transition name="modal-transition">
-            <RecordModalComponent :record="record" v-if="record" />
+            <RecordModalComponent :record="query_record" v-if="query_record" />
         </transition>
     </main>
 </template>
@@ -44,7 +44,9 @@ const route = useRoute();
 const results = inject('records');
 const displayedResults = ref([]);
 
-const record = computed(() => { return results.value.find(result => result.uniqueId.value === route.query.record) });
+const query_record = computed(() => { 
+  return findRecord(route.query.record) 
+});
 
 const favourites = ref(JSON.parse(localStorage.getItem('favourites')) || [])
 
@@ -52,11 +54,15 @@ window.addEventListener('updatedFav', (event) => {
     favourites.value = event.detail.newFavourites;
 });
 
-const filteredResults = computed(() => {
+const favouriteResults = computed(() => {
     return results.value.filter((result) => {
         return favourites.value.includes(result.uniqueId.value)
     });
 });
+
+function findRecord(record_id){
+  return results.value.find(result => result.uniqueId.value === record_id) 
+}
 
 function updateDisplayedResults(data) {
     displayedResults.value = data
@@ -65,9 +71,9 @@ function updateDisplayedResults(data) {
 </script>
   
 <style scoped>
-.main {
+/*.main {
     z-index: unset;
-}
+}*/
 
 .modal-backdrop {
     position: absolute;

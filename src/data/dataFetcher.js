@@ -28,24 +28,24 @@ async function queryEuropeanaEndpoint() {
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
         PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
 
-        SELECT DISTINCT (SAMPLE(?item) AS ?item) (SAMPLE(?proxy) AS ?proxy) (SAMPLE(?DataProvider) AS ?DataProvider) (SAMPLE(?Collection) AS ?Collection) (SAMPLE(?Title) AS ?Title) (SAMPLE(?Description) AS ?Description) (SAMPLE(?Image) AS ?Image) (SAMPLE(?Date) AS ?Date) (SAMPLE(?Provider) AS ?Provider) (SAMPLE(?Creator) AS ?Creator) (SAMPLE(?Spatial) AS ?Spatial) (SAMPLE(?Lat) AS ?Lat) (SAMPLE(?Long) AS ?Long) (SAMPLE(?SpatialLabel) AS ?SpatialLabel)
+        SELECT DISTINCT (SAMPLE(?Item) AS ?Item) (SAMPLE(?Proxy) AS ?Proxy) (SAMPLE(?DataProvider) AS ?DataProvider) (SAMPLE(?Collection) AS ?Collection) (SAMPLE(?Title) AS ?Title) (SAMPLE(?Description) AS ?Description) (SAMPLE(?Image) AS ?Image) (SAMPLE(?Date) AS ?Date) (SAMPLE(?Provider) AS ?Provider) (SAMPLE(?Creator) AS ?Creator) (SAMPLE(?Spatial) AS ?Spatial) (SAMPLE(?Lat) AS ?Lat) (SAMPLE(?Long) AS ?Long) (SAMPLE(?SpatialLabel) AS ?SpatialLabel)
         WHERE { 
-            ?proxy ?prop ?subject . 
-            ?proxy ore:proxyFor ?item .
-            ?proxy ore:proxyIn ?Aggregation .
+            ?Proxy ?Prop ?Subject . 
+            ?Proxy ore:proxyFor ?Item .
+            ?Proxy ore:proxyIn ?Aggregation .
             ?Aggregation edm:object ?Image .
             ?Aggregation edm:dataProvider ?DataProvider .
             ?Aggregation edm:provider ?Provider . 
-            OPTIONAL { ?proxy dc:title ?Title . }
-            OPTIONAL { ?proxy dc:description ?Description . }
-            OPTIONAL { ?proxy dc:date ?Date . } 
-            OPTIONAL { ?proxy dc:creator ?Creator. } 
-            OPTIONAL { ?proxy dcterms:spatial ?Spatial. OPTIONAL {?Spatial wgs84_pos:lat ?Lat.
+            OPTIONAL { ?Proxy dc:title ?Title . }
+            OPTIONAL { ?Proxy dc:description ?Description . }
+            OPTIONAL { ?Proxy dc:date ?Date . } 
+            OPTIONAL { ?Proxy dc:creator ?Creator. } 
+            OPTIONAL { ?Proxy dcterms:spatial ?Spatial. OPTIONAL {?Spatial wgs84_pos:lat ?Lat.
             ?Spatial wgs84_pos:long ?Long. } OPTIONAL{?Spatial skos:prefLabel ?SpatialLabel}} 
 
             BIND(?DataProvider AS ?Collection).
 
-            FILTER(?subject IN ("stained glass", "Stained Glass", "Stained glass windows in Sweden","stained glass window ", "stained_glass", "Glasschilderkunst", "Church windows in Sweden", "Vitrail de la famille Jailloux",
+            FILTER(?Subject IN ("stained glass", "Stained Glass", "Stained glass windows in Sweden","stained glass window ", "stained_glass", "Glasschilderkunst", "Church windows in Sweden", "Vitrail de la famille Jailloux",
             "Stained glass", "Glasmalerei", "Glassmaleri", "Витраж", "Вітраж", "Lasimaalaus",
             "Vitral", "Стъклопис", "Vitražas", "Vitrāža", "Vitraj", "Vitrail", "Üvegfestés",
             "Vitraž", "Vitráž (chrám)", "Gloine dhaite", "Vitrall", "Glasmålning",
@@ -54,12 +54,12 @@ async function queryEuropeanaEndpoint() {
             "Gebrandschilderd glas"
             )) 
         } 
-        GROUP BY ?proxy
+        GROUP BY ?Proxy
         LIMIT 10000
     `)
 
     results.map((element, index) => {
-        element.uniqueId = element.item;
+        element.uniqueId = element.Item;
         return element;
     });
     //console.log(results)
@@ -74,44 +74,44 @@ async function queryVitralWikiEndpoint() {
         
         SELECT DISTINCT *
         WHERE { 
-            ?item smwprop:Dc-3Atype "Stained glass". 
-            OPTIONAL {?item smwprop:Dc-3Atitle ?Title.}
-            OPTIONAL {?item smwprop:Edm-3Aobject ?Image.}
-            OPTIONAL {?item smwprop:Dc-3Acreator ?Creator.}
-            OPTIONAL {?item smwprop:Dc-3Asource ?Source.}
-            OPTIONAL {?item smwprop:Place_of_manufacture ?Place_of_manufacture.}
-            OPTIONAL {?item smwprop:Edm-3Acountry ?Country.}
-            OPTIONAL {?item smwprop:Dc-3Adescription ?Description.}
-            OPTIONAL {?item smwprop:Edm-3AdatasetName ?Dataset_name.}
-            OPTIONAL {?item smwprop:Dcterms-3Aextent ?Extent.}
-            OPTIONAL {?item smwprop:Registry_Date ?Registry_date.}
-            OPTIONAL {?item smwprop:Digital_image_source ?Digital_image_source.}
-            OPTIONAL {?item smwprop:Photographic_context ?Photographic_context.}
-            OPTIONAL {?item smwprop:Photographic_process ?Photographic_process.}
-            OPTIONAL {?item smwprop:Photo_creation_date ?Photo_creation_date.}
-            OPTIONAL {?item smwprop:Image_author ?Image_author.}
-            OPTIONAL {?item smwprop:Registry_Author ?Registry_author.}
-            OPTIONAL {?item smwprop:Credits ?Credits.}
-            OPTIONAL {?item smwprop:License_type ?License_type.}
-            OPTIONAL {?item smwprop:License_description ?License_description.}
-            OPTIONAL {?item smwprop:City ?City.}
-            OPTIONAL {?item smwprop:State-2FRegion ?State_or_region.}
-            OPTIONAL {?item smwprop:Building ?Building.}
-            OPTIONAL {?item smwprop:Direction ?Direction.}
-            OPTIONAL {?item smwprop:Window_number ?Window_number.}
-            OPTIONAL {?item smwprop:Row ?Row.}
-            OPTIONAL {?item smwprop:Former-2FOriginal_Locations ?Former_or_original_locations.}
-            OPTIONAL {?item smwprop:Identifiers_of_original-2Fformer_locations ?Identifiers_of_former_or_original_locations.}
-            OPTIONAL {?item smwprop:Date_of_origin ?Date_of_origin.}
-            OPTIONAL {?item smwprop:Production_technique_and_style ?Production_technique_and_style.}
-            OPTIONAL {?item smwprop:Current_state_of_conservation ?Current_state_of_conservation.}
-            OPTIONAL {?item smwprop:Restoration_and_conservation_history ?Restoration_and_conservation_history.}
-            OPTIONAL {?item smwprop:History_related_image ?History_related_image.}
-            OPTIONAL {?item smwprop:Owner-27s_name ?Owner_name.}
-            OPTIONAL {?item smwprop:Owner-27s_identifier ?Owner_identifier.}
-            OPTIONAL {?item smwprop:Signature ?Signature.}
-            OPTIONAL {?item smwprop:Edm-3APlace ?Place.}
-            OPTIONAL {?item smwprop:Edm-3AcurrentLocation ?Current_location.}
+            ?Item smwprop:Dc-3Atype "Stained glass". 
+            OPTIONAL {?Item smwprop:Dc-3Atitle ?Title.}
+            OPTIONAL {?Item smwprop:Edm-3Aobject ?Image.}
+            OPTIONAL {?Item smwprop:Dc-3Acreator ?Creator.}
+            OPTIONAL {?Item smwprop:Dc-3Asource ?Source.}
+            OPTIONAL {?Item smwprop:Place_of_manufacture ?Place_of_manufacture.}
+            OPTIONAL {?Item smwprop:Edm-3Acountry ?Country.}
+            OPTIONAL {?Item smwprop:Dc-3Adescription ?Description.}
+            OPTIONAL {?Item smwprop:Edm-3AdatasetName ?Dataset_name.}
+            OPTIONAL {?Item smwprop:Dcterms-3Aextent ?Extent.}
+            OPTIONAL {?Item smwprop:Registry_Date ?Registry_date.}
+            OPTIONAL {?Item smwprop:Digital_image_source ?Digital_image_source.}
+            OPTIONAL {?Item smwprop:Photographic_context ?Photographic_context.}
+            OPTIONAL {?Item smwprop:Photographic_process ?Photographic_process.}
+            OPTIONAL {?Item smwprop:Photo_creation_date ?Photo_creation_date.}
+            OPTIONAL {?Item smwprop:Image_author ?Image_author.}
+            OPTIONAL {?Item smwprop:Registry_Author ?Registry_author.}
+            OPTIONAL {?Item smwprop:Credits ?Credits.}
+            OPTIONAL {?Item smwprop:License_type ?License_type.}
+            OPTIONAL {?Item smwprop:License_description ?License_description.}
+            OPTIONAL {?Item smwprop:City ?City.}
+            OPTIONAL {?Item smwprop:State-2FRegion ?State_or_region.}
+            OPTIONAL {?Item smwprop:Building ?Building.}
+            OPTIONAL {?Item smwprop:Direction ?Direction.}
+            OPTIONAL {?Item smwprop:Window_number ?Window_number.}
+            OPTIONAL {?Item smwprop:Row ?Row.}
+            OPTIONAL {?Item smwprop:Former-2FOriginal_Locations ?Former_or_original_locations.}
+            OPTIONAL {?Item smwprop:Identifiers_of_original-2Fformer_locations ?Identifiers_of_former_or_original_locations.}
+            OPTIONAL {?Item smwprop:Date_of_origin ?Date_of_origin.}
+            OPTIONAL {?Item smwprop:Production_technique_and_style ?Production_technique_and_style.}
+            OPTIONAL {?Item smwprop:Current_state_of_conservation ?Current_state_of_conservation.}
+            OPTIONAL {?Item smwprop:Restoration_and_conservation_history ?Restoration_and_conservation_history.}
+            OPTIONAL {?Item smwprop:History_related_image ?History_related_image.}
+            OPTIONAL {?Item smwprop:Owner-27s_name ?Owner_name.}
+            OPTIONAL {?Item smwprop:Owner-27s_identifier ?Owner_identifier.}
+            OPTIONAL {?Item smwprop:Signature ?Signature.}
+            OPTIONAL {?Item smwprop:Edm-3APlace ?Place.}
+            OPTIONAL {?Item smwprop:Edm-3AcurrentLocation ?Current_location.}
             BIND(?Building AS ?Collection).
         } 
         ORDER BY ASC(?Title)
@@ -119,7 +119,7 @@ async function queryVitralWikiEndpoint() {
     `)
 
     results.map((element, index) => {
-        element.uniqueId = element.item;
+        element.uniqueId = element.Item;
         if (element.Current_location) {
             const [latitude, longitude] = element.Current_location.value.split(',');
             if (parseFloat(latitude) && parseFloat(longitude)) {
@@ -138,19 +138,17 @@ async function querynNFDI4CultureEndpoint() {
       PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
-      SELECT distinct ?item ?Collection ?Title ?Image ?Date ?Spatial ?Height ?Width
+      SELECT DISTINCT ?Item ?Collection ?Title ?Image ?Date ?Spatial ?Height ?Width
       WHERE {
-        ?item schema:isPartOf <https://corpusvitrearum.de/bildarchiv.html> .
-      
-        OPTIONAL {?item schema:name ?Title.}
-        OPTIONAL {?item schema:temporalCoverage ?Date}
-        OPTIONAL {?item schema:contentLocation ?Spatial.}   
-        OPTIONAL {?item schema:contentUrl ?Image.}
-
-        OPTIONAL {?item schema:height ?Height.}
-        OPTIONAL {?item schema:width ?Width.}   
-
+        ?Item schema:contentUrl ?Image .
+        OPTIONAL {?Item schema:name ?Title}
+        OPTIONAL {?Item schema:temporalCoverage ?Date}
+        OPTIONAL {?Item schema:contentLocation ?Spatial}
+        OPTIONAL {?Item schema:height ?Height}
+        OPTIONAL {?Item schema:width ?Width}
         BIND("Corpus Vitrearum Medii Aevi Deutschland" AS ?Collection).
+        
+        FILTER(STRSTARTS(str(?Item), "https://corpusvitrearum.de")).
     }
     `)
     results.map((element, index) => {

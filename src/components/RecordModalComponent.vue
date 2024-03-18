@@ -52,7 +52,7 @@ function isVitralWiki() {
 
 const fav = ref((JSON.parse(localStorage.getItem('favourites')) || []).includes(record.uniqueId.value))
 
-const toggleFav = () => {
+function toggleFav() {
     const currentFavourites = JSON.parse(localStorage.getItem('favourites')) || [];
     const isRecordFavourite = currentFavourites.includes(record.uniqueId.value);
     if (isRecordFavourite) {
@@ -76,7 +76,10 @@ const goBack = () => {
     const newPathSegments = currentPathSegments.slice(0, -1);
     const newRoutePath = newPathSegments.join('/');
     router.push(newRoutePath);*/ //this is for using record as a param and not query
-    router.push(router.currentRoute.value.path);
+    const currentRoute = router.currentRoute.value;
+    const queryParams = { ...currentRoute.query };
+    delete queryParams.record;
+    router.push({ path: currentRoute.path, query: queryParams });
 };
 </script>
   

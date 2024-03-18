@@ -10,11 +10,11 @@
 				<option value="record">Record</option>
 			</select>
 			<p style="margin-left: auto; font-size: 15px; color: rgb(247, 247, 247); font-weight:500; white-space: nowrap;">
-				{{ filteredResults.length }} Collections</p>
+				{{ filteredCollections.length }} Collections</p>
 		</div>
 		<div class="results-container">
-			<CollectionCardComponent v-for="group in filteredResults" :key="group.collection" :collection="group.collection"
-				:records="group.records" />
+			<CollectionCardComponent v-for="collection in filteredCollections" :key="collection.collectionName" :collection="collection.collectionName"
+				:records="collection.records" />
 		</div>
 	</main>
 </template>
@@ -33,42 +33,42 @@ const locationProps = ["Country", "Building", "SpatialLabel", "City",
 	"Former_or_original_locations",
 	"State_or_region"];
 
-const groupedResults = computed(() => {
-	const groups = {};
+const collections = computed(() => {
+	const allCollections = {};
 	results.value.forEach((result) => {
 		if (result.Collection) {
-			const collection = result.Collection.value;
-			if (!groups[collection]) {
-				groups[collection] = {
-					collection,
+			const collectionName = result.Collection.value;
+			if (!allCollections[collectionName]) {
+				allCollections[collectionName] = {
+					collectionName: collectionName,
 					records: []
 				};
 			}
-			groups[collection].records.push(result);
+			allCollections[collectionName].records.push(result);
 		}
 	});
-	return Object.values(groups);
+	return Object.values(allCollections);
 });
 
-const filteredResults = computed(() => {
+const filteredCollections = computed(() => {
 	const filterText = filter.value.toLowerCase();
-	if (filterText == "") return groupedResults.value;
-	return groupedResults.value.filter(group => {
+	if (filterText == "") return collections.value;
+	return collections.value.filter(collection => {
 		if (selectedFilter.value === 'collection') {
-			return group.collection.toLowerCase().includes(filterText);
+			return collection.collectionName.toLowerCase().includes(filterText);
 		}
 		if (selectedFilter.value === 'record') {
-			return group.records.some(record => {
+			return collection.records.some(record => {
 				return record.Title && record.Title.value.toLowerCase().includes(filterText);
 			});
 		}
 		if (selectedFilter.value === 'creator') {
-			return group.records.some(record => {
+			return collection.records.some(record => {
 				return record.Creator && record.Creator.value.toLowerCase().includes(filterText);
 			});
 		}
 		if (selectedFilter.value === 'date') {
-			return group.records.some(record => {
+			return collection.records.some(record => {
 				for (const prop of dateProps) {
 					if (record[prop] && record[prop].value.toLowerCase().includes(filterText)) {
 						return true;
@@ -78,7 +78,7 @@ const filteredResults = computed(() => {
 			});
 		}
 		if (selectedFilter.value === 'location') {
-			return group.records.some(record => {
+			return collection.records.some(record => {
 				for (const prop of locationProps) {
 					if (record[prop] && record[prop].value.toLowerCase().includes(filterText)) {
 						return true;

@@ -1,14 +1,14 @@
 <template>
 	<main class="main">
-		<MapComponent />
+		<MapComponent :records="results"/>
 		<div class="info">
 			<button @click="showMessage()">?</button>
 		</div>
 		<Transition name="backdrop-transition">
-			<div class="modal-backdrop" v-if="record"> </div>
+			<div class="modal-backdrop" v-if="query_record"> </div>
 		</Transition>
 		<Transition name="modal-transition">
-			<RecordModalComponent :record="record" v-if="record" />
+			<RecordModalComponent :record="query_record" v-if="query_record" />
 		</Transition>
 	</main>
 </template>
@@ -24,11 +24,10 @@ import RecordModalComponent from '../components/RecordModalComponent.vue';
 
 const results = inject('records');
 const route = useRoute();
-const record = computed(() => { return results.value.find(result => result.uniqueId.value === route.query.record) });
 
-function showMessage() {
-	alert('The map page only contains stained glass pieces that explicitly have their geo-location properties expressed (latitude and longitude). As such, the records displayed on the map are only a fraction of those present on the website.');
-}
+const query_record = computed(() => { 
+  return findRecord(route.query.record) 
+});
 
 onMounted(() => {
 	if (!localStorage.getItem('mapMessage')) {
@@ -37,12 +36,19 @@ onMounted(() => {
 	}
 });
 
+function findRecord(record_id){
+  return results.value.find(result => result.uniqueId.value === record_id) 
+}
+
+function showMessage() {
+	alert('The map page only contains stained glass pieces that explicitly have their geo-location properties expressed (latitude and longitude). As such, the records displayed on the map are only a fraction of those present on the website.');
+}
 </script>
 
 <style scoped>
 .main {
 	padding: 0rem;
-	z-index: unset;
+	/*z-index: unset;*/
 }
 
 .info {

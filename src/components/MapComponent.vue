@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import { onMounted, inject, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import L from 'leaflet';
 import { useRouter } from 'vue-router';
 
@@ -24,7 +24,8 @@ import logoURL from '../assets/iconV.png'
 import markerUrl from '../assets/marker.png'
 import markerShadowUrl from '../assets/markerShadow.png'
 
-const results = inject('records');
+//const results = inject('records');
+const { records } = defineProps(['records']);
 const router = useRouter();
 
 
@@ -72,7 +73,8 @@ function customPopup(record) {
     Image.value = record.Image.value
   }
   return `
-    <div class="custom-leaflet-popup" style="cursor: pointer; box-shadow: 0 3px 14px rgba(0,0,0,0.4);   overflow: hidden; display: flex;
+    <div class="custom-leaflet-popup" style="cursor: pointer; box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    overflow: hidden; display: flex;
     flex-direction: column; border-radius: 8px; padding: 8px; width: 150px;
     height: 250px; background-color: #1a1c1d;">
       <div style="overflow:hidden; height:100%; 
@@ -132,7 +134,7 @@ onMounted(async () => {
 
   // Add markers in a cluster to the map
   markersLayer = L.markerClusterGroup();
-  for (const result of results.value) {
+  for (const result of records) {
     if (result.Lat && result.Long) {
       addRecordMarker(result);
     }
