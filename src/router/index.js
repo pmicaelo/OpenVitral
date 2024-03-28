@@ -15,58 +15,26 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/collections', // Redirect from root path to /map
-    },
-    {
-      path: '/map',
-      name: 'map',
+      redirect: '/collections',
+    },{
+      path: '/map',name: 'map',meta: { position: 4 },
       component: MapPage,
-      meta: { position: 4 },
-    },
-    {
-      path: '/allrecords',
-      name: 'allrecords',
+    },{
+      path: '/allrecords', name: 'allrecords',meta: { position: 2 },
       component: AllRecordsPage,
-      meta: { position: 2 },
-    },
-    /*{
-      path: '/allrecords/:record?', if using the record as a path param instead of passing in querry
-      name: 'allrecords',
-      component: AllRecordsPage, 
-    },
-    /*{
-      path: '/allrecords/:record',
-      component: RecordPage,
-    },*/
-    {
-      path: '/collections',
-      name: 'collections',
+    },{
+      path: '/collections', name: 'collections', meta: { position: 1 },
       component: CollectionsPage,
-      meta: { position: 1 },
-    },
-    {
-      path: '/collections/:collection',
-      name: 'collectionrecords',
+    },{
+      path: '/collections/:collection',name: 'collectionrecords',meta: { position: 1 },
       component: CollectionRecordsPage,
-      meta: { position: 1 },
-    },
-    {
-      path: '/favourites',
-      name: 'favourites',
+    },{
+      path: '/favourites', name: 'favourites',meta: { position: 3 },
       component: FavouritesPage,
-      meta: { position: 3 },
-    },
-    {
-      path: '/about',
-      name: 'about',
+    },{
+      path: '/about', name: 'about',meta: { position: 5 },
       component: AboutPage,
-      meta: { position: 5 },
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      //component: () => import('../views/AboutView.vue')
-    },
-    {
+    },{
       path: "/:pathMatch(.*)",
       component: ErrorPage,
     }

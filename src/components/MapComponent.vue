@@ -24,7 +24,6 @@ import logoURL from '../assets/iconV.png'
 import markerUrl from '../assets/marker.png'
 import markerShadowUrl from '../assets/markerShadow.png'
 
-//const results = inject('records');
 const { records } = defineProps(['records']);
 const router = useRouter();
 
@@ -45,25 +44,44 @@ let map = null
 let markersLayer = null;
 
 
-const addRecordMarker = (record) => {
+function addRecordMarker (record, layer) {
   try {
     const marker = L.marker([parseFloat(record.Lat.value), parseFloat(record.Long.value)], { icon: markerIcon });
     const popupContent = customPopup(record);
-    marker.addTo(markersLayer).bindPopup(popupContent).on("popupopen", () => {
+    marker.addTo(layer).bindPopup(popupContent).on("popupopen", () => {
       setTimeout(() => {
         const customLeafletPopup = document.querySelector(".custom-leaflet-popup");
-        if (customLeafletPopup) {
-          customLeafletPopup.addEventListener("click", () => handlePopupClick(record));
-        }
-      }, 200); // Delay needed to avoid adding while prev popup still there
+        customLeafletPopup.addEventListener("click", () => handlePopupClick(record));
+      }, 200); // Delay needed to avoid adding event while previous popup still open
     });
   } catch (error) {
-        console.error('Error adding the marker:', error);
-        return;
+      console.error('Error adding the marker:', error);
+      return;
     }
 }
 
 function customPopup(record) {
+  const Title = ref ("Untitled Record")
+  const Image = ref(logoURL)
+  if (record.Title){
+    Title.value = record.Title.value
+  }
+  if (record.Image){
+    Image.value = record.Image.value
+  }
+  return `
+    <div class="custom-leaflet-popup">
+      <div class="custom-popup-image">
+        <img src="${Image.value}" alt="">
+      </div>
+      <div class="custom-popup-text" >
+        <div class="custom-popup-text-title">${Title.value}</div>
+      </div>
+    </div>
+    `
+}
+
+/*function customPopup(record) {
   const Title = ref ("Untitled Record")
   const Image = ref(logoURL)
   if (record.Title){
@@ -92,55 +110,48 @@ function customPopup(record) {
       </div>
     </div>
     `
-}
+}*/
 
-const handlePopupClick = (record) => {
+function handlePopupClick (record) {
   const currentRoute = router.currentRoute.value;
   const queryParams = { ...currentRoute.query, record: record.uniqueId.value };
   router.push({ path: currentRoute.path, query: queryParams });
 };
 
 onMounted(async () => {
+  
   // Create and initialize the map
   map = L.map('map', {
     minZoom: 5,
-    zoomControl: false
+    zoomControl: true
   }).setView([47, 1], 5);
+  map.zoomControl.setPosition('topright');
 
-  // Add a tile layer to the map
+  // Add a tile layer to the map (OpenStreetMap)
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  // Add a zoom to the map
-  L.control.zoom({
-    position: 'topright'
-  }).addTo(map);
-
-  // Add a geocoder to the map
-  L.Control.geocoder({
-    defaultMarkGeocode: false, position: 'topleft', placeholder: "Search location"
-  }).on('markgeocode', function (e) {
-    var latlng = e.geocode.center;
-    var bbox = e.geocode.bbox;
-    var poly = L.polygon([
-      bbox.getSouthEast(),
-      bbox.getNorthEast(),
-      bbox.getNorthWest(),
-      bbox.getSouthWest()
-    ])
-    map.setView(latlng, map.getBoundsZoom(poly.getBounds()));
-  }).addTo(map);
-
-  // Add markers in a cluster to the map
+  // Add markers to cluster then add the cluster to the map
   markersLayer = L.markerClusterGroup();
   for (const result of records) {
     if (result.Lat && result.Long) {
-      addRecordMarker(result);
+      addRecordMarker(result, markersLayer);
     }
   }
   map.addLayer(markersLayer);
+
+  // Add geocoder to the map
+  L.Control.geocoder({
+    defaultMarkGeocode: false, position: 'topleft', 
+    placeholder: "Search location"
+  }).on('markgeocode', function (markedArea) {
+    var center = markedArea.geocode.center;
+    var bbox = markedArea.geocode.bbox;
+    map.setView(center, map.getBoundsZoom(bbox));
+  }).addTo(map);
 })
+
 </script>
 
 
@@ -148,6 +159,56 @@ onMounted(async () => {
 .leaflet-control-zoom.leaflet-bar.leaflet-control a:hover {
   background-color: #3a3a3a;
   border-bottom: 1px solid #858585;
+}
+
+.custom-leaflet-popup{
+  cursor: pointer; 
+  box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column; 
+  border-radius: 8px; 
+  padding: 8px; 
+  width: 150px;
+  height: 250px; 
+  background-color: #1a1c1d;
+}
+
+/*.custom-leaflet-popup:hover{
+  filter: brightness(1.4);
+  transition: 0.0s ease-in-out;
+}*/
+
+.custom-leaflet-popup .custom-popup-image{
+  overflow:hidden; 
+  height:100%
+}
+
+.custom-leaflet-popup .custom-popup-image img{
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.custom-leaflet-popup .custom-popup-text {
+  word-wrap:break-word; 
+  padding-top:8px;  
+  overflow: hidden;
+  display: flex; 
+  align-items: center; 
+  height:50px
+}
+
+.custom-leaflet-popup .custom-popup-text .custom-popup-text-title{
+  overflow: hidden; 
+  font-weight:500;
+  -webkit-line-clamp: 2; 
+  display: -webkit-box;
+  -webkit-box-orient: vertical; 
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .leaflet-control-zoom.leaflet-bar.leaflet-control a {

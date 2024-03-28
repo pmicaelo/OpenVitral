@@ -1,6 +1,6 @@
 <template>
     <main class="main">
-        <div v-if="favourites.length > 0" style="display: flex; flex-direction: column; flex: 1 1 0;">
+        <div v-if="favourites.length > 0" style="display: inherit; flex-direction: inherit; flex: inherit;">
             <div class="results-container">
                 <router-link class="card-link" v-for="result in displayedResults" :key="result.uniqueId.value" :to="{
                     name: 'favourites',
@@ -151,7 +151,7 @@ function updateDisplayedResults(data) {
 .results-container {
     justify-items: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 16px;
 }
 

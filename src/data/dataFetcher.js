@@ -16,6 +16,7 @@ async function queryEndpoint(sparqlEndpoint, sparqlEndpointQuery) {
     }
 }
 
+
 async function queryEuropeanaEndpoint() {
 
     const results = await queryEndpoint('https://sparql.europeana.eu/', `
@@ -161,7 +162,7 @@ async function querynNFDI4CultureEndpoint() {
 function fetchLocal() {
     const results = dataVW.results;
     results.map((element, index) => {
-        element.uniqueId = element.item;
+        element.uniqueId = element.Item;
         if (element.Current_location) {
             const [latitude, longitude] = element.Current_location.value.split(',');
             if (parseFloat(latitude) && parseFloat(longitude)) {

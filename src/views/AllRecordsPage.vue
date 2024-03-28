@@ -59,12 +59,17 @@ const locationProps = ["Country", "Building", "SpatialLabel", "City",
   "Former_or_original_locations",
   "State_or_region"];
 
+
 const filteredResults = computed(() => {
   const filterText = filter.value.toLowerCase();
   if (filterText === "") {
     return results.value;
   }
   return results.value.filter((result) => {
+    /*if (selectedFilter.value === 'all') {
+      return Object.values(result).some(valueObj => {
+      return valueObj.value.toLowerCase().includes(filterText);
+    })}*/
     if (selectedFilter.value === 'title' && result.Title) {
       return result.Title.value.toLowerCase().includes(filterText);
     } else if (selectedFilter.value === 'description' && result.Description) {
@@ -76,15 +81,13 @@ const filteredResults = computed(() => {
         if (result[prop] && result[prop].value.toLowerCase().includes(filterText)) {
           return true;
         }
-      }
-      return false;
+      } return false;
     } else if (selectedFilter.value === 'location') {
       for (const prop of locationProps) {
         if (result[prop] && result[prop].value.toLowerCase().includes(filterText)) {
           return true;
         }
-      }
-      return false;
+      } return false;
     }
     return false;
   });
@@ -126,17 +129,9 @@ function findRecord(record_id){
 }
 
 .results-container {
-  /*
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-evenly;
-  align-items: flex-end;*/
-
   justify-items: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 16px;
 }
 

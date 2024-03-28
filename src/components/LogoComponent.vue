@@ -1,7 +1,7 @@
 <template>
     <router-link to="/" class="logo">
         <img :src="logoURL" alt="Vue" />
-        <span class="text">VitralWiki</span>
+        <span class="text">OpenVitral</span>
     </router-link>
 </template>
     

@@ -4,28 +4,26 @@
       <section class="text-element">
         <h1>Project & Goals</h1>
         <p>In 2022, the Nova Laboratory for Computer Science and Informatics (NOVALINCS) at FCT-NOVA initiated
-          VitralWiki,
           a new project aimed at addressing the crucial task of preserving Portugal's culturally rich
           stained glass heritage.</p>
-        <p>VitralWiki's primary objective lies in the improvement of accessibility to available stained glass resources
+        <p>OpenVitral is part of this project and its primary objective lies in the improvement of accessibility to available stained glass resources
           on
-          the Web while also
+          the Web, while also
           promoting a deeper appreciation for this type of glass art.
         </p>
       </section>
       <section class="text-element">
         <h1>Content</h1>
-        <p>VitralWiki contains data regarding stained glass objects that is available on the Web in the form of Linked
+        <p>OpenVitral contains data regarding stained glass objects that is available on the Web in the form of Linked
           Open Data (LOD).</p>
         <p>As of today, the data on this website is obtained via two different sources: </p>
-        <p>• By using the data in VitralWiki's wiki page available at MediaWiki which contains the Portuguese Batalha's
-          Monastery stained glass collection;</p>
+        <p>• By querrying the VitralWiki's open access SPARQL Endpoint;</p>
         <p>• By querrying the Europeana's open access SPARQL Endpoint;</p>
       </section>
       <section class="text-element">
         <h1>Collaborators</h1>
         <p>So far, this project has counted with the collaboration of: </p>
-        <p>• Research unit VICARTE - glass and ceramics for the arts; </p>
+        <p>• Research unit VICARTE - Glass and Ceramic for the Arts; </p>
         <p>• Monastery of Santa Maria da Vitória (Batalha). </p>
       </section>
       <section class="text-element">
@@ -41,7 +39,11 @@
         </a>
         <a class="link" href="https://cvportugal.fct.unl.pt/mediawiki-1.37.1/index.php/VitralWiki" target="_blank"
           rel="noopener noreferrer">
-          <p>VitralWiki's Wiki Page</p>
+          <p>VitralWiki Wiki</p>
+        </a>
+        <a class="link" href="https://cvportugal.fct.unl.pt/mediawiki-1.37.1/index.php/VitralWiki" target="_blank"
+          rel="noopener noreferrer">
+          <p>VitralWiki SPARQL Endpoint</p>
         </a>
         <a class="link" href="https://sparql.europeana.eu/" target="_blank" rel="noopener noreferrer">
           <p>Europeana SPARQL Endpoint</p>
