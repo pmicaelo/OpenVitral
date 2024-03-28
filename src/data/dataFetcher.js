@@ -177,8 +177,8 @@ function fetchLocal() {
 
 export async function fetchAll() {
     const all = [];
-    all.push(...fetchLocal());
-    //all.push(...await queryVitralWikiEndpoint())
+    //all.push(...fetchLocal());
+    all.push(...await queryVitralWikiEndpoint())
     all.push(...await queryEuropeanaEndpoint())
     //all.push(...await querynNFDI4CultureEndpoint())
     return all;
