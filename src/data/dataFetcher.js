@@ -1,5 +1,4 @@
 import axios from 'axios';
-import dataVW from './vitralWiki2.json'
 
 async function queryEndpoint(sparqlEndpoint, sparqlEndpointQuery) {
     try {
@@ -159,25 +158,8 @@ async function querynNFDI4CultureEndpoint() {
     return results;
 }
 
-function fetchLocal() {
-    const results = dataVW.results;
-    results.map((element, index) => {
-        element.uniqueId = element.Item;
-        if (element.Current_location) {
-            const [latitude, longitude] = element.Current_location.value.split(',');
-            if (parseFloat(latitude) && parseFloat(longitude)) {
-                element.Lat = { type: 'literal', value: latitude };
-                element.Long = { type: 'literal', value: longitude };
-            }
-        }
-        return element;
-    });
-    return results
-}
-
 export async function fetchAll() {
     const all = [];
-    //all.push(...fetchLocal());
     all.push(...await queryVitralWikiEndpoint())
     all.push(...await queryEuropeanaEndpoint())
     //all.push(...await querynNFDI4CultureEndpoint())
